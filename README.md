@@ -27,6 +27,9 @@ This mod is owned by Coolgatty
 ***
 #####Main Team
 
+* Coolgatty - Developer
+* furzuad - Developer
+
 #####Special Thanks to
 
 
