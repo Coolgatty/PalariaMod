@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class Items 
 {
 	public static Item wood_blade;
+	public static Item stone_blade;
+	public static Item iron_blade;
 	
 	public static void init()
 	{
