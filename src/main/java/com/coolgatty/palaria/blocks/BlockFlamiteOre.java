@@ -23,11 +23,4 @@ public class BlockFlamiteOre extends Block
 		setHarvestLevel("pickaxe", 3);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
-	
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune)
-	    {
-	        return Palaria.flamiteingot;
-	    }
-
 }

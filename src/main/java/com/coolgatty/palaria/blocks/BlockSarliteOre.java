@@ -23,10 +23,4 @@ public class BlockSarliteOre extends Block
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
-	
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune)
-	    {
-	        return Palaria.sarliteingot;
-	    }
 }
