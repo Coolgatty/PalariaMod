@@ -10,7 +10,7 @@ public class ItemFlamiteIngot extends Item
 	public ItemFlamiteIngot()
 	{
 		super ();
-		setUnlocalizedName("slamiteingot");
+		setUnlocalizedName("flamiteingot");
 		//setTextureName(Reference.MODID + ";" + getUnlocalizedName().substring(5));
 		setCreativeTab(CreativeTabs.tabMaterials);
 	}
