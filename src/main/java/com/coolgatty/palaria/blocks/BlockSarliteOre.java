@@ -20,7 +20,7 @@ public class BlockSarliteOre extends Block
 		//setBlockTextureName(Reference.MODID + ";" + getUnlocalizedName().substring(5));
 		setHardness(3.5F);
 		setResistance(5.5F);
-		setHarvestLevel("pickaxe", 4);
+		setHarvestLevel("pickaxe", 3);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
 }
