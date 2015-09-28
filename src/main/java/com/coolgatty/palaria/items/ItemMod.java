@@ -1,6 +1,7 @@
 package com.coolgatty.palaria.items;
 
 import com.coolgatty.palaria.blocks.BlockFlamiteOre;
+import com.coolgatty.palaria.blocks.BlockMod;
 import com.coolgatty.palaria.blocks.BlockSarliteOre;
 import com.coolgatty.palaria.help.Reference;
 import com.coolgatty.palaria.help.RegisterHelper;
@@ -44,7 +45,7 @@ public class ItemMod
 	
 	//Materials
 	static ToolMaterial SARLITE_TOOLS = EnumHelper.addToolMaterial("SARLITE_TOOLS", 4, 2432, 8.5F, 3.0F, 10);
-	static ToolMaterial FLAMITE_TOOLS = EnumHelper.addToolMaterial("FLAMITE_TOOLS", 4, 2576, 9.0F, 5.0F, 10);
+	static ToolMaterial FLAMITE_TOOLS = EnumHelper.addToolMaterial("FLAMITE_TOOLS", 4, 2576, 9.0F, 3.0F, 10);
 	
 	static ToolMaterial SARLITE_SWORD = EnumHelper.addToolMaterial("SARLITE_SWORD", 4, 2432, 8.5F, 4.0F, 10);
 	static ToolMaterial FLAMITE_SWORD = EnumHelper.addToolMaterial("FLAMITE_SWORD", 4, 2576, 9.0F, 5.0F, 10);
@@ -96,6 +97,7 @@ public class ItemMod
 		
 		
 		//Recipes
+		/*Sarlite*/
 		GameRegistry.addRecipe(new ItemStack(sarlitepick), new Object [] 
 		{
 				"XXX", 
@@ -103,6 +105,105 @@ public class ItemMod
 				" Y ", 
 				'X', sarliteingot, 'Y', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(sarliteaxe), new Object [] 
+		{
+				"XX", 
+				"XY", 
+				" Y", 
+				'X', sarliteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(sarliteaxe), new Object [] 
+		{
+				"XX", 
+				"YX", 
+				"Y ", 
+				'X', sarliteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(sarlitehoe), new Object [] 
+		{
+				"XX", 
+				" Y", 
+				" Y", 
+				'X', sarliteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(sarlitehoe), new Object [] 
+		{
+				"XX", 
+				"Y ", 
+				"Y ", 
+				'X', sarliteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(sarliteshovel), new Object [] 
+		{
+				"X", 
+				"Y", 
+				"Y", 
+				'X', sarliteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(sarlitesword), new Object [] 
+		{
+				"X", 
+				"X", 
+				"Y", 
+				'X', sarliteingot, 'Y', Items.stick
+		});
+		
+		/*Flamite*/
+		
+		GameRegistry.addRecipe(new ItemStack(flamitepick), new Object [] 
+		{
+				"XXX", 
+				" Y ", 
+				" Y ", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(flamiteaxe), new Object [] 
+		{
+				"XX", 
+				"XY", 
+				" Y", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(flamiteaxe), new Object [] 
+		{
+				"XX", 
+				"YX", 
+				"Y ", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(flamitehoe), new Object [] 
+		{
+				"XX", 
+				" Y", 
+				" Y", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(flamitehoe), new Object [] 
+		{
+				"XX", 
+				"Y ", 
+				"Y ", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(flamiteshovel), new Object [] 
+		{
+				"X", 
+				"Y", 
+				"Y", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(flamitesword), new Object [] 
+		{
+				"X", 
+				"X", 
+				"Y", 
+				'X', flamiteingot, 'Y', Items.stick
+		});
+		
+		
+		//Smelting
+		GameRegistry.addSmelting(BlockMod.sarliteore, new ItemStack(sarliteingot), 5.0F);
+		GameRegistry.addSmelting(BlockMod.flamiteore, new ItemStack(flamiteingot), 5.0F);
 	}
 	
 	public static void registerRenders ()
