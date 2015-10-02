@@ -15,6 +15,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
@@ -43,12 +45,26 @@ public class ItemMod
 	public static Item sarlitesword;
 	public static Item flamitesword;
 	
+	//Armor
+	public static Item sarlitehelmet;
+	public static Item sarlitechestplate;
+	public static Item sarliteleggings;
+	public static Item sarliteboots;
+	
+	public static Item flamitehelmet;
+	public static Item flamitechestplate;
+	public static Item flamiteleggings;
+	public static Item flamiteboots;
+	
 	//Materials
 	static ToolMaterial SARLITE_TOOLS = EnumHelper.addToolMaterial("SARLITE_TOOLS", 4, 2432, 8.5F, 3.0F, 10);
 	static ToolMaterial FLAMITE_TOOLS = EnumHelper.addToolMaterial("FLAMITE_TOOLS", 4, 2576, 9.0F, 3.0F, 10);
 	
 	static ToolMaterial SARLITE_SWORD = EnumHelper.addToolMaterial("SARLITE_SWORD", 4, 2432, 8.5F, 4.0F, 10);
 	static ToolMaterial FLAMITE_SWORD = EnumHelper.addToolMaterial("FLAMITE_SWORD", 4, 2576, 9.0F, 5.0F, 10);
+	
+	static ArmorMaterial SARLITE_ARMOR = EnumHelper.addArmorMaterial("SARLITE_ARMOR", "palaria:sarlite", 52, new int[]{4, 9, 6, 3}, 10);
+	static ArmorMaterial FLAMITE_ARMOR = EnumHelper.addArmorMaterial("FLAMITE_ARMOR", "palaria:flamite", 60, new int[]{4, 8, 7, 4}, 10);
 	
 	
 	public static void init()
@@ -71,6 +87,17 @@ public class ItemMod
 		//Swords
 		sarlitesword = new ItemSword(SARLITE_SWORD).setUnlocalizedName("sarlitesword").setCreativeTab(CreativeTabs.tabCombat);
 		flamitesword = new ItemSword(FLAMITE_SWORD).setUnlocalizedName("flamitesword").setCreativeTab(CreativeTabs.tabCombat);
+		
+		//Armors
+		sarlitehelmet = new ItemArmor(SARLITE_ARMOR, 1, 0).setUnlocalizedName("sarlitehelmet").setCreativeTab(CreativeTabs.tabCombat);
+		sarlitechestplate = new ItemArmor(SARLITE_ARMOR, 1, 1).setUnlocalizedName("sarlitechestplate").setCreativeTab(CreativeTabs.tabCombat);
+		sarliteleggings = new ItemArmor(SARLITE_ARMOR, 2, 2).setUnlocalizedName("sarliteleggings").setCreativeTab(CreativeTabs.tabCombat);
+		sarliteboots = new ItemArmor(SARLITE_ARMOR, 1, 3).setUnlocalizedName("sarliteboots").setCreativeTab(CreativeTabs.tabCombat);
+		
+		flamitehelmet = new ItemArmor(FLAMITE_ARMOR, 1, 0).setUnlocalizedName("flamitehelmet").setCreativeTab(CreativeTabs.tabCombat);
+		flamitechestplate = new ItemArmor(FLAMITE_ARMOR, 1, 1).setUnlocalizedName("flamitechestplate").setCreativeTab(CreativeTabs.tabCombat);
+		flamiteleggings = new ItemArmor(FLAMITE_ARMOR, 2, 2).setUnlocalizedName("flamiteleggings").setCreativeTab(CreativeTabs.tabCombat);
+		flamiteboots = new ItemArmor(FLAMITE_ARMOR, 1, 3).setUnlocalizedName("flamiteboots").setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	public static void register()
@@ -94,6 +121,17 @@ public class ItemMod
 		//Swords
 		RegisterHelper.registerItem(sarlitesword);
 		RegisterHelper.registerItem(flamitesword);
+		
+		//Armor
+		RegisterHelper.registerItem(sarlitehelmet);
+		RegisterHelper.registerItem(sarlitechestplate);
+		RegisterHelper.registerItem(sarliteleggings);
+		RegisterHelper.registerItem(sarliteboots);
+		
+		RegisterHelper.registerItem(flamitehelmet);
+		RegisterHelper.registerItem(flamitechestplate);
+		RegisterHelper.registerItem(flamiteleggings);
+		RegisterHelper.registerItem(flamiteboots);
 		
 		
 		//Recipes
@@ -148,6 +186,33 @@ public class ItemMod
 				'X', sarliteingot, 'Y', Items.stick
 		});
 		
+		GameRegistry.addRecipe(new ItemStack(sarlitehelmet), new Object []
+		{
+			"XXX",
+			"X X",
+			'X', sarliteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(sarlitechestplate), new Object []
+		{
+			"X X",
+			"XXX",
+			"XXX",
+			'X', sarliteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(sarliteleggings), new Object []
+		{
+			"XXX",
+			"X X",
+			"X X",
+			'X', sarliteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(sarliteboots), new Object []
+		{
+			"X X",
+			"X X",
+			'X', sarliteingot
+		});
+		
 		/*Flamite*/
 		
 		GameRegistry.addRecipe(new ItemStack(flamitepick), new Object [] 
@@ -200,6 +265,34 @@ public class ItemMod
 				'X', flamiteingot, 'Y', Items.stick
 		});
 		
+		GameRegistry.addRecipe(new ItemStack(flamitehelmet), new Object []
+		{
+			"XXX",
+			"X X",
+			'X', flamiteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(flamitechestplate), new Object []
+		{
+			"X X",
+			"XXX",
+			"XXX",
+			'X', flamiteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(flamiteleggings), new Object []
+		{
+			"XXX",
+			"X X",
+			"X X",
+			'X', flamiteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(flamiteboots), new Object []
+		{
+			"X X",
+			"X X",
+			'X', flamiteingot
+		});
+		
+		
 		
 		//Smelting
 		GameRegistry.addSmelting(BlockMod.sarliteore, new ItemStack(sarliteingot), 5.0F);
@@ -227,11 +320,21 @@ public class ItemMod
 		registerRender(sarlitesword);
 		registerRender(flamitesword);
 		
+		//Armor
+		registerRender(sarlitehelmet);
+		registerRender(sarlitechestplate);
+		registerRender(sarliteleggings);
+		registerRender(sarliteboots);
+		
+		registerRender(flamitehelmet);
+		registerRender(flamitechestplate);
+		registerRender(flamiteleggings);
+		registerRender(flamiteboots);
+		
 	}
 	
 	public static void registerRender(Item item)
 	{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
 	}
-
 }

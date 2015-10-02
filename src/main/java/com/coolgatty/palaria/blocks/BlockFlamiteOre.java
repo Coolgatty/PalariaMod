@@ -17,7 +17,6 @@ public class BlockFlamiteOre extends Block
 	{
 		super(Material.rock);
 		setUnlocalizedName("flamiteore");
-		//setBlockTextureName(Reference.MODID + ";" + getUnlocalizedName().substring(5));
 		setHardness(3.5F);
 		setResistance(5.5F);
 		setHarvestLevel("pickaxe", 3);
