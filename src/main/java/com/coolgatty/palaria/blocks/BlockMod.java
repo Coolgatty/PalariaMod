@@ -17,6 +17,7 @@ public class BlockMod
 	//Ores
 	public static Block sarliteore;
 	public static Block flamiteore;
+	public static Block clariteore;
 	
 	
 	public static void init()
@@ -24,6 +25,7 @@ public class BlockMod
 		//Ores
 		sarliteore = new BlockSarliteOre();
 		flamiteore = new BlockFlamiteOre();
+		clariteore = new BlockClariteOre();
 	}
 	
 	public static void register()
@@ -31,12 +33,14 @@ public class BlockMod
 		//Ores
 		RegisterHelper.regsiterBlock(sarliteore);
 		RegisterHelper.regsiterBlock(flamiteore);
+		RegisterHelper.regsiterBlock(clariteore);
 	}
 	
 	public static void registerRenders ()
 	{
 		registerRender(sarliteore);
 		registerRender(flamiteore);
+		registerRender(clariteore);
 		
 	}
 	

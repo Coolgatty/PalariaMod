@@ -4,6 +4,8 @@ tile.flamiteore.name=Flamite Ore
 
 item.sarliteingot.name=Sarlite Ingot
 item.flamiteingot.name=Flamite Ingot
+item.claritegem.name=Clarite Gem
+
 item.sarlitepick.name=Sarlite Pickaxe
 item.sarliteaxe.name=Sarlite Axe
 item.sarliteshovel.name=Sarlite Shovel
@@ -12,6 +14,20 @@ item.sarlitehelmet.name=Sarlite Helmet
 item.sarlitechestplate.name=Sarlite Chestplate
 item.sarliteleggings.name=Sarlite Leggings
 item.sarliteboots.name=Sarlite Boots
+
+item.claritepick.name=Clarite Pickaxe
+item.clariteaxe.name=Clarite Axe
+item.clariteshovel.name=Clarite Shovel
+item.claritehoe.name=Clarite Hoe
+item.claritehelmet.name=Clarite Helmet
+item.claritechestplate.name=Clarite Chestplate
+item.clariteleggings.name=Clarite Leggings
+item.clariteboots.name=Clarite Boots
+
+item.flamitepick.name=Flamite Pickaxe
+item.flamiteaxe.name=Flamite Axe
+item.flamiteshovel.name=Flamite Shovel
+item.flamitehoe.name=Flamite Hoe
 item.flamitehelmet.name=Flamite Helmet
 item.flamitechestplate.name=Flamite Chestplate
 item.flamiteleggings.name=Flamite Leggings
