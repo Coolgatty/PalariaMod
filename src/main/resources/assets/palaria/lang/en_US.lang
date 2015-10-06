@@ -1,11 +1,14 @@
 tile.sarliteore.name=Sarlite Ore
 tile.flamiteore.name=Flamite Ore
-
+tile.clariteore.name=Clarite Ore
+tile.illiwonore.name=Illiwon Ore
 
 item.sarliteingot.name=Sarlite Ingot
 item.flamiteingot.name=Flamite Ingot
 item.claritegem.name=Clarite Gem
+item.illiwongem.name=Illiwon Gem
 
+item.sarlitesword.name=Sarlite Sword
 item.sarlitepick.name=Sarlite Pickaxe
 item.sarliteaxe.name=Sarlite Axe
 item.sarliteshovel.name=Sarlite Shovel
@@ -15,6 +18,7 @@ item.sarlitechestplate.name=Sarlite Chestplate
 item.sarliteleggings.name=Sarlite Leggings
 item.sarliteboots.name=Sarlite Boots
 
+item.claritesword.name=Clarite Sword
 item.claritepick.name=Clarite Pickaxe
 item.clariteaxe.name=Clarite Axe
 item.clariteshovel.name=Clarite Shovel
@@ -24,6 +28,7 @@ item.claritechestplate.name=Clarite Chestplate
 item.clariteleggings.name=Clarite Leggings
 item.clariteboots.name=Clarite Boots
 
+item.flamitesword.name=Flamite Sword
 item.flamitepick.name=Flamite Pickaxe
 item.flamiteaxe.name=Flamite Axe
 item.flamiteshovel.name=Flamite Shovel
@@ -32,3 +37,13 @@ item.flamitehelmet.name=Flamite Helmet
 item.flamitechestplate.name=Flamite Chestplate
 item.flamiteleggings.name=Flamite Leggings
 item.flamiteboots.name=Flamite Boots
+
+item.illiwonsword.name=Illiwon Sword
+item.illiwonpick.name=Illiwon Pickaxe
+item.illiwonaxe.name=Illiwon Axe
+item.illiwonshovel.name=Illiwon Shovel
+item.illiwonhoe.name=Illiwon Hoe
+item.illiwonhelmet.name=Illiwon Helmet
+item.illiwonchestplate.name=Illiwon Chestplate
+item.illiwonleggings.name=Illiwon Leggings
+item.illiwonboots.name=Illiwon Boots

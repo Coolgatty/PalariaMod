@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class RegisterHelper 
 {
-	public static void regsiterBlock(Block block)
+	public static void registerBlock(Block block)
 	{
 		GameRegistry.registerBlock(block, block.getUnlocalizedName().substring(5));
 	}

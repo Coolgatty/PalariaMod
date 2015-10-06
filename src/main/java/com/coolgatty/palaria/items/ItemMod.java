@@ -30,6 +30,7 @@ public class ItemMod
 	public static Item sarliteingot;
 	public static Item flamiteingot;
 	public static Item claritegem;
+	public static Item illiwongem;
 	
 	//Tools	
 	public static Item sarliteshovel;
@@ -47,10 +48,16 @@ public class ItemMod
 	public static Item clariteaxe;
 	public static Item claritehoe;
 	
+	public static Item illiwonshovel;
+	public static Item illiwonpick;
+	public static Item illiwonaxe;
+	public static Item illiwonhoe;
+	
 	//Swords
 	public static Item sarlitesword;
 	public static Item flamitesword;
 	public static Item claritesword;
+	public static Item illiwonsword;
 	
 	//Armor
 	public static Item sarlitehelmet;
@@ -68,18 +75,26 @@ public class ItemMod
 	public static Item clariteleggings;
 	public static Item clariteboots;
 	
+	public static Item illiwonhelmet;
+	public static Item illiwonchestplate;
+	public static Item illiwonleggings;
+	public static Item illiwonboots;
+	
 	//Materials
 	static ToolMaterial SARLITE_TOOLS = EnumHelper.addToolMaterial("SARLITE", 4, 2432, 12.0F, 3.0F, 10);
 	static ToolMaterial FLAMITE_TOOLS = EnumHelper.addToolMaterial("FLAMITE", 4, 2576, 13.0F, 3.0F, 10);
 	static ToolMaterial CLARITE_TOOLS = EnumHelper.addToolMaterial("CLARITE", 3, 781, 10.0F, 3.0F, 16);
+	static ToolMaterial ILLIWON_TOOLS = EnumHelper.addToolMaterial("ILLIWON", 5, 3122, 16.0F, 3.0F, 9);
 	
 	static ToolMaterial SARLITE_SWORD = EnumHelper.addToolMaterial("SARLITE", 4, 2432, 12.0F, 4.0F, 10);
 	static ToolMaterial FLAMITE_SWORD = EnumHelper.addToolMaterial("FLAMITE", 4, 2576, 13.0F, 5.0F, 10);
 	static ToolMaterial CLARITE_SWORD = EnumHelper.addToolMaterial("CLARITE", 3, 781, 10.0F, 3.0F, 16);
+	static ToolMaterial ILLIWON_SWORD = EnumHelper.addToolMaterial("ILLIWON", 5, 3122, 16.0F, 6.0F, 9);
 	
 	static ArmorMaterial SARLITE_ARMOR = EnumHelper.addArmorMaterial("SARLITE", "palaria:sarlite", 52, new int[]{4, 9, 6, 3}, 10);
 	static ArmorMaterial FLAMITE_ARMOR = EnumHelper.addArmorMaterial("FLAMITE", "palaria:flamite", 60, new int[]{4, 8, 7, 4}, 10);
 	static ArmorMaterial CLARITE_ARMOR = EnumHelper.addArmorMaterial("CLARITE", "palaria:clarite", 23, new int[]{3, 7, 6, 3}, 16);
+	static ArmorMaterial ILLIWON_ARMOR = EnumHelper.addArmorMaterial("ILLIWON", "palaria:illiwon", 66, new int[]{5, 10, 8, 5}, 9);
 	
 	
 	public static void init()
@@ -88,6 +103,7 @@ public class ItemMod
 		sarliteingot = new Item().setUnlocalizedName("sarliteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		flamiteingot = new Item().setUnlocalizedName("flamiteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		claritegem = new Item().setUnlocalizedName("claritegem").setCreativeTab(CreativeTabs.tabMaterials);
+		illiwongem = new Item().setUnlocalizedName("illiwongem").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		//Tools
 		sarliteshovel = new ItemSpade(SARLITE_TOOLS).setUnlocalizedName("sarliteshovel").setCreativeTab(CreativeTabs.tabTools);
@@ -105,10 +121,16 @@ public class ItemMod
 		clariteaxe = new ItemModAxe(CLARITE_TOOLS).setUnlocalizedName("clariteaxe").setCreativeTab(CreativeTabs.tabTools);
 		claritehoe = new ItemHoe(CLARITE_TOOLS).setUnlocalizedName("claritehoe").setCreativeTab(CreativeTabs.tabTools);
 		
+		illiwonshovel = new ItemSpade(ILLIWON_TOOLS).setUnlocalizedName("illiwonshovel").setCreativeTab(CreativeTabs.tabTools);
+		illiwonpick = new ItemModPickaxe(ILLIWON_TOOLS).setUnlocalizedName("illiwonpick").setCreativeTab(CreativeTabs.tabTools);
+		illiwonaxe = new ItemModAxe(ILLIWON_TOOLS).setUnlocalizedName("illiwonaxe").setCreativeTab(CreativeTabs.tabTools);
+		illiwonhoe = new ItemHoe(ILLIWON_TOOLS).setUnlocalizedName("illiwonhoe").setCreativeTab(CreativeTabs.tabTools);
+		
 		//Swords
 		sarlitesword = new ItemSword(SARLITE_SWORD).setUnlocalizedName("sarlitesword").setCreativeTab(CreativeTabs.tabCombat);
 		flamitesword = new ItemSword(FLAMITE_SWORD).setUnlocalizedName("flamitesword").setCreativeTab(CreativeTabs.tabCombat);
 		claritesword = new ItemSword(CLARITE_SWORD).setUnlocalizedName("claritesword").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonsword = new ItemSword(ILLIWON_SWORD).setUnlocalizedName("illiwonsword").setCreativeTab(CreativeTabs.tabCombat);
 		
 		//Armors
 		sarlitehelmet = new ItemArmor(SARLITE_ARMOR, 1, 0).setUnlocalizedName("sarlitehelmet").setCreativeTab(CreativeTabs.tabCombat);
@@ -125,6 +147,11 @@ public class ItemMod
 		claritechestplate = new ItemArmor(CLARITE_ARMOR, 1, 1).setUnlocalizedName("claritechestplate").setCreativeTab(CreativeTabs.tabCombat);
 		clariteleggings = new ItemArmor(CLARITE_ARMOR, 2, 2).setUnlocalizedName("clariteleggings").setCreativeTab(CreativeTabs.tabCombat);
 		clariteboots = new ItemArmor(CLARITE_ARMOR, 1, 3).setUnlocalizedName("clariteboots").setCreativeTab(CreativeTabs.tabCombat);
+		
+		illiwonhelmet = new ItemArmor(ILLIWON_ARMOR, 1, 0).setUnlocalizedName("illiwonhelmet").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonchestplate = new ItemArmor(ILLIWON_ARMOR, 1, 1).setUnlocalizedName("illiwonchestplate").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonleggings = new ItemArmor(ILLIWON_ARMOR, 2, 2).setUnlocalizedName("illiwonleggings").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonboots = new ItemArmor(ILLIWON_ARMOR, 1, 3).setUnlocalizedName("illiwonboots").setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	public static void register()
@@ -134,6 +161,7 @@ public class ItemMod
 		RegisterHelper.registerItem(sarliteingot);
 		RegisterHelper.registerItem(flamiteingot);
 		RegisterHelper.registerItem(claritegem);
+		RegisterHelper.registerItem(illiwongem);
 		
 		//Tools
 		RegisterHelper.registerItem(sarliteshovel);
@@ -151,10 +179,16 @@ public class ItemMod
 		RegisterHelper.registerItem(clariteaxe);
 		RegisterHelper.registerItem(claritehoe);
 		
+		RegisterHelper.registerItem(illiwonshovel);
+		RegisterHelper.registerItem(illiwonpick);
+		RegisterHelper.registerItem(illiwonaxe);
+		RegisterHelper.registerItem(illiwonhoe);
+		
 		//Swords
 		RegisterHelper.registerItem(sarlitesword);
 		RegisterHelper.registerItem(flamitesword);
 		RegisterHelper.registerItem(claritesword);
+		RegisterHelper.registerItem(illiwonsword);
 		
 		//Armor
 		RegisterHelper.registerItem(sarlitehelmet);
@@ -171,6 +205,11 @@ public class ItemMod
 		RegisterHelper.registerItem(claritechestplate);
 		RegisterHelper.registerItem(clariteleggings);
 		RegisterHelper.registerItem(clariteboots);
+		
+		RegisterHelper.registerItem(illiwonhelmet);
+		RegisterHelper.registerItem(illiwonchestplate);
+		RegisterHelper.registerItem(illiwonleggings);
+		RegisterHelper.registerItem(illiwonboots);
 		
 		
 		//Recipes
@@ -411,6 +450,85 @@ public class ItemMod
 			"X X",
 			'X', claritegem
 		});
+		/**************************************************************/
+		/*Illiwon*/
+		/**************************************************************/
+		GameRegistry.addRecipe(new ItemStack(illiwonpick), new Object [] 
+		{
+				"XXX", 
+				" Y ", 
+				" Y ", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonaxe), new Object [] 
+		{
+				"XX", 
+				"XY", 
+				" Y", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonaxe), new Object [] 
+		{
+				"XX", 
+				"YX", 
+				"Y ", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonhoe), new Object [] 
+		{
+				"XX", 
+				" Y", 
+				" Y", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonhoe), new Object [] 
+		{
+				"XX", 
+				"Y ", 
+				"Y ", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonshovel), new Object [] 
+		{
+				"X", 
+				"Y", 
+				"Y", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonsword), new Object [] 
+		{
+				"X", 
+				"X", 
+				"Y", 
+				'X', illiwongem, 'Y', Items.stick
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(illiwonhelmet), new Object []
+		{
+			"XXX",
+			"X X",
+			'X', illiwongem
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonchestplate), new Object []
+		{
+			"X X",
+			"XXX",
+			"XXX",
+			'X', illiwongem
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonleggings), new Object []
+		{
+			"XXX",
+			"X X",
+			"X X",
+			'X', illiwongem
+		});
+		GameRegistry.addRecipe(new ItemStack(illiwonboots), new Object []
+		{
+			"X X",
+			"X X",
+			'X', illiwongem
+		});
 		
 		
 		
@@ -425,6 +543,7 @@ public class ItemMod
 		registerRender(sarliteingot);
 		registerRender(flamiteingot);
 		registerRender(claritegem);
+		registerRender(illiwongem);
 		
 		//Tools
 		registerRender(sarliteshovel);
@@ -442,10 +561,16 @@ public class ItemMod
 		registerRender(clariteaxe);
 		registerRender(claritehoe);
 		
+		registerRender(illiwonshovel);
+		registerRender(illiwonpick);
+		registerRender(illiwonaxe);
+		registerRender(illiwonhoe);
+		
 		//Swords
 		registerRender(sarlitesword);
 		registerRender(flamitesword);
 		registerRender(claritesword);
+		registerRender(illiwonsword);
 		
 		//Armor
 		registerRender(sarlitehelmet);
@@ -462,6 +587,11 @@ public class ItemMod
 		registerRender(claritechestplate);
 		registerRender(clariteleggings);
 		registerRender(clariteboots);
+		
+		registerRender(illiwonhelmet);
+		registerRender(illiwonchestplate);
+		registerRender(illiwonleggings);
+		registerRender(illiwonboots);
 		
 	}
 	
