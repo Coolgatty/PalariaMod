@@ -2,7 +2,10 @@ package com.coolgatty.palaria.proxy;
 
 import com.coolgatty.palaria.blocks.BlockMod;
 import com.coolgatty.palaria.items.ItemMod;
+import com.coolgatty.palaria.mobs.EntityCreeptile;
+import com.coolgatty.palaria.mobs.render.RenderCreeptile;
 
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -14,6 +17,12 @@ public class ClientProxy extends CommonProxy
 	{
 		ItemMod.registerRenders();
 		BlockMod.registerRenders();
+	}
+	
+	@Override
+	public void renderEntity()
+	{
+		RenderingRegistry.registerEntityRenderingHandler(EntityCreeptile.class, new RenderCreeptile());
 	}
 	
 	@Override

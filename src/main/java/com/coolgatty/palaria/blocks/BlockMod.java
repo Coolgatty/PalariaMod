@@ -1,5 +1,6 @@
 package com.coolgatty.palaria.blocks;
 
+import com.coolgatty.palaria.Palaria;
 import com.coolgatty.palaria.blocks.BlockFlamiteOre;
 import com.coolgatty.palaria.blocks.BlockSarliteOre;
 import com.coolgatty.palaria.help.Reference;
