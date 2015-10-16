@@ -104,6 +104,7 @@ public class ItemMod
 	static ArmorMaterial FLAMITE_ARMOR = EnumHelper.addArmorMaterial("FLAMITE", "palaria:flamite", 60, new int[]{4, 8, 7, 4}, 10);
 	static ArmorMaterial CLARITE_ARMOR = EnumHelper.addArmorMaterial("CLARITE", "palaria:clarite", 23, new int[]{3, 6, 6, 3}, 16);
 	static ArmorMaterial ILLIWON_ARMOR = EnumHelper.addArmorMaterial("ILLIWON", "palaria:illiwon", 66, new int[]{5, 10, 8, 5}, 9);
+	static ArmorMaterial AFNAMITE_ARMOR = EnumHelper.addArmorMaterial("AFNAMITE", "palaria:afnamite", 105, new int[]{6, 11, 9, 6}, 8);
 	
 	
 	public static void init()
@@ -169,10 +170,10 @@ public class ItemMod
 		illiwonleggings = new ItemArmor(ILLIWON_ARMOR, 2, 2).setUnlocalizedName("illiwonleggings").setCreativeTab(CreativeTabs.tabCombat);
 		illiwonboots = new ItemArmor(ILLIWON_ARMOR, 1, 3).setUnlocalizedName("illiwonboots").setCreativeTab(CreativeTabs.tabCombat);
 		
-		afnamitehelmet = new ItemArmor(ILLIWON_ARMOR, 1, 0).setUnlocalizedName("afnamitehelmet").setCreativeTab(CreativeTabs.tabCombat);
-		afnamitechestplate = new ItemArmor(ILLIWON_ARMOR, 1, 1).setUnlocalizedName("afnamitechestplate").setCreativeTab(CreativeTabs.tabCombat);
-		afnamiteleggings = new ItemArmor(ILLIWON_ARMOR, 2, 2).setUnlocalizedName("afnamiteleggings").setCreativeTab(CreativeTabs.tabCombat);
-		afnamiteboots = new ItemArmor(ILLIWON_ARMOR, 1, 3).setUnlocalizedName("afnamiteboots").setCreativeTab(CreativeTabs.tabCombat);
+		afnamitehelmet = new ItemArmor(AFNAMITE_ARMOR, 1, 0).setUnlocalizedName("afnamitehelmet").setCreativeTab(CreativeTabs.tabCombat);
+		afnamitechestplate = new ItemArmor(AFNAMITE_ARMOR, 1, 1).setUnlocalizedName("afnamitechestplate").setCreativeTab(CreativeTabs.tabCombat);
+		afnamiteleggings = new ItemArmor(AFNAMITE_ARMOR, 2, 2).setUnlocalizedName("afnamiteleggings").setCreativeTab(CreativeTabs.tabCombat);
+		afnamiteboots = new ItemArmor(AFNAMITE_ARMOR, 1, 3).setUnlocalizedName("afnamiteboots").setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	public static void register()
