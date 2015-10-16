@@ -16,7 +16,7 @@ public class ItemModAxe extends ItemTool
 
     protected ItemModAxe(Item.ToolMaterial material)
     {
-        super(3.0F, material, EFFECTIVE_ON);
+        super(6.0F - material.getDamageVsEntity(), material, EFFECTIVE_ON);
     }
 
     public float getStrVsBlock(ItemStack stack, Block block)

@@ -11,6 +11,7 @@ import com.coolgatty.palaria.items.ItemMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.MobMod;
 import com.coolgatty.palaria.proxy.CommonProxy;
+import com.coolgatty.palaria.world.WorldGenOres;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -57,10 +58,15 @@ public class Palaria
 			
 		}
 		
+		//World
+        WorldGenOres.init();
+        //Blocks
 		BlockMod.init();		
 		BlockMod.register();
+		//Items
 		ItemMod.init();
 		ItemMod.register();
+		//Mobs
 		MobMod.register();
 		
 	}
@@ -69,7 +75,6 @@ public class Palaria
 	public void Init(FMLInitializationEvent event)
 	{
 		proxy.registerRenders();
-		proxy.loadAllRender();
 	}
 	
 	@EventHandler

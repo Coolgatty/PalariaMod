@@ -16,7 +16,7 @@ public class ItemModPickaxe extends ItemTool
 
     protected ItemModPickaxe(Item.ToolMaterial material)
     {
-        super(2.0F, material, EFFECTIVE_ON);
+        super(5.0F - material.getDamageVsEntity(), material, EFFECTIVE_ON);
     }
 
     /**

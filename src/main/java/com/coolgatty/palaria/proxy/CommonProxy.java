@@ -11,11 +11,6 @@ public class CommonProxy
 		
 	}
 	
-	public void loadAllRender()
-	{
-		renderEntity();
-	}
-	
 	public void renderEntity()
 	{
 		

@@ -17,15 +17,15 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockIlliwonOre extends Block
+public class BlockAfnamiteOre extends Block
 {
-	public BlockIlliwonOre()
+	public BlockAfnamiteOre()
 	{
 		super(Material.rock);
-		setUnlocalizedName("illiwonore");
-		setHardness(5.5F);
-		setResistance(7.5F);
-		setHarvestLevel("pickaxe", 4);
+		setUnlocalizedName("afnamiteore");
+		setHardness(6.5F);
+		setResistance(8.5F);
+		setHarvestLevel("pickaxe", 5);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
@@ -38,7 +38,7 @@ public class BlockIlliwonOre extends Block
         {
             int j = 0;
 
-            if (this == BlockMod.illiwonore)
+            if (this == BlockMod.afnamiteore)
             {
                 j = MathHelper.getRandomIntegerInRange(rand, 2, 8);
             }
@@ -51,7 +51,7 @@ public class BlockIlliwonOre extends Block
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return this == BlockMod.illiwonore ? ItemMod.illiwongem : Item.getItemFromBlock(this);
+        return this == BlockMod.afnamiteore ? ItemMod.afnamitegem : Item.getItemFromBlock(this);
     }
     
     @Override

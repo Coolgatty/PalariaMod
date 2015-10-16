@@ -2,11 +2,13 @@ tile.sarliteore.name=Sarlite Ore
 tile.flamiteore.name=Flamite Ore
 tile.clariteore.name=Clarite Ore
 tile.illiwonore.name=Illiwon Ore
+tile.illiwonore.name=Afnamite Ore
 
 item.sarliteingot.name=Sarlite Ingot
 item.flamiteingot.name=Flamite Ingot
 item.claritegem.name=Clarite Gem
 item.illiwongem.name=Illiwon Gem
+item.afnamitegem.name=Afnamite Gem
 
 item.sarlitesword.name=Sarlite Sword
 item.sarlitepick.name=Sarlite Pickaxe
@@ -47,5 +49,15 @@ item.illiwonhelmet.name=Illiwon Helmet
 item.illiwonchestplate.name=Illiwon Chestplate
 item.illiwonleggings.name=Illiwon Leggings
 item.illiwonboots.name=Illiwon Boots
+
+item.afnamitesword.name=Afnamite Sword
+item.afnamitepick.name=Afnamite Pickaxe
+item.afnamiteaxe.name=Afnamite Axe
+item.afnamiteshovel.name=Afnamite Shovel
+item.afnamitehoe.name=Afnamite Hoe
+item.afnamitehelmet.name=Afnamite Helmet
+item.afnamitechestplate.name=Afnamite Chestplate
+item.afnamiteleggings.name=Afnamite Leggings
+item.afnamiteboots.name=Afnamite Boots
 
 entity.Creeptile.name=Creeptile

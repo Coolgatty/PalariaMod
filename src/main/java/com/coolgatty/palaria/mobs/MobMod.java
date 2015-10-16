@@ -2,10 +2,13 @@ package com.coolgatty.palaria.mobs;
 
 import com.coolgatty.palaria.Palaria;
 import com.coolgatty.palaria.help.Reference;
+import com.coolgatty.palaria.mobs.render.RenderCreeptile;
 
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class MobMod 
@@ -52,4 +55,16 @@ public class MobMod
 				BiomeGenBase.taigaHills);
 		EntityList.addMapping(EntityCreeptile.class, "Creeptile", Palaria.creeptileID, 0x23DE55, 0x000000);
 	}
+
+	public static void registerRenders() 
+	{
+		registerRender(EntityCreeptile.class, new RenderCreeptile());
+	}
+
+	private static void registerRender(Class entityClass,  Render renderClass) 
+	{
+		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderClass);
+	}
+	
+	
 }

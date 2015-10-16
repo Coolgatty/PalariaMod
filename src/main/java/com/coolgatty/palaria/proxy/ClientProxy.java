@@ -3,6 +3,7 @@ package com.coolgatty.palaria.proxy;
 import com.coolgatty.palaria.blocks.BlockMod;
 import com.coolgatty.palaria.items.ItemMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
+import com.coolgatty.palaria.mobs.MobMod;
 import com.coolgatty.palaria.mobs.render.RenderCreeptile;
 
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -17,12 +18,7 @@ public class ClientProxy extends CommonProxy
 	{
 		ItemMod.registerRenders();
 		BlockMod.registerRenders();
-	}
-	
-	@Override
-	public void renderEntity()
-	{
-		RenderingRegistry.registerEntityRenderingHandler(EntityCreeptile.class, new RenderCreeptile());
+		MobMod.registerRenders();
 	}
 	
 	@Override

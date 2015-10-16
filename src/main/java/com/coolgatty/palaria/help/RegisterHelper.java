@@ -1,5 +1,7 @@
 package com.coolgatty.palaria.help;
 
+import com.coolgatty.palaria.world.WorldGenOres;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
