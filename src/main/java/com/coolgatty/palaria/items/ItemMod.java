@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,7 @@ public class ItemMod
 	public static Item claritegem;
 	public static Item illiwongem;
 	public static Item afnamitegem;
+	public static Item endermiteingot;
 	
 	//Tools	
 	public static Item sarliteshovel;
@@ -59,12 +61,57 @@ public class ItemMod
 	public static Item afnamiteaxe;
 	public static Item afnamitehoe;
 	
+	public static Item endermiteshovel;
+	public static Item endermitepick;
+	public static Item endermiteaxe;
+	public static Item endermitehoe;
+	
 	//Swords
 	public static Item sarlitesword;
 	public static Item flamitesword;
 	public static Item claritesword;
 	public static Item illiwonsword;
 	public static Item afnamitesword;
+	public static Item endermitesword;
+	
+	//Scythe Blades
+	public static Item woodblade;
+	public static Item stoneblade;
+	public static Item ironblade;
+	public static Item diamondblade;
+	public static Item goldblade;
+	public static Item sarliteblade;
+	public static Item flamiteblade;
+	public static Item clariteblade;
+	public static Item illiwonblade;
+	public static Item afnamiteblade;
+	public static Item endermiteblade;
+	
+	//Stealth Daggers
+	public static Item woodstealth;
+	public static Item stonestealth;
+	public static Item ironstealth;
+	public static Item diamondstealth;
+	public static Item goldstealth;
+	public static Item sarlitestealth;
+	public static Item flamitestealth;
+	public static Item claritestealth;
+	public static Item illiwonstealth;
+	public static Item afnamitestealth;
+	public static Item endermitestealth;
+	
+	//Falkions
+	public static Item woodfalkion;
+	public static Item stonefalkion;
+	public static Item ironfalkion;
+	public static Item diamondfalkion;
+	public static Item goldfalkion;
+	public static Item sarlitefalkion;
+	public static Item flamitefalkion;
+	public static Item claritefalkion;
+	public static Item illiwonfalkion;
+	public static Item afnamitefalkion;
+	public static Item endermitefalkion;
 	
 	//Armor
 	public static Item sarlitehelmet;
@@ -92,6 +139,11 @@ public class ItemMod
 	public static Item afnamiteleggings;
 	public static Item afnamiteboots;
 	
+	public static Item endermitehelmet;
+	public static Item endermitechestplate;
+	public static Item endermiteleggings;
+	public static Item endermiteboots;
+	
 	//Materials
 
 	static ToolMaterial SARLITE = EnumHelper.addToolMaterial("SARLITE", 4, 2432, 12.0F, 4.0F, 10);
@@ -99,12 +151,14 @@ public class ItemMod
 	static ToolMaterial CLARITE = EnumHelper.addToolMaterial("CLARITE", 2, 781, 10.0F, 3.0F, 16);
 	static ToolMaterial ILLIWON = EnumHelper.addToolMaterial("ILLIWON", 5, 3122, 16.0F, 6.0F, 9);
 	static ToolMaterial AFNAMITE = EnumHelper.addToolMaterial("AFNAMITE", 6, 4996, 20.0F, 7.0F, 8);
+	static ToolMaterial ENDERMITE = EnumHelper.addToolMaterial("ENDERMITE", 7, 12354, 24.0F, 10.0F, 6);
 	
 	static ArmorMaterial SARLITE_ARMOR = EnumHelper.addArmorMaterial("SARLITE", "palaria:sarlite", 52, new int[]{4, 9, 6, 3}, 10);
 	static ArmorMaterial FLAMITE_ARMOR = EnumHelper.addArmorMaterial("FLAMITE", "palaria:flamite", 60, new int[]{4, 8, 7, 4}, 10);
 	static ArmorMaterial CLARITE_ARMOR = EnumHelper.addArmorMaterial("CLARITE", "palaria:clarite", 23, new int[]{3, 6, 6, 3}, 16);
 	static ArmorMaterial ILLIWON_ARMOR = EnumHelper.addArmorMaterial("ILLIWON", "palaria:illiwon", 66, new int[]{5, 10, 8, 5}, 9);
 	static ArmorMaterial AFNAMITE_ARMOR = EnumHelper.addArmorMaterial("AFNAMITE", "palaria:afnamite", 105, new int[]{6, 11, 9, 6}, 8);
+	static ArmorMaterial ENDERMITE_ARMOR = EnumHelper.addArmorMaterial("ENDERMITE", "palaria:ender", 126, new int[]{8, 12, 10, 8}, 8);
 	
 	
 	public static void init()
@@ -115,39 +169,85 @@ public class ItemMod
 		claritegem = new Item().setUnlocalizedName("claritegem").setCreativeTab(CreativeTabs.tabMaterials);
 		illiwongem = new Item().setUnlocalizedName("illiwongem").setCreativeTab(CreativeTabs.tabMaterials);
 		afnamitegem = new Item().setUnlocalizedName("afnamitegem").setCreativeTab(CreativeTabs.tabMaterials);
+		endermiteingot = new Item().setUnlocalizedName("endermiteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		//Tools
-		sarliteshovel = new ItemModSpade(SARLITE).setUnlocalizedName("sarliteshovel").setCreativeTab(CreativeTabs.tabTools);
-		sarlitepick = new ItemModPickaxe(SARLITE).setUnlocalizedName("sarlitepick").setCreativeTab(CreativeTabs.tabTools);
-		sarliteaxe = new ItemModAxe(SARLITE).setUnlocalizedName("sarliteaxe").setCreativeTab(CreativeTabs.tabTools);
+		sarliteshovel = new ItemModSpade(SARLITE, sarliteingot).setUnlocalizedName("sarliteshovel").setCreativeTab(CreativeTabs.tabTools);
+		sarlitepick = new ItemModPickaxe(SARLITE, sarliteingot).setUnlocalizedName("sarlitepick").setCreativeTab(CreativeTabs.tabTools);
+		sarliteaxe = new ItemModAxe(SARLITE, sarliteingot).setUnlocalizedName("sarliteaxe").setCreativeTab(CreativeTabs.tabTools);
 		sarlitehoe = new ItemHoe(SARLITE).setUnlocalizedName("sarlitehoe").setCreativeTab(CreativeTabs.tabTools);
 		
-		flamiteshovel = new ItemModSpade(FLAMITE).setUnlocalizedName("flamiteshovel").setCreativeTab(CreativeTabs.tabTools);
-		flamitepick = new ItemModPickaxe(FLAMITE).setUnlocalizedName("flamitepick").setCreativeTab(CreativeTabs.tabTools);
-		flamiteaxe = new ItemModAxe(FLAMITE).setUnlocalizedName("flamiteaxe").setCreativeTab(CreativeTabs.tabTools);
+		flamiteshovel = new ItemModSpade(FLAMITE, flamiteingot).setUnlocalizedName("flamiteshovel").setCreativeTab(CreativeTabs.tabTools);
+		flamitepick = new ItemModPickaxe(FLAMITE, flamiteingot).setUnlocalizedName("flamitepick").setCreativeTab(CreativeTabs.tabTools);
+		flamiteaxe = new ItemModAxe(FLAMITE, flamiteingot).setUnlocalizedName("flamiteaxe").setCreativeTab(CreativeTabs.tabTools);
 		flamitehoe = new ItemHoe(FLAMITE).setUnlocalizedName("flamitehoe").setCreativeTab(CreativeTabs.tabTools);
 		
-		clariteshovel = new ItemModSpade(CLARITE).setUnlocalizedName("clariteshovel").setCreativeTab(CreativeTabs.tabTools);
-		claritepick = new ItemModPickaxe(CLARITE).setUnlocalizedName("claritepick").setCreativeTab(CreativeTabs.tabTools);
-		clariteaxe = new ItemModAxe(CLARITE).setUnlocalizedName("clariteaxe").setCreativeTab(CreativeTabs.tabTools);
+		clariteshovel = new ItemModSpade(CLARITE, claritegem).setUnlocalizedName("clariteshovel").setCreativeTab(CreativeTabs.tabTools);
+		claritepick = new ItemModPickaxe(CLARITE, claritegem).setUnlocalizedName("claritepick").setCreativeTab(CreativeTabs.tabTools);
+		clariteaxe = new ItemModAxe(CLARITE, claritegem).setUnlocalizedName("clariteaxe").setCreativeTab(CreativeTabs.tabTools);
 		claritehoe = new ItemHoe(CLARITE).setUnlocalizedName("claritehoe").setCreativeTab(CreativeTabs.tabTools);
 		
-		illiwonshovel = new ItemModSpade(ILLIWON).setUnlocalizedName("illiwonshovel").setCreativeTab(CreativeTabs.tabTools);
-		illiwonpick = new ItemModPickaxe(ILLIWON).setUnlocalizedName("illiwonpick").setCreativeTab(CreativeTabs.tabTools);
-		illiwonaxe = new ItemModAxe(ILLIWON).setUnlocalizedName("illiwonaxe").setCreativeTab(CreativeTabs.tabTools);
+		illiwonshovel = new ItemModSpade(ILLIWON, illiwongem).setUnlocalizedName("illiwonshovel").setCreativeTab(CreativeTabs.tabTools);
+		illiwonpick = new ItemModPickaxe(ILLIWON, illiwongem).setUnlocalizedName("illiwonpick").setCreativeTab(CreativeTabs.tabTools);
+		illiwonaxe = new ItemModAxe(ILLIWON, illiwongem).setUnlocalizedName("illiwonaxe").setCreativeTab(CreativeTabs.tabTools);
 		illiwonhoe = new ItemHoe(ILLIWON).setUnlocalizedName("illiwonhoe").setCreativeTab(CreativeTabs.tabTools);
 		
-		afnamiteshovel = new ItemModSpade(AFNAMITE).setUnlocalizedName("afnamiteshovel").setCreativeTab(CreativeTabs.tabTools);
-		afnamitepick = new ItemModPickaxe(AFNAMITE).setUnlocalizedName("afnamitepick").setCreativeTab(CreativeTabs.tabTools);
-		afnamiteaxe = new ItemModAxe(AFNAMITE).setUnlocalizedName("afnamiteaxe").setCreativeTab(CreativeTabs.tabTools);
+		afnamiteshovel = new ItemModSpade(AFNAMITE, afnamitegem).setUnlocalizedName("afnamiteshovel").setCreativeTab(CreativeTabs.tabTools);
+		afnamitepick = new ItemModPickaxe(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitepick").setCreativeTab(CreativeTabs.tabTools);
+		afnamiteaxe = new ItemModAxe(AFNAMITE, afnamitegem).setUnlocalizedName("afnamiteaxe").setCreativeTab(CreativeTabs.tabTools);
 		afnamitehoe = new ItemHoe(AFNAMITE).setUnlocalizedName("afnamitehoe").setCreativeTab(CreativeTabs.tabTools);
 		
+		endermiteshovel = new ItemModSpade(ENDERMITE, endermiteingot).setUnlocalizedName("endermiteshovel").setCreativeTab(CreativeTabs.tabTools);
+		endermitepick = new ItemModPickaxe(ENDERMITE, endermiteingot).setUnlocalizedName("endermitepick").setCreativeTab(CreativeTabs.tabTools);
+		endermiteaxe = new ItemModAxe(ENDERMITE, endermiteingot).setUnlocalizedName("endermiteaxe").setCreativeTab(CreativeTabs.tabTools);
+		endermitehoe = new ItemHoe(ENDERMITE).setUnlocalizedName("endermitehoe").setCreativeTab(CreativeTabs.tabTools);
+		
 		//Swords
-		sarlitesword = new ItemSword(SARLITE).setUnlocalizedName("sarlitesword").setCreativeTab(CreativeTabs.tabCombat);
-		flamitesword = new ItemSword(FLAMITE).setUnlocalizedName("flamitesword").setCreativeTab(CreativeTabs.tabCombat);
-		claritesword = new ItemSword(CLARITE).setUnlocalizedName("claritesword").setCreativeTab(CreativeTabs.tabCombat);
-		illiwonsword = new ItemSword(ILLIWON).setUnlocalizedName("illiwonsword").setCreativeTab(CreativeTabs.tabCombat);
-		afnamitesword = new ItemSword(AFNAMITE).setUnlocalizedName("afnamitesword").setCreativeTab(CreativeTabs.tabCombat);
+		sarlitesword = new ItemModSword(SARLITE, sarliteingot).setUnlocalizedName("sarlitesword").setCreativeTab(CreativeTabs.tabCombat);
+		flamitesword = new ItemModSword(FLAMITE, flamiteingot).setUnlocalizedName("flamitesword").setCreativeTab(CreativeTabs.tabCombat);
+		claritesword = new ItemModSword(CLARITE, claritegem).setUnlocalizedName("claritesword").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonsword = new ItemModSword(ILLIWON, illiwongem).setUnlocalizedName("illiwonsword").setCreativeTab(CreativeTabs.tabCombat);
+		afnamitesword = new ItemModSword(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitesword").setCreativeTab(CreativeTabs.tabCombat);
+		endermitesword = new ItemModSword(ENDERMITE, endermiteingot).setUnlocalizedName("endermitesword").setCreativeTab(CreativeTabs.tabCombat);
+		
+		//Scythe Blades
+		woodblade = new ItemScytheBlade(ToolMaterial.WOOD, Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName("woodblade").setCreativeTab(CreativeTabs.tabCombat);
+		stoneblade = new ItemScytheBlade(ToolMaterial.STONE, Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName("stoneblade").setCreativeTab(CreativeTabs.tabCombat);
+		ironblade = new ItemScytheBlade(ToolMaterial.IRON, Items.iron_ingot).setUnlocalizedName("ironblade").setCreativeTab(CreativeTabs.tabCombat);
+		diamondblade = new ItemScytheBlade(ToolMaterial.EMERALD, Items.diamond).setUnlocalizedName("diamondblade").setCreativeTab(CreativeTabs.tabCombat);
+		goldblade = new ItemScytheBlade(ToolMaterial.GOLD, Items.gold_ingot).setUnlocalizedName("goldblade").setCreativeTab(CreativeTabs.tabCombat);
+		sarliteblade = new ItemScytheBlade(SARLITE, sarliteingot).setUnlocalizedName("sarliteblade").setCreativeTab(CreativeTabs.tabCombat);
+		flamiteblade = new ItemScytheBlade(FLAMITE, flamiteingot).setUnlocalizedName("flamiteblade").setCreativeTab(CreativeTabs.tabCombat);
+		clariteblade = new ItemScytheBlade(CLARITE, claritegem).setUnlocalizedName("clariteblade").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonblade = new ItemScytheBlade(ILLIWON, illiwongem).setUnlocalizedName("illiwonblade").setCreativeTab(CreativeTabs.tabCombat);
+		afnamiteblade = new ItemScytheBlade(AFNAMITE, afnamitegem).setUnlocalizedName("afnamiteblade").setCreativeTab(CreativeTabs.tabCombat);
+		endermiteblade = new ItemScytheBlade(ENDERMITE, endermiteingot).setUnlocalizedName("endermiteblade").setCreativeTab(CreativeTabs.tabCombat);
+		
+		//Stealth Daggers
+		woodstealth = new ItemStealthDagger(ToolMaterial.WOOD, Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName("woodstealth").setCreativeTab(CreativeTabs.tabCombat);
+		stonestealth = new ItemStealthDagger(ToolMaterial.STONE, Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName("stonestealth").setCreativeTab(CreativeTabs.tabCombat);
+		ironstealth = new ItemStealthDagger(ToolMaterial.IRON, Items.iron_ingot).setUnlocalizedName("ironstealth").setCreativeTab(CreativeTabs.tabCombat);
+		diamondstealth = new ItemStealthDagger(ToolMaterial.EMERALD, Items.diamond).setUnlocalizedName("diamondstealth").setCreativeTab(CreativeTabs.tabCombat);
+		goldstealth = new ItemStealthDagger(ToolMaterial.GOLD, Items.gold_ingot).setUnlocalizedName("goldstealth").setCreativeTab(CreativeTabs.tabCombat);
+		sarlitestealth = new ItemStealthDagger(SARLITE, sarliteingot).setUnlocalizedName("sarlitestealth").setCreativeTab(CreativeTabs.tabCombat);
+		flamitestealth = new ItemStealthDagger(FLAMITE, flamiteingot).setUnlocalizedName("flamitestealth").setCreativeTab(CreativeTabs.tabCombat);
+		claritestealth = new ItemStealthDagger(CLARITE, claritegem).setUnlocalizedName("claritestealth").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonstealth = new ItemStealthDagger(ILLIWON, illiwongem).setUnlocalizedName("illiwonstealth").setCreativeTab(CreativeTabs.tabCombat);
+		afnamitestealth = new ItemStealthDagger(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitestealth").setCreativeTab(CreativeTabs.tabCombat);
+		endermitestealth = new ItemStealthDagger(ENDERMITE, endermiteingot).setUnlocalizedName("endermitestealth").setCreativeTab(CreativeTabs.tabCombat);
+		
+		//Falkions
+		woodfalkion = new ItemFalkion(ToolMaterial.WOOD, Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName("woodfalkion").setCreativeTab(CreativeTabs.tabCombat);
+		stonefalkion = new ItemFalkion(ToolMaterial.STONE, Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName("stonefalkion").setCreativeTab(CreativeTabs.tabCombat);
+		ironfalkion = new ItemFalkion(ToolMaterial.IRON, Items.iron_ingot).setUnlocalizedName("ironfalkion").setCreativeTab(CreativeTabs.tabCombat);
+		diamondfalkion = new ItemFalkion(ToolMaterial.EMERALD, Items.diamond).setUnlocalizedName("diamondfalkion").setCreativeTab(CreativeTabs.tabCombat);
+		goldfalkion = new ItemFalkion(ToolMaterial.GOLD, Items.gold_ingot).setUnlocalizedName("goldfalkion").setCreativeTab(CreativeTabs.tabCombat);
+		sarlitefalkion = new ItemFalkion(SARLITE, sarliteingot).setUnlocalizedName("sarlitefalkion").setCreativeTab(CreativeTabs.tabCombat);
+		flamitefalkion = new ItemFalkion(FLAMITE, flamiteingot).setUnlocalizedName("flamitefalkion").setCreativeTab(CreativeTabs.tabCombat);
+		claritefalkion = new ItemFalkion(CLARITE, claritegem).setUnlocalizedName("claritefalkion").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonfalkion = new ItemFalkion(ILLIWON, illiwongem).setUnlocalizedName("illiwonfalkion").setCreativeTab(CreativeTabs.tabCombat);
+		afnamitefalkion = new ItemFalkion(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitefalkion").setCreativeTab(CreativeTabs.tabCombat);
+		endermitefalkion = new ItemFalkion(ENDERMITE, endermiteingot).setUnlocalizedName("endermitefalkion").setCreativeTab(CreativeTabs.tabCombat);
 		
 		//Armors
 		sarlitehelmet = new ItemArmor(SARLITE_ARMOR, 1, 0).setUnlocalizedName("sarlitehelmet").setCreativeTab(CreativeTabs.tabCombat);
@@ -174,6 +274,11 @@ public class ItemMod
 		afnamitechestplate = new ItemArmor(AFNAMITE_ARMOR, 1, 1).setUnlocalizedName("afnamitechestplate").setCreativeTab(CreativeTabs.tabCombat);
 		afnamiteleggings = new ItemArmor(AFNAMITE_ARMOR, 2, 2).setUnlocalizedName("afnamiteleggings").setCreativeTab(CreativeTabs.tabCombat);
 		afnamiteboots = new ItemArmor(AFNAMITE_ARMOR, 1, 3).setUnlocalizedName("afnamiteboots").setCreativeTab(CreativeTabs.tabCombat);
+		
+		endermitehelmet = new ItemArmor(ENDERMITE_ARMOR, 1, 0).setUnlocalizedName("endermitehelmet").setCreativeTab(CreativeTabs.tabCombat);
+		endermitechestplate = new ItemArmor(ENDERMITE_ARMOR, 1, 1).setUnlocalizedName("endermitechestplate").setCreativeTab(CreativeTabs.tabCombat);
+		endermiteleggings = new ItemArmor(ENDERMITE_ARMOR, 2, 2).setUnlocalizedName("endermiteleggings").setCreativeTab(CreativeTabs.tabCombat);
+		endermiteboots = new ItemArmor(ENDERMITE_ARMOR, 1, 3).setUnlocalizedName("endermiteboots").setCreativeTab(CreativeTabs.tabCombat);
 	}
 	
 	public static void register()
@@ -185,6 +290,7 @@ public class ItemMod
 		RegisterHelper.registerItem(claritegem);
 		RegisterHelper.registerItem(illiwongem);
 		RegisterHelper.registerItem(afnamitegem);
+		RegisterHelper.registerItem(endermiteingot);
 		
 		//Tools
 		RegisterHelper.registerItem(sarliteshovel);
@@ -212,12 +318,57 @@ public class ItemMod
 		RegisterHelper.registerItem(afnamiteaxe);
 		RegisterHelper.registerItem(afnamitehoe);
 		
+		RegisterHelper.registerItem(endermiteshovel);
+		RegisterHelper.registerItem(endermitepick);
+		RegisterHelper.registerItem(endermiteaxe);
+		RegisterHelper.registerItem(endermitehoe);
+		
 		//Swords
 		RegisterHelper.registerItem(sarlitesword);
 		RegisterHelper.registerItem(flamitesword);
 		RegisterHelper.registerItem(claritesword);
 		RegisterHelper.registerItem(illiwonsword);
 		RegisterHelper.registerItem(afnamitesword);
+		RegisterHelper.registerItem(endermitesword);
+		
+		//Scythe Blades
+		RegisterHelper.registerItem(woodblade);
+		RegisterHelper.registerItem(stoneblade);
+		RegisterHelper.registerItem(ironblade);
+		RegisterHelper.registerItem(diamondblade);
+		RegisterHelper.registerItem(goldblade);
+		RegisterHelper.registerItem(sarliteblade);
+		RegisterHelper.registerItem(flamiteblade);
+		RegisterHelper.registerItem(clariteblade);
+		RegisterHelper.registerItem(illiwonblade);
+		RegisterHelper.registerItem(afnamiteblade);
+		RegisterHelper.registerItem(endermiteblade);
+		
+		//Stealth Daggers
+		RegisterHelper.registerItem(woodstealth);
+		RegisterHelper.registerItem(stonestealth);
+		RegisterHelper.registerItem(ironstealth);
+		RegisterHelper.registerItem(diamondstealth);
+		RegisterHelper.registerItem(goldstealth);
+		RegisterHelper.registerItem(sarlitestealth);
+		RegisterHelper.registerItem(flamitestealth);
+		RegisterHelper.registerItem(claritestealth);
+		RegisterHelper.registerItem(illiwonstealth);
+		RegisterHelper.registerItem(afnamitestealth);
+		RegisterHelper.registerItem(endermitestealth);
+		
+		//Falkions
+		RegisterHelper.registerItem(woodfalkion);
+		RegisterHelper.registerItem(stonefalkion);
+		RegisterHelper.registerItem(ironfalkion);
+		RegisterHelper.registerItem(diamondfalkion);
+		RegisterHelper.registerItem(goldfalkion);
+		RegisterHelper.registerItem(sarlitefalkion);
+		RegisterHelper.registerItem(flamitefalkion);
+		RegisterHelper.registerItem(claritefalkion);
+		RegisterHelper.registerItem(illiwonfalkion);
+		RegisterHelper.registerItem(afnamitefalkion);
+		RegisterHelper.registerItem(endermitefalkion);
 		
 		//Armor
 		RegisterHelper.registerItem(sarlitehelmet);
@@ -245,409 +396,10 @@ public class ItemMod
 		RegisterHelper.registerItem(afnamiteleggings);
 		RegisterHelper.registerItem(afnamiteboots);
 		
-		
-		//Recipes
-		/**************************************************************/
-		/*Sarlite*/
-		/**************************************************************/
-		GameRegistry.addRecipe(new ItemStack(sarlitepick), new Object [] 
-		{
-				"XXX", 
-				" Y ", 
-				" Y ", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(sarliteaxe), new Object [] 
-		{
-				"XX", 
-				"XY", 
-				" Y", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(sarliteaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(sarlitehoe), new Object [] 
-		{
-				"XX", 
-				" Y", 
-				" Y", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(sarlitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(sarliteshovel), new Object [] 
-		{
-				"X", 
-				"Y", 
-				"Y", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(sarlitesword), new Object [] 
-		{
-				"X", 
-				"X", 
-				"Y", 
-				'X', sarliteingot, 'Y', Items.stick
-		});
-		
-		GameRegistry.addRecipe(new ItemStack(sarlitehelmet), new Object []
-		{
-			"XXX",
-			"X X",
-			'X', sarliteingot
-		});
-		GameRegistry.addRecipe(new ItemStack(sarlitechestplate), new Object []
-		{
-			"X X",
-			"XXX",
-			"XXX",
-			'X', sarliteingot
-		});
-		GameRegistry.addRecipe(new ItemStack(sarliteleggings), new Object []
-		{
-			"XXX",
-			"X X",
-			"X X",
-			'X', sarliteingot
-		});
-		GameRegistry.addRecipe(new ItemStack(sarliteboots), new Object []
-		{
-			"X X",
-			"X X",
-			'X', sarliteingot
-		});
-		/**************************************************************/
-		/*Flamite*/
-		/**************************************************************/
-		GameRegistry.addRecipe(new ItemStack(flamitepick), new Object [] 
-		{
-				"XXX", 
-				" Y ", 
-				" Y ", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(flamiteaxe), new Object [] 
-		{
-				"XX", 
-				"XY", 
-				" Y", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(flamiteaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(flamitehoe), new Object [] 
-		{
-				"XX", 
-				" Y", 
-				" Y", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(flamitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(flamiteshovel), new Object [] 
-		{
-				"X", 
-				"Y", 
-				"Y", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(flamitesword), new Object [] 
-		{
-				"X", 
-				"X", 
-				"Y", 
-				'X', flamiteingot, 'Y', Items.stick
-		});
-		
-		GameRegistry.addRecipe(new ItemStack(flamitehelmet), new Object []
-		{
-			"XXX",
-			"X X",
-			'X', flamiteingot
-		});
-		GameRegistry.addRecipe(new ItemStack(flamitechestplate), new Object []
-		{
-			"X X",
-			"XXX",
-			"XXX",
-			'X', flamiteingot
-		});
-		GameRegistry.addRecipe(new ItemStack(flamiteleggings), new Object []
-		{
-			"XXX",
-			"X X",
-			"X X",
-			'X', flamiteingot
-		});
-		GameRegistry.addRecipe(new ItemStack(flamiteboots), new Object []
-		{
-			"X X",
-			"X X",
-			'X', flamiteingot
-		});
-		/**************************************************************/
-		/*Clarite*/
-		/**************************************************************/
-		GameRegistry.addRecipe(new ItemStack(claritepick), new Object [] 
-		{
-				"XXX", 
-				" Y ", 
-				" Y ", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(clariteaxe), new Object [] 
-		{
-				"XX", 
-				"XY", 
-				" Y", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(clariteaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(claritehoe), new Object [] 
-		{
-				"XX", 
-				" Y", 
-				" Y", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(claritehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(clariteshovel), new Object [] 
-		{
-				"X", 
-				"Y", 
-				"Y", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(claritesword), new Object [] 
-		{
-				"X", 
-				"X", 
-				"Y", 
-				'X', claritegem, 'Y', Items.stick
-		});
-		
-		GameRegistry.addRecipe(new ItemStack(claritehelmet), new Object []
-		{
-			"XXX",
-			"X X",
-			'X', claritegem
-		});
-		GameRegistry.addRecipe(new ItemStack(claritechestplate), new Object []
-		{
-			"X X",
-			"XXX",
-			"XXX",
-			'X', claritegem
-		});
-		GameRegistry.addRecipe(new ItemStack(clariteleggings), new Object []
-		{
-			"XXX",
-			"X X",
-			"X X",
-			'X', claritegem
-		});
-		GameRegistry.addRecipe(new ItemStack(clariteboots), new Object []
-		{
-			"X X",
-			"X X",
-			'X', claritegem
-		});
-		/**************************************************************/
-		/*Illiwon*/
-		/**************************************************************/
-		GameRegistry.addRecipe(new ItemStack(illiwonpick), new Object [] 
-		{
-				"XXX", 
-				" Y ", 
-				" Y ", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonaxe), new Object [] 
-		{
-				"XX", 
-				"XY", 
-				" Y", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonhoe), new Object [] 
-		{
-				"XX", 
-				" Y", 
-				" Y", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonhoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonshovel), new Object [] 
-		{
-				"X", 
-				"Y", 
-				"Y", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonsword), new Object [] 
-		{
-				"X", 
-				"X", 
-				"Y", 
-				'X', illiwongem, 'Y', Items.stick
-		});
-		
-		GameRegistry.addRecipe(new ItemStack(illiwonhelmet), new Object []
-		{
-			"XXX",
-			"X X",
-			'X', illiwongem
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonchestplate), new Object []
-		{
-			"X X",
-			"XXX",
-			"XXX",
-			'X', illiwongem
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonleggings), new Object []
-		{
-			"XXX",
-			"X X",
-			"X X",
-			'X', illiwongem
-		});
-		GameRegistry.addRecipe(new ItemStack(illiwonboots), new Object []
-		{
-			"X X",
-			"X X",
-			'X', illiwongem
-		});
-		/**************************************************************/
-		/*Afnamite*/
-		/**************************************************************/
-		GameRegistry.addRecipe(new ItemStack(afnamitepick), new Object [] 
-		{
-				"XXX", 
-				" Y ", 
-				" Y ", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamiteaxe), new Object [] 
-		{
-				"XX", 
-				"XY", 
-				" Y", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamiteaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamitehoe), new Object [] 
-		{
-				"XX", 
-				" Y", 
-				" Y", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamiteshovel), new Object [] 
-		{
-				"X", 
-				"Y", 
-				"Y", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamitesword), new Object [] 
-		{
-				"X", 
-				"X", 
-				"Y", 
-				'X', afnamitegem, 'Y', Items.stick
-		});
-		
-		GameRegistry.addRecipe(new ItemStack(afnamitehelmet), new Object []
-		{
-			"XXX",
-			"X X",
-			'X', afnamitegem
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamitechestplate), new Object []
-		{
-			"X X",
-			"XXX",
-			"XXX",
-			'X', afnamitegem
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamiteleggings), new Object []
-		{
-			"XXX",
-			"X X",
-			"X X",
-			'X', afnamitegem
-		});
-		GameRegistry.addRecipe(new ItemStack(afnamiteboots), new Object []
-		{
-			"X X",
-			"X X",
-			'X', afnamitegem
-		});
-		
-		
-		
-		//Smelting
-		GameRegistry.addSmelting(BlockMod.sarliteore, new ItemStack(sarliteingot), 5.0F);
-		GameRegistry.addSmelting(BlockMod.flamiteore, new ItemStack(flamiteingot), 5.0F);
+		RegisterHelper.registerItem(endermitehelmet);
+		RegisterHelper.registerItem(endermitechestplate);
+		RegisterHelper.registerItem(endermiteleggings);
+		RegisterHelper.registerItem(endermiteboots);
 	}
 	
 	public static void registerRenders ()
@@ -658,6 +410,7 @@ public class ItemMod
 		registerRender(claritegem);
 		registerRender(illiwongem);
 		registerRender(afnamitegem);
+		registerRender(endermiteingot);
 		
 		//Tools
 		registerRender(sarliteshovel);
@@ -685,12 +438,57 @@ public class ItemMod
 		registerRender(afnamiteaxe);
 		registerRender(afnamitehoe);
 		
+		registerRender(endermiteshovel);
+		registerRender(endermitepick);
+		registerRender(endermiteaxe);
+		registerRender(endermitehoe);
+		
 		//Swords
 		registerRender(sarlitesword);
 		registerRender(flamitesword);
 		registerRender(claritesword);
 		registerRender(illiwonsword);
 		registerRender(afnamitesword);
+		registerRender(endermitesword);
+		
+		//Scythe Blades
+		registerRender(woodblade);
+		registerRender(stoneblade);
+		registerRender(ironblade);
+		registerRender(diamondblade);
+		registerRender(goldblade);
+		registerRender(sarliteblade);
+		registerRender(flamiteblade);
+		registerRender(clariteblade);
+		registerRender(illiwonblade);
+		registerRender(afnamiteblade);
+		registerRender(endermiteblade);
+		
+		//Stealth Daggers
+		registerRender(woodstealth);
+		registerRender(stonestealth);
+		registerRender(ironstealth);
+		registerRender(diamondstealth);
+		registerRender(goldstealth);
+		registerRender(sarlitestealth);
+		registerRender(flamitestealth);
+		registerRender(claritestealth);
+		registerRender(illiwonstealth);
+		registerRender(afnamitestealth);
+		registerRender(endermitestealth);
+		
+		//Falkions
+		registerRender(woodfalkion);
+		registerRender(stonefalkion);
+		registerRender(ironfalkion);
+		registerRender(diamondfalkion);
+		registerRender(goldfalkion);
+		registerRender(sarlitefalkion);
+		registerRender(flamitefalkion);
+		registerRender(claritefalkion);
+		registerRender(illiwonfalkion);
+		registerRender(afnamitefalkion);
+		registerRender(endermitefalkion);
 		
 		//Armor
 		registerRender(sarlitehelmet);
@@ -717,6 +515,11 @@ public class ItemMod
 		registerRender(afnamitechestplate);
 		registerRender(afnamiteleggings);
 		registerRender(afnamiteboots);
+		
+		registerRender(endermitehelmet);
+		registerRender(endermitechestplate);
+		registerRender(endermiteleggings);
+		registerRender(endermiteboots);
 		
 	}
 	

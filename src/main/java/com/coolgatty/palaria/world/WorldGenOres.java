@@ -30,6 +30,7 @@ public class WorldGenOres implements IWorldGenerator
 	            	break;
 	            	
 	            case 1 :
+	            	generateEnd(world, random, chunkX*16, chunkZ*16);
 	            	break;
 	        }
 	    }
@@ -71,6 +72,15 @@ public class WorldGenOres implements IWorldGenerator
 
 	            new WorldGenMinable(BlockMod.afnamiteore.getDefaultState(), 3).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
 	        }
+	        
+	        for (int i = 0; i < 2; i++) 
+	        {
+	            int Xcoord = x + random.nextInt(28);
+	            int Zcoord = z + random.nextInt(28);
+	            int Ycoord = random.nextInt(20);
+
+	            new WorldGenMinable(BlockMod.endermiteore.getDefaultState(), 3).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
+	        }
 	    }
 	    
 	    private void generateNether(World world, Random random, int x, int z) 
@@ -82,6 +92,18 @@ public class WorldGenOres implements IWorldGenerator
 	            int Ycoord = random.nextInt(128);
 
 	            new WorldGenMinable(BlockMod.flamiteore.getDefaultState(), 4, BlockHelper.forBlock(Blocks.netherrack)).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
+	        }
+	    }
+	    
+	    private void generateEnd(World world, Random random, int x, int z) 
+	    {
+	        for (int i = 1; i < 4; i++) 
+	        {
+	            int Xcoord = x + random.nextInt(16);
+	            int Zcoord = z + random.nextInt(16);
+	            int Ycoord = random.nextInt(100);
+
+	            new WorldGenMinable(BlockMod.endendermiteore.getDefaultState(), 4, BlockHelper.forBlock(Blocks.end_stone)).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
 	        }
 	    }
 	    

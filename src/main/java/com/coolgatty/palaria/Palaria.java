@@ -8,6 +8,7 @@ import com.coolgatty.palaria.blocks.BlockSarliteOre;
 import com.coolgatty.palaria.help.Reference;
 import com.coolgatty.palaria.help.RegisterHelper;
 import com.coolgatty.palaria.items.ItemMod;
+import com.coolgatty.palaria.items.RecipesMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.MobMod;
 import com.coolgatty.palaria.proxy.CommonProxy;
@@ -22,6 +23,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.FMLLog;
@@ -68,6 +70,8 @@ public class Palaria
 		ItemMod.register();
 		//Mobs
 		MobMod.register();
+		//Recipes
+		RecipesMod.addRecipes();
 		
 	}
 	 

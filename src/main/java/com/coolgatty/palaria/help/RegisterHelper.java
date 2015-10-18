@@ -4,6 +4,7 @@ import com.coolgatty.palaria.world.WorldGenOres;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class RegisterHelper 

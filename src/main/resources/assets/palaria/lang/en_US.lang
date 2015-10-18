@@ -1,14 +1,35 @@
+item.woodblade.name=Wooden Scythe Blade
+item.stoneblade.name=Stone Scythe Blade
+item.ironblade.name=Iron Scythe Blade
+item.diamondblade.name=Diamond Scythe Blade
+item.goldblade.name=Gold Scythe Blade
+
+item.woodstealth.name=Wooden Stealth Dagger
+item.stonestealth.name=Stone Stealth Dagger
+item.ironstealth.name=Iron Stealth Dagger
+item.diamondstealth.name=Diamond Stealth Dagger
+item.goldstealth.name=Gold Stealth Dagger
+
+item.woodfalkion.name=Wooden Falkion
+item.stonefalkion.name=Stone Falkion
+item.ironfalkion.name=Iron Falkion
+item.diamondfalkion.name=Diamond Falkion
+item.goldfalkion.name=Gold Falkion
+
 tile.sarliteore.name=Sarlite Ore
 tile.flamiteore.name=Flamite Ore
 tile.clariteore.name=Clarite Ore
 tile.illiwonore.name=Illiwon Ore
 tile.afnamiteore.name=Afnamite Ore
+tile.endermiteore.name=Endermite Ore
+tile.endendermiteore.name=Endermite Ore
 
 item.sarliteingot.name=Sarlite Ingot
 item.flamiteingot.name=Flamite Ingot
 item.claritegem.name=Clarite Gem
 item.illiwongem.name=Illiwon Gem
 item.afnamitegem.name=Afnamite Gem
+item.endermiteingot.name=Endermite Ingot
 
 item.sarlitesword.name=Sarlite Sword
 item.sarlitepick.name=Sarlite Pickaxe
@@ -19,6 +40,9 @@ item.sarlitehelmet.name=Sarlite Helmet
 item.sarlitechestplate.name=Sarlite Chestplate
 item.sarliteleggings.name=Sarlite Leggings
 item.sarliteboots.name=Sarlite Boots
+item.sarliteblade.name=Sarlite Scythe Blade
+item.sarlitestealth.name=Sarlite Stealth Dagger
+item.sarlitefalkion.name=Sarlite Falkion
 
 item.claritesword.name=Clarite Sword
 item.claritepick.name=Clarite Pickaxe
@@ -29,6 +53,9 @@ item.claritehelmet.name=Clarite Helmet
 item.claritechestplate.name=Clarite Chestplate
 item.clariteleggings.name=Clarite Leggings
 item.clariteboots.name=Clarite Boots
+item.clariteblade.name=Clarite Scythe Blade
+item.claritestealth.name=Clarite Stealth Dagger
+item.claritefalkion.name=Clarite Falkion
 
 item.flamitesword.name=Flamite Sword
 item.flamitepick.name=Flamite Pickaxe
@@ -39,6 +66,9 @@ item.flamitehelmet.name=Flamite Helmet
 item.flamitechestplate.name=Flamite Chestplate
 item.flamiteleggings.name=Flamite Leggings
 item.flamiteboots.name=Flamite Boots
+item.flamiteblade.name=Flamite Scythe Blade
+item.flamitestealth.name=Flamite Stealth Dagger
+item.flamitefalkion.name=Flamite Falkion
 
 item.illiwonsword.name=Illiwon Sword
 item.illiwonpick.name=Illiwon Pickaxe
@@ -49,6 +79,9 @@ item.illiwonhelmet.name=Illiwon Helmet
 item.illiwonchestplate.name=Illiwon Chestplate
 item.illiwonleggings.name=Illiwon Leggings
 item.illiwonboots.name=Illiwon Boots
+item.illiwonblade.name=Illiwon Scythe Blade
+item.illiwonstealth.name=Illiwon Stealth Dagger
+item.illiwonfalkion.name=Illiwon Falkion
 
 item.afnamitesword.name=Afnamite Sword
 item.afnamitepick.name=Afnamite Pickaxe
@@ -59,5 +92,21 @@ item.afnamitehelmet.name=Afnamite Helmet
 item.afnamitechestplate.name=Afnamite Chestplate
 item.afnamiteleggings.name=Afnamite Leggings
 item.afnamiteboots.name=Afnamite Boots
+item.afnamiteblade.name=Afnamite Scythe Blade
+item.afnamitestealth.name=Afnamite Stealth Dagger
+item.afnamitefalkion.name=Afnamite Falkion
+
+item.endermitesword.name=Endermite Sword
+item.endermitepick.name=Endermite Pickaxe
+item.endermiteaxe.name=Endermite Axe
+item.endermiteshovel.name=Endermite Shovel
+item.endermitehoe.name=Endermite Hoe
+item.endermitehelmet.name=Endermite Helmet
+item.endermitechestplate.name=Endermite Chestplate
+item.endermiteleggings.name=Endermite Leggings
+item.endermiteboots.name=Endermite Boots
+item.endermiteblade.name=Endermite Scythe Blade
+item.endermitestealth.name=Endermite Stealth Dagger
+item.endermitefalkion.name=Endermite Falkion
 
 entity.Creeptile.name=Creeptile
