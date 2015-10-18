@@ -1,6 +1,10 @@
 package com.coolgatty.palaria.items;
 
+import java.util.Set;
+
 import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,24 +16,26 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemStealthDagger extends Item
+public class ItemBattleAxe extends ItemTool
 {
+	private static final Set EFFECTIVE_ON = Sets.newHashSet(new Block[] {Blocks.planks, Blocks.bookshelf, Blocks.log, Blocks.log2, Blocks.chest, Blocks.pumpkin, Blocks.lit_pumpkin, Blocks.melon_block, Blocks.ladder});
     private float attackDamage;
     private final Item.ToolMaterial material;
     private static final String __OBFID = "CL_00000072";
     private final Item repair;
 
-    public ItemStealthDagger(Item.ToolMaterial material, Item repair)
+    public ItemBattleAxe(Item.ToolMaterial material, Item repair)
     {
+        super(5.35F, material, EFFECTIVE_ON);
         this.material = material;
         this.maxStackSize = 1;
-        this.setMaxDamage((material.getMaxUses()*5)/8);
-        this.attackDamage = 2.05F + material.getDamageVsEntity();
+        this.setMaxDamage((material.getMaxUses()*4)/3);
         this.repair = repair;
     }
 
@@ -50,7 +56,7 @@ public class ItemStealthDagger extends Item
         else
         {
             Material material = block.getMaterial();
-            return material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.gourd ? 1.0F : 1.5F;
+            return material != Material.wood && material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.gourd? super.getStrVsBlock(stack, block) : this.efficiencyOnProperMaterial;
         }
     }
 

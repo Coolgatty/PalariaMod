@@ -29,8 +29,7 @@ public class ItemScytheBlade extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage((material.getMaxUses()*3)/2);
-        this.setCreativeTab(CreativeTabs.tabCombat);
-        this.attackDamage = 6.0F + material.getDamageVsEntity();
+        this.attackDamage = 5.85F + material.getDamageVsEntity();
         this.repair = repair;
     }
 

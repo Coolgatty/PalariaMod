@@ -28,6 +28,62 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ItemMod 
 {	
 	//Items
+	public static Item woodswordhead;
+	public static Item woodaxehead;
+	public static Item woodshovelhead;
+	public static Item woodpickaxehead;
+	
+	public static Item stoneswordhead;
+	public static Item stoneaxehead;
+	public static Item stoneshovelhead;
+	public static Item stonepickaxehead;
+	
+	public static Item ironswordhead;
+	public static Item ironaxehead;
+	public static Item ironshovelhead;
+	public static Item ironpickaxehead;
+	
+	public static Item clariteswordhead;
+	public static Item clariteaxehead;
+	public static Item clariteshovelhead;
+	public static Item claritepickaxehead;
+	
+	public static Item diamondswordhead;
+	public static Item diamondaxehead;
+	public static Item diamondshovelhead;
+	public static Item diamondpickaxehead;
+	
+	public static Item goldswordhead;
+	public static Item goldaxehead;
+	public static Item goldshovelhead;
+	public static Item goldpickaxehead;
+	
+	public static Item sarliteswordhead;
+	public static Item sarliteaxehead;
+	public static Item sarliteshovelhead;
+	public static Item sarlitepickaxehead;
+	
+	public static Item flamiteswordhead;
+	public static Item flamiteaxehead;
+	public static Item flamiteshovelhead;
+	public static Item flamitepickaxehead;
+	
+	public static Item illiwonswordhead;
+	public static Item illiwonaxehead;
+	public static Item illiwonshovelhead;
+	public static Item illiwonpickaxehead;
+	
+	public static Item afnamiteswordhead;
+	public static Item afnamiteaxehead;
+	public static Item afnamiteshovelhead;
+	public static Item afnamitepickaxehead;
+	
+	public static Item endermiteswordhead;
+	public static Item endermiteaxehead;
+	public static Item endermiteshovelhead;
+	public static Item endermitepickaxehead;
+	
+	//Materials
 	public static Item sarliteingot;
 	public static Item flamiteingot;
 	public static Item claritegem;
@@ -35,7 +91,7 @@ public class ItemMod
 	public static Item afnamitegem;
 	public static Item endermiteingot;
 	
-	//Tools	
+	//Classic Tools	
 	public static Item sarliteshovel;
 	public static Item sarlitepick;
 	public static Item sarliteaxe;
@@ -65,6 +121,19 @@ public class ItemMod
 	public static Item endermitepick;
 	public static Item endermiteaxe;
 	public static Item endermitehoe;
+	
+	//Other Tools
+	public static Item woodshick;
+	public static Item stoneshick;
+	public static Item ironshick;
+	public static Item clariteshick;
+	public static Item diamondshick;
+	public static Item goldshick;
+	public static Item sarliteshick;
+	public static Item flamiteshick;
+	public static Item illiwonshick;
+	public static Item afnamiteshick;
+	public static Item endermiteshick;
 	
 	//Swords
 	public static Item sarlitesword;
@@ -112,6 +181,19 @@ public class ItemMod
 	public static Item illiwonfalkion;
 	public static Item afnamitefalkion;
 	public static Item endermitefalkion;
+	
+	//Battle Axes
+	public static Item woodbattleaxe;
+	public static Item stonebattleaxe;
+	public static Item ironbattleaxe;
+	public static Item claritebattleaxe;
+	public static Item diamondbattleaxe;
+	public static Item goldbattleaxe;
+	public static Item sarlitebattleaxe;
+	public static Item flamitebattleaxe;
+	public static Item illiwonbattleaxe;
+	public static Item afnamitebattleaxe;
+	public static Item endermitebattleaxe;
 	
 	//Armor
 	public static Item sarlitehelmet;
@@ -163,7 +245,64 @@ public class ItemMod
 	
 	public static void init()
 	{
-		//Items	
+		
+		//Items
+		woodswordhead = new Item().setUnlocalizedName("woodswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		woodaxehead= new Item().setUnlocalizedName("woodaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		woodshovelhead = new Item().setUnlocalizedName("woodshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		woodpickaxehead = new Item().setUnlocalizedName("woodpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		stoneswordhead= new Item().setUnlocalizedName("stoneswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		stoneaxehead= new Item().setUnlocalizedName("stoneaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		stoneshovelhead= new Item().setUnlocalizedName("stoneshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		stonepickaxehead= new Item().setUnlocalizedName("stonepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+
+		ironswordhead= new Item().setUnlocalizedName("ironswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		ironaxehead= new Item().setUnlocalizedName("ironaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		ironshovelhead= new Item().setUnlocalizedName("ironshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		ironpickaxehead= new Item().setUnlocalizedName("ironpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		clariteswordhead= new Item().setUnlocalizedName("clariteswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		clariteaxehead= new Item().setUnlocalizedName("clariteaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		clariteshovelhead= new Item().setUnlocalizedName("clariteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		claritepickaxehead= new Item().setUnlocalizedName("claritepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		diamondswordhead= new Item().setUnlocalizedName("diamondswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		diamondaxehead= new Item().setUnlocalizedName("diamondaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		diamondshovelhead= new Item().setUnlocalizedName("diamondshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		diamondpickaxehead= new Item().setUnlocalizedName("diamondpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		goldswordhead= new Item().setUnlocalizedName("goldswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		goldaxehead= new Item().setUnlocalizedName("goldaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		goldshovelhead= new Item().setUnlocalizedName("goldshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		goldpickaxehead= new Item().setUnlocalizedName("goldpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		sarliteswordhead= new Item().setUnlocalizedName("sarliteswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		sarliteaxehead= new Item().setUnlocalizedName("sarliteaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		sarliteshovelhead= new Item().setUnlocalizedName("sarliteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		sarlitepickaxehead= new Item().setUnlocalizedName("sarlitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		flamiteswordhead= new Item().setUnlocalizedName("flamiteswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		flamiteaxehead= new Item().setUnlocalizedName("flamiteaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		flamiteshovelhead= new Item().setUnlocalizedName("flamiteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		flamitepickaxehead= new Item().setUnlocalizedName("flamitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		illiwonswordhead= new Item().setUnlocalizedName("illiwonswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		illiwonaxehead= new Item().setUnlocalizedName("illiwonaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		illiwonshovelhead= new Item().setUnlocalizedName("illiwonshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		illiwonpickaxehead= new Item().setUnlocalizedName("illiwonpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		afnamiteswordhead= new Item().setUnlocalizedName("afnamiteswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		afnamiteaxehead= new Item().setUnlocalizedName("afnamiteaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		afnamiteshovelhead= new Item().setUnlocalizedName("afnamiteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		afnamitepickaxehead= new Item().setUnlocalizedName("afnamitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		endermiteswordhead= new Item().setUnlocalizedName("endermiteswordhead").setCreativeTab(CreativeTabs.tabMisc);
+		endermiteaxehead= new Item().setUnlocalizedName("endermiteaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		endermiteshovelhead= new Item().setUnlocalizedName("endermiteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
+		endermitepickaxehead= new Item().setUnlocalizedName("endermitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		
+		//Materials
 		sarliteingot = new Item().setUnlocalizedName("sarliteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		flamiteingot = new Item().setUnlocalizedName("flamiteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		claritegem = new Item().setUnlocalizedName("claritegem").setCreativeTab(CreativeTabs.tabMaterials);
@@ -249,6 +388,19 @@ public class ItemMod
 		afnamitefalkion = new ItemFalkion(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitefalkion").setCreativeTab(CreativeTabs.tabCombat);
 		endermitefalkion = new ItemFalkion(ENDERMITE, endermiteingot).setUnlocalizedName("endermitefalkion").setCreativeTab(CreativeTabs.tabCombat);
 		
+		//Battle Axes
+		woodbattleaxe = new ItemBattleAxe(ToolMaterial.WOOD, Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName("woodbattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		stonebattleaxe = new ItemBattleAxe(ToolMaterial.STONE, Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName("stonebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		ironbattleaxe = new ItemBattleAxe(ToolMaterial.IRON, Items.iron_ingot).setUnlocalizedName("ironbattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		diamondbattleaxe = new ItemBattleAxe(ToolMaterial.EMERALD, Items.diamond).setUnlocalizedName("diamondbattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		goldbattleaxe = new ItemBattleAxe(ToolMaterial.GOLD, Items.gold_ingot).setUnlocalizedName("goldbattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		sarlitebattleaxe = new ItemBattleAxe(SARLITE, sarliteingot).setUnlocalizedName("sarlitebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		flamitebattleaxe = new ItemBattleAxe(FLAMITE, flamiteingot).setUnlocalizedName("flamitebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		claritebattleaxe = new ItemBattleAxe(CLARITE, claritegem).setUnlocalizedName("claritebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		illiwonbattleaxe = new ItemBattleAxe(ILLIWON, illiwongem).setUnlocalizedName("illiwonbattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		afnamitebattleaxe = new ItemBattleAxe(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		endermitebattleaxe = new ItemBattleAxe(ENDERMITE, endermiteingot).setUnlocalizedName("endermitebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
+		
 		//Armors
 		sarlitehelmet = new ItemArmor(SARLITE_ARMOR, 1, 0).setUnlocalizedName("sarlitehelmet").setCreativeTab(CreativeTabs.tabCombat);
 		sarlitechestplate = new ItemArmor(SARLITE_ARMOR, 1, 1).setUnlocalizedName("sarlitechestplate").setCreativeTab(CreativeTabs.tabCombat);
@@ -285,6 +437,62 @@ public class ItemMod
 	{	
 
 		//Items
+		RegisterHelper.registerItem(woodswordhead);
+		RegisterHelper.registerItem(woodaxehead);
+		RegisterHelper.registerItem(woodshovelhead);
+		RegisterHelper.registerItem(woodpickaxehead);
+		
+		RegisterHelper.registerItem(stoneswordhead);
+		RegisterHelper.registerItem(stoneaxehead);
+		RegisterHelper.registerItem(stoneshovelhead);
+		RegisterHelper.registerItem(stonepickaxehead);
+		
+		RegisterHelper.registerItem(ironswordhead);
+		RegisterHelper.registerItem(ironaxehead);
+		RegisterHelper.registerItem(ironshovelhead);
+		RegisterHelper.registerItem(ironpickaxehead);
+		
+		RegisterHelper.registerItem(clariteswordhead);
+		RegisterHelper.registerItem(clariteaxehead);
+		RegisterHelper.registerItem(clariteshovelhead);
+		RegisterHelper.registerItem(claritepickaxehead);
+		
+		RegisterHelper.registerItem(diamondswordhead);
+		RegisterHelper.registerItem(diamondaxehead);
+		RegisterHelper.registerItem(diamondshovelhead);
+		RegisterHelper.registerItem(diamondpickaxehead);
+		
+		RegisterHelper.registerItem(goldswordhead);
+		RegisterHelper.registerItem(goldaxehead);
+		RegisterHelper.registerItem(goldshovelhead);
+		RegisterHelper.registerItem(goldpickaxehead);
+		
+		RegisterHelper.registerItem(sarliteswordhead);
+		RegisterHelper.registerItem(sarliteaxehead);
+		RegisterHelper.registerItem(sarliteshovelhead);
+		RegisterHelper.registerItem(sarlitepickaxehead);
+		
+		RegisterHelper.registerItem(flamiteswordhead);
+		RegisterHelper.registerItem(flamiteaxehead);
+		RegisterHelper.registerItem(flamiteshovelhead);
+		RegisterHelper.registerItem(flamitepickaxehead);
+		
+		RegisterHelper.registerItem(illiwonswordhead);
+		RegisterHelper.registerItem(illiwonaxehead);
+		RegisterHelper.registerItem(illiwonshovelhead);
+		RegisterHelper.registerItem(illiwonpickaxehead);
+		
+		RegisterHelper.registerItem(afnamiteswordhead);
+		RegisterHelper.registerItem(afnamiteaxehead);
+		RegisterHelper.registerItem(afnamiteshovelhead);
+		RegisterHelper.registerItem(afnamitepickaxehead);
+		
+		RegisterHelper.registerItem(endermiteswordhead);
+		RegisterHelper.registerItem(endermiteaxehead);
+		RegisterHelper.registerItem(endermiteshovelhead);
+		RegisterHelper.registerItem(endermitepickaxehead);
+		
+		//Materials
 		RegisterHelper.registerItem(sarliteingot);
 		RegisterHelper.registerItem(flamiteingot);
 		RegisterHelper.registerItem(claritegem);
@@ -370,6 +578,19 @@ public class ItemMod
 		RegisterHelper.registerItem(afnamitefalkion);
 		RegisterHelper.registerItem(endermitefalkion);
 		
+		//Battle Axes
+		RegisterHelper.registerItem(woodbattleaxe);
+		RegisterHelper.registerItem(stonebattleaxe);
+		RegisterHelper.registerItem(ironbattleaxe);
+		RegisterHelper.registerItem(diamondbattleaxe);
+		RegisterHelper.registerItem(goldbattleaxe);
+		RegisterHelper.registerItem(sarlitebattleaxe);
+		RegisterHelper.registerItem(flamitebattleaxe);
+		RegisterHelper.registerItem(claritebattleaxe);
+		RegisterHelper.registerItem(illiwonbattleaxe);
+		RegisterHelper.registerItem(afnamitebattleaxe);
+		RegisterHelper.registerItem(endermitebattleaxe);
+		
 		//Armor
 		RegisterHelper.registerItem(sarlitehelmet);
 		RegisterHelper.registerItem(sarlitechestplate);
@@ -404,7 +625,64 @@ public class ItemMod
 	
 	public static void registerRenders ()
 	{
+		
 		//Items
+		registerRender(woodswordhead);
+		registerRender(woodaxehead);
+		registerRender(woodshovelhead);
+		registerRender(woodpickaxehead);
+		
+		registerRender(stoneswordhead);
+		registerRender(stoneaxehead);
+		registerRender(stoneshovelhead);
+		registerRender(stonepickaxehead);
+		
+		registerRender(ironswordhead);
+		registerRender(ironaxehead);
+		registerRender(ironshovelhead);
+		registerRender(ironpickaxehead);
+		
+		registerRender(clariteswordhead);
+		registerRender(clariteaxehead);
+		registerRender(clariteshovelhead);
+		registerRender(claritepickaxehead);
+		
+		registerRender(diamondswordhead);
+		registerRender(diamondaxehead);
+		registerRender(diamondshovelhead);
+		registerRender(diamondpickaxehead);
+		
+		registerRender(goldswordhead);
+		registerRender(goldaxehead);
+		registerRender(goldshovelhead);
+		registerRender(goldpickaxehead);
+		
+		registerRender(sarliteswordhead);
+		registerRender(sarliteaxehead);
+		registerRender(sarliteshovelhead);
+		registerRender(sarlitepickaxehead);
+		
+		registerRender(flamiteswordhead);
+		registerRender(flamiteaxehead);
+		registerRender(flamiteshovelhead);
+		registerRender(flamitepickaxehead);
+		
+		registerRender(illiwonswordhead);
+		registerRender(illiwonaxehead);
+		registerRender(illiwonshovelhead);
+		registerRender(illiwonpickaxehead);
+		
+		registerRender(afnamiteswordhead);
+		registerRender(afnamiteaxehead);
+		registerRender(afnamiteshovelhead);
+		registerRender(afnamitepickaxehead);
+		
+		registerRender(endermiteswordhead);
+		registerRender(endermiteaxehead);
+		registerRender(endermiteshovelhead);
+		registerRender(endermitepickaxehead);
+		
+		//Materials
 		registerRender(sarliteingot);
 		registerRender(flamiteingot);
 		registerRender(claritegem);
@@ -489,6 +767,19 @@ public class ItemMod
 		registerRender(illiwonfalkion);
 		registerRender(afnamitefalkion);
 		registerRender(endermitefalkion);
+		
+		//Battle Axes
+		registerRender(woodbattleaxe);
+		registerRender(stonebattleaxe);
+		registerRender(ironbattleaxe);
+		registerRender(diamondbattleaxe);
+		registerRender(goldbattleaxe);
+		registerRender(sarlitebattleaxe);
+		registerRender(flamitebattleaxe);
+		registerRender(claritebattleaxe);
+		registerRender(illiwonbattleaxe);
+		registerRender(afnamitebattleaxe);
+		registerRender(endermitebattleaxe);
 		
 		//Armor
 		registerRender(sarlitehelmet);

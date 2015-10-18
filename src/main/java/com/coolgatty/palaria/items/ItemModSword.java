@@ -29,7 +29,6 @@ public class ItemModSword extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.setCreativeTab(CreativeTabs.tabCombat);
         this.attackDamage = 4.0F + material.getDamageVsEntity();
         this.repair = repair;
     }

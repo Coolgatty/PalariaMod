@@ -29,8 +29,7 @@ public class ItemFalkion extends Item
         this.material = material;
         this.maxStackSize = 1;
         this.setMaxDamage((material.getMaxUses()*4)/3);
-        this.setCreativeTab(CreativeTabs.tabCombat);
-        this.attackDamage = 4.0F + material.getDamageVsEntity();
+        this.attackDamage = 4.45F + material.getDamageVsEntity();
         this.repair = repair;
     }
 

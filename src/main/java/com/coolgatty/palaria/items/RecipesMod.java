@@ -24,13 +24,6 @@ public class RecipesMod
 			"XXY",
 			'X', Blocks.planks, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.woodblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', Blocks.planks, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.woodstealth), new Object []
 		{
 			"X",
@@ -44,6 +37,33 @@ public class RecipesMod
 			" Y ",
 			'X', Blocks.planks, 'Y', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.woodaxehead), new Object []
+		{
+			"X",
+			'X', Items.wooden_axe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.woodswordhead), new Object []
+		{
+			"X",
+			'X', Items.wooden_sword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.woodpickaxehead), new Object []
+		{
+			"X",
+			'X', Items.wooden_pickaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.woodshovelhead), new Object []
+		{
+			"X",
+			'X', Items.wooden_shovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.woodbattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.woodaxehead, 'Y', ItemMod.woodswordhead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Stone*/
@@ -54,13 +74,6 @@ public class RecipesMod
 			"XXY",
 			"X Y",
 			"XXY",
-			'X', Blocks.cobblestone, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.stoneblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
 			'X', Blocks.cobblestone, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.stonestealth), new Object []
@@ -76,6 +89,33 @@ public class RecipesMod
 			" Y ",
 			'X', Blocks.cobblestone, 'Y', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stoneaxehead), new Object []
+		{
+			"X",
+			'X', Items.stone_axe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stoneswordhead), new Object []
+		{
+			"X",
+			'X', Items.stone_sword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stonepickaxehead), new Object []
+		{
+			"X",
+			'X', Items.stone_pickaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stoneshovelhead), new Object []
+		{
+			"X",
+			'X', Items.stone_shovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stonebattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.stoneaxehead, 'Y', ItemMod.stoneswordhead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Iron*/
@@ -86,13 +126,6 @@ public class RecipesMod
 			"XXY",
 			"X Y",
 			"XXY",
-			'X', Items.iron_ingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.ironblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
 			'X', Items.iron_ingot, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.ironstealth), new Object []
@@ -108,6 +141,33 @@ public class RecipesMod
 			" Y ",
 			'X', Items.iron_ingot, 'Y', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.ironaxehead), new Object []
+		{
+			"X",
+			'X', Items.iron_axe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.ironswordhead), new Object []
+		{
+			"X",
+			'X', Items.iron_sword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.ironpickaxehead), new Object []
+		{
+			"X",
+			'X', Items.iron_pickaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.ironshovelhead), new Object []
+		{
+			"X",
+			'X', Items.iron_shovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.ironbattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.ironaxehead, 'Y', ItemMod.ironswordhead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Diamond*/
@@ -118,13 +178,6 @@ public class RecipesMod
 			"XXY",
 			"X Y",
 			"XXY",
-			'X', Items.diamond, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
 			'X', Items.diamond, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondstealth), new Object []
@@ -140,6 +193,33 @@ public class RecipesMod
 			" Y ",
 			'X', Items.diamond, 'Y', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondaxehead), new Object []
+		{
+			"X",
+			'X', Items.diamond_axe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondswordhead), new Object []
+		{
+			"X",
+			'X', Items.diamond_sword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondpickaxehead), new Object []
+		{
+			"X",
+			'X', Items.diamond_pickaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondshovelhead), new Object []
+		{
+			"X",
+			'X', Items.diamond_shovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondbattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.diamondaxehead, 'Y', ItemMod.diamondswordhead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Gold*/
@@ -150,13 +230,6 @@ public class RecipesMod
 			"XXY",
 			"X Y",
 			"XXY",
-			'X', Items.gold_ingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.goldblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
 			'X', Items.gold_ingot, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.goldstealth), new Object []
@@ -171,6 +244,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', Items.gold_ingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.goldaxehead), new Object []
+		{
+			"X",
+			'X', Items.golden_axe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.goldswordhead), new Object []
+		{
+			"X",
+			'X', Items.golden_sword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.goldpickaxehead), new Object []
+		{
+			"X",
+			'X', Items.golden_pickaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.goldshovelhead), new Object []
+		{
+			"X",
+			'X', Items.golden_shovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.goldbattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.goldaxehead, 'Y', ItemMod.goldswordhead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -191,25 +291,11 @@ public class RecipesMod
 				" Y", 
 				'X', ItemMod.sarliteingot, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', ItemMod.sarliteingot, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.sarlitehoe), new Object [] 
 		{
 				"XX", 
 				" Y", 
 				" Y", 
-				'X', ItemMod.sarliteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.sarlitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
 				'X', ItemMod.sarliteingot, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteshovel), new Object [] 
@@ -260,13 +346,6 @@ public class RecipesMod
 			"XXY",
 			'X', ItemMod.sarliteingot, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', ItemMod.sarliteingot, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.sarlitestealth), new Object []
 		{
 			"X",
@@ -279,6 +358,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', ItemMod.sarliteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.sarliteaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteswordhead), new Object []
+		{
+			"X",
+			'X', ItemMod.sarlitesword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.sarlitepickaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.sarlitepick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteshovelhead), new Object []
+		{
+			"X",
+			'X', ItemMod.sarliteshovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.sarlitebattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.sarliteaxehead, 'Y', ItemMod.sarliteswordhead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -295,13 +401,6 @@ public class RecipesMod
 		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteaxe), new Object [] 
 		{
 				"XX", 
-				"XY", 
-				" Y", 
-				'X', ItemMod.flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteaxe), new Object [] 
-		{
-				"XX", 
 				"YX", 
 				"Y ", 
 				'X', ItemMod.flamiteingot, 'Y', Items.stick
@@ -311,13 +410,6 @@ public class RecipesMod
 				"XX", 
 				" Y", 
 				" Y", 
-				'X', ItemMod.flamiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.flamitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
 				'X', ItemMod.flamiteingot, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteshovel), new Object [] 
@@ -368,13 +460,6 @@ public class RecipesMod
 			"XXY",
 			'X', ItemMod.flamiteingot, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', ItemMod.flamiteingot, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.flamitestealth), new Object []
 		{
 			"X",
@@ -387,6 +472,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', ItemMod.flamiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.flamiteaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteswordhead), new Object []
+		{
+			"X",
+			'X', ItemMod.flamitesword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flamitepickaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.flamitepick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteshovelhead), new Object []
+		{
+			"X",
+			'X', ItemMod.flamiteshovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flamitebattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.flamiteaxehead, 'Y', ItemMod.flamiteswordhead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -407,25 +519,11 @@ public class RecipesMod
 				" Y", 
 				'X', ItemMod.claritegem, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteaxe), new Object [] 
-		{
-				"XX", 
-				"YX", 
-				"Y ", 
-				'X', ItemMod.claritegem, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.claritehoe), new Object [] 
 		{
 				"XX", 
 				" Y", 
 				" Y", 
-				'X', ItemMod.claritegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.claritehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
 				'X', ItemMod.claritegem, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteshovel), new Object [] 
@@ -476,13 +574,6 @@ public class RecipesMod
 			"XXY",
 			'X', ItemMod.claritegem, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', ItemMod.claritegem, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.claritestealth), new Object []
 		{
 			"X",
@@ -495,6 +586,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', ItemMod.claritegem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.clariteaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteswordhead), new Object []
+		{
+			"X",
+			'X', ItemMod.claritesword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.claritepickaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.claritepick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteshovelhead), new Object []
+		{
+			"X",
+			'X', ItemMod.clariteshovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.claritebattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.clariteaxehead, 'Y', ItemMod.clariteswordhead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -511,22 +629,8 @@ public class RecipesMod
 		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonaxe), new Object [] 
 		{
 				"XX", 
-				"XY", 
-				" Y", 
-				'X', ItemMod.illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonaxe), new Object [] 
-		{
-				"XX", 
 				"YX", 
 				"Y ", 
-				'X', ItemMod.illiwongem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonhoe), new Object [] 
-		{
-				"XX", 
-				" Y", 
-				" Y", 
 				'X', ItemMod.illiwongem, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonhoe), new Object [] 
@@ -584,13 +688,6 @@ public class RecipesMod
 			"XXY",
 			'X', ItemMod.illiwongem, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', ItemMod.illiwongem, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonstealth), new Object []
 		{
 			"X",
@@ -603,6 +700,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', ItemMod.illiwongem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.illiwonaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonswordhead), new Object []
+		{
+			"X",
+			'X', ItemMod.illiwonsword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonpickaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.illiwonpick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonshovelhead), new Object []
+		{
+			"X",
+			'X', ItemMod.illiwonshovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonbattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.illiwonaxehead, 'Y', ItemMod.illiwonswordhead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -619,13 +743,6 @@ public class RecipesMod
 		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteaxe), new Object [] 
 		{
 				"XX", 
-				"XY", 
-				" Y", 
-				'X', ItemMod.afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteaxe), new Object [] 
-		{
-				"XX", 
 				"YX", 
 				"Y ", 
 				'X', ItemMod.afnamitegem, 'Y', Items.stick
@@ -635,13 +752,6 @@ public class RecipesMod
 				"XX", 
 				" Y", 
 				" Y", 
-				'X', ItemMod.afnamitegem, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
 				'X', ItemMod.afnamitegem, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteshovel), new Object [] 
@@ -692,13 +802,6 @@ public class RecipesMod
 			"XXY",
 			'X', ItemMod.afnamitegem, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', ItemMod.afnamitegem, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamitestealth), new Object []
 		{
 			"X",
@@ -711,6 +814,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', ItemMod.afnamitegem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.afnamiteaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteswordhead), new Object []
+		{
+			"X",
+			'X', ItemMod.afnamitesword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamitepickaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.afnamitepick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteshovelhead), new Object []
+		{
+			"X",
+			'X', ItemMod.afnamiteshovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamitebattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.afnamiteaxehead, 'Y', ItemMod.afnamiteswordhead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -727,13 +857,6 @@ public class RecipesMod
 		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteaxe), new Object [] 
 		{
 				"XX", 
-				"XY", 
-				" Y", 
-				'X', ItemMod.endermiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteaxe), new Object [] 
-		{
-				"XX", 
 				"YX", 
 				"Y ", 
 				'X', ItemMod.endermiteingot, 'Y', Items.stick
@@ -743,13 +866,6 @@ public class RecipesMod
 				"XX", 
 				" Y", 
 				" Y", 
-				'X', ItemMod.endermiteingot, 'Y', Items.stick
-		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitehoe), new Object [] 
-		{
-				"XX", 
-				"Y ", 
-				"Y ", 
 				'X', ItemMod.endermiteingot, 'Y', Items.stick
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteshovel), new Object [] 
@@ -800,13 +916,6 @@ public class RecipesMod
 			"XXY",
 			'X', ItemMod.endermiteingot, 'Y', Items.stick
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteblade), new Object []
-		{
-			"YXX",
-			"Y X",
-			"YXX",
-			'X', ItemMod.endermiteingot, 'Y', Items.stick
-		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitestealth), new Object []
 		{
 			"X",
@@ -819,6 +928,33 @@ public class RecipesMod
 			" X ",
 			" Y ",
 			'X', ItemMod.endermiteingot, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.endermiteaxe
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteswordhead), new Object []
+		{
+			"X",
+			'X', ItemMod.endermitesword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitepickaxehead), new Object []
+		{
+			"X",
+			'X', ItemMod.endermitepick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteshovelhead), new Object []
+		{
+			"X",
+			'X', ItemMod.endermiteshovel
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitebattleaxe), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.endermiteaxehead, 'Y', ItemMod.endermiteswordhead, 'Z', Items.stick
 		});
 		
 		

@@ -48,16 +48,17 @@ public class Palaria
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
-		try {
+		try 
+		{
 			config.load();
 			creeptileID = config.get("Entity", "Creeptile", 12010).getInt();
 			config.save();
-		} finally{
+		} finally
+		{
 			if(config.hasChanged())
 			{
 				config.save();
 			}
-			
 		}
 		
 		//World
