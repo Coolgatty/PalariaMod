@@ -27,7 +27,6 @@ public class ItemBattleAxe extends ItemTool
 	private static final Set EFFECTIVE_ON = Sets.newHashSet(new Block[] {Blocks.planks, Blocks.bookshelf, Blocks.log, Blocks.log2, Blocks.chest, Blocks.pumpkin, Blocks.lit_pumpkin, Blocks.melon_block, Blocks.ladder});
     private float attackDamage;
     private final Item.ToolMaterial material;
-    private static final String __OBFID = "CL_00000072";
     private final Item repair;
 
     public ItemBattleAxe(Item.ToolMaterial material, Item repair)

@@ -64,6 +64,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.woodaxehead, 'Y', ItemMod.woodswordhead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.woodshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.woodshovelhead, 'Y', ItemMod.woodpickaxehead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Stone*/
@@ -115,6 +122,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.stoneaxehead, 'Y', ItemMod.stoneswordhead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stoneshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.stoneshovelhead, 'Y', ItemMod.stonepickaxehead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -168,6 +182,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.ironaxehead, 'Y', ItemMod.ironswordhead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.ironshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.ironshovelhead, 'Y', ItemMod.ironpickaxehead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Diamond*/
@@ -220,6 +241,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.diamondaxehead, 'Y', ItemMod.diamondswordhead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.diamondshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.diamondshovelhead, 'Y', ItemMod.diamondpickaxehead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Gold*/
@@ -271,6 +299,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.goldaxehead, 'Y', ItemMod.goldswordhead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.goldshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.goldshovelhead, 'Y', ItemMod.goldpickaxehead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -386,6 +421,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.sarliteaxehead, 'Y', ItemMod.sarliteswordhead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.sarliteshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.sarliteshovelhead, 'Y', ItemMod.sarlitepickaxehead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Flamite*/
@@ -499,6 +541,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.flamiteaxehead, 'Y', ItemMod.flamiteswordhead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flamiteshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.flamiteshovelhead, 'Y', ItemMod.flamitepickaxehead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -614,6 +663,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.clariteaxehead, 'Y', ItemMod.clariteswordhead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.clariteshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.clariteshovelhead, 'Y', ItemMod.claritepickaxehead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Illiwon*/
@@ -727,6 +783,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.illiwonaxehead, 'Y', ItemMod.illiwonswordhead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.illiwonshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.illiwonshovelhead, 'Y', ItemMod.illiwonpickaxehead, 'Z', Items.stick
 		});
 		
 		/**************************************************************/
@@ -842,6 +905,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.afnamiteaxehead, 'Y', ItemMod.afnamiteswordhead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.afnamiteshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.afnamiteshovelhead, 'Y', ItemMod.afnamitepickaxehead, 'Z', Items.stick
+		});
 		
 		/**************************************************************/
 		/*Endermite*/
@@ -955,6 +1025,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.endermiteaxehead, 'Y', ItemMod.endermiteswordhead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermiteshick), new Object []
+		{
+			"X",
+			"Y",
+			"Z",
+			'X', ItemMod.endermiteshovelhead, 'Y', ItemMod.endermitepickaxehead, 'Z', Items.stick
 		});
 		
 		

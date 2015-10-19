@@ -11,7 +11,6 @@ import net.minecraft.item.ItemTool;
 public class ItemModSpade extends ItemTool
 {
     private static final Set EFFECTIVE_ON = Sets.newHashSet(new Block[] {Blocks.clay, Blocks.dirt, Blocks.farmland, Blocks.grass, Blocks.gravel, Blocks.mycelium, Blocks.sand, Blocks.snow, Blocks.snow_layer, Blocks.soul_sand});
-    private static final String __OBFID = "CL_00000063";
     private final Item repair;
 
     public ItemModSpade(Item.ToolMaterial material, Item repair)

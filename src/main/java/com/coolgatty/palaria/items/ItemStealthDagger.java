@@ -21,7 +21,6 @@ public class ItemStealthDagger extends Item
 {
     private float attackDamage;
     private final Item.ToolMaterial material;
-    private static final String __OBFID = "CL_00000072";
     private final Item repair;
 
     public ItemStealthDagger(Item.ToolMaterial material, Item repair)

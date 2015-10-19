@@ -401,6 +401,19 @@ public class ItemMod
 		afnamitebattleaxe = new ItemBattleAxe(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
 		endermitebattleaxe = new ItemBattleAxe(ENDERMITE, endermiteingot).setUnlocalizedName("endermitebattleaxe").setCreativeTab(CreativeTabs.tabCombat);
 		
+		//Shicks
+		woodshick = new ItemShick(ToolMaterial.WOOD, Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName("woodshick").setCreativeTab(CreativeTabs.tabTools);
+		stoneshick = new ItemShick(ToolMaterial.STONE, Item.getItemFromBlock(Blocks.cobblestone)).setUnlocalizedName("stoneshick").setCreativeTab(CreativeTabs.tabTools);
+		ironshick = new ItemShick(ToolMaterial.IRON, Items.iron_ingot).setUnlocalizedName("ironshick").setCreativeTab(CreativeTabs.tabTools);
+		diamondshick = new ItemShick(ToolMaterial.EMERALD, Items.diamond).setUnlocalizedName("diamondshick").setCreativeTab(CreativeTabs.tabTools);
+		goldshick = new ItemShick(ToolMaterial.GOLD, Items.gold_ingot).setUnlocalizedName("goldshick").setCreativeTab(CreativeTabs.tabTools);
+		sarliteshick = new ItemShick(SARLITE, sarliteingot).setUnlocalizedName("sarliteshick").setCreativeTab(CreativeTabs.tabTools);
+		flamiteshick = new ItemShick(FLAMITE, flamiteingot).setUnlocalizedName("flamiteshick").setCreativeTab(CreativeTabs.tabTools);
+		clariteshick = new ItemShick(CLARITE, claritegem).setUnlocalizedName("clariteshick").setCreativeTab(CreativeTabs.tabTools);
+		illiwonshick = new ItemShick(ILLIWON, illiwongem).setUnlocalizedName("illiwonshick").setCreativeTab(CreativeTabs.tabTools);
+		afnamiteshick = new ItemShick(AFNAMITE, afnamitegem).setUnlocalizedName("afnamiteshick").setCreativeTab(CreativeTabs.tabTools);
+		endermiteshick = new ItemShick(ENDERMITE, endermiteingot).setUnlocalizedName("endermiteshick").setCreativeTab(CreativeTabs.tabTools);
+		
 		//Armors
 		sarlitehelmet = new ItemArmor(SARLITE_ARMOR, 1, 0).setUnlocalizedName("sarlitehelmet").setCreativeTab(CreativeTabs.tabCombat);
 		sarlitechestplate = new ItemArmor(SARLITE_ARMOR, 1, 1).setUnlocalizedName("sarlitechestplate").setCreativeTab(CreativeTabs.tabCombat);
@@ -591,6 +604,19 @@ public class ItemMod
 		RegisterHelper.registerItem(afnamitebattleaxe);
 		RegisterHelper.registerItem(endermitebattleaxe);
 		
+		//Shicks
+		RegisterHelper.registerItem(woodshick);
+		RegisterHelper.registerItem(stoneshick);
+		RegisterHelper.registerItem(ironshick);
+		RegisterHelper.registerItem(diamondshick);
+		RegisterHelper.registerItem(goldshick);
+		RegisterHelper.registerItem(sarliteshick);
+		RegisterHelper.registerItem(flamiteshick);
+		RegisterHelper.registerItem(clariteshick);
+		RegisterHelper.registerItem(illiwonshick);
+		RegisterHelper.registerItem(afnamiteshick);
+		RegisterHelper.registerItem(endermiteshick);
+		
 		//Armor
 		RegisterHelper.registerItem(sarlitehelmet);
 		RegisterHelper.registerItem(sarlitechestplate);
@@ -780,6 +806,19 @@ public class ItemMod
 		registerRender(illiwonbattleaxe);
 		registerRender(afnamitebattleaxe);
 		registerRender(endermitebattleaxe);
+		
+		//Shicks
+		registerRender(woodshick);
+		registerRender(stoneshick);
+		registerRender(ironshick);
+		registerRender(diamondshick);
+		registerRender(goldshick);
+		registerRender(sarliteshick);
+		registerRender(flamiteshick);
+		registerRender(clariteshick);
+		registerRender(illiwonshick);
+		registerRender(afnamiteshick);
+		registerRender(endermiteshick);
 		
 		//Armor
 		registerRender(sarlitehelmet);

@@ -2,19 +2,31 @@ item.woodblade.name=Wooden Scythe Blade
 item.stoneblade.name=Stone Scythe Blade
 item.ironblade.name=Iron Scythe Blade
 item.diamondblade.name=Diamond Scythe Blade
-item.goldblade.name=Gold Scythe Blade
+item.goldblade.name=Golden Scythe Blade
 
 item.woodstealth.name=Wooden Stealth Dagger
 item.stonestealth.name=Stone Stealth Dagger
 item.ironstealth.name=Iron Stealth Dagger
 item.diamondstealth.name=Diamond Stealth Dagger
-item.goldstealth.name=Gold Stealth Dagger
+item.goldstealth.name=Golden Stealth Dagger
 
 item.woodfalkion.name=Wooden Falkion
 item.stonefalkion.name=Stone Falkion
 item.ironfalkion.name=Iron Falkion
 item.diamondfalkion.name=Diamond Falkion
-item.goldfalkion.name=Gold Falkion
+item.goldfalkion.name=Golden Falkion
+
+item.woodbattleaxe.name=Wooden Battle Axe
+item.stonebattleaxe.name=Stone Battle Axe
+item.ironbattleaxe.name=Iron Battle Axe
+item.diamondbattleaxe.name=Diamond Battle Axe
+item.goldbattleaxe.name=Golden Battle Axe
+
+item.woodshick.name=Wooden Shick
+item.stoneshick.name=Stone Shick
+item.ironshick.name=Iron Shick
+item.diamondshick.name=Diamond Shick
+item.goldshick.name=Golden Shick
 
 tile.sarliteore.name=Sarlite Ore
 tile.flamiteore.name=Flamite Ore
@@ -43,6 +55,8 @@ item.sarliteboots.name=Sarlite Boots
 item.sarliteblade.name=Sarlite Scythe Blade
 item.sarlitestealth.name=Sarlite Stealth Dagger
 item.sarlitefalkion.name=Sarlite Falkion
+item.sarlitebattleaxe.name=Sarlite Battle Axe
+item.sarliteshick.name=Sarlite Shick
 
 item.claritesword.name=Clarite Sword
 item.claritepick.name=Clarite Pickaxe
@@ -56,6 +70,8 @@ item.clariteboots.name=Clarite Boots
 item.clariteblade.name=Clarite Scythe Blade
 item.claritestealth.name=Clarite Stealth Dagger
 item.claritefalkion.name=Clarite Falkion
+item.claritebattleaxe.name=Clarite Battle Axe
+item.clariteshick.name=Clarite Shick
 
 item.flamitesword.name=Flamite Sword
 item.flamitepick.name=Flamite Pickaxe
@@ -69,6 +85,8 @@ item.flamiteboots.name=Flamite Boots
 item.flamiteblade.name=Flamite Scythe Blade
 item.flamitestealth.name=Flamite Stealth Dagger
 item.flamitefalkion.name=Flamite Falkion
+item.flamitebattleaxe.name=Flamite Battle Axe
+item.flamiteshick.name=Flamite Shick
 
 item.illiwonsword.name=Illiwon Sword
 item.illiwonpick.name=Illiwon Pickaxe
@@ -82,6 +100,8 @@ item.illiwonboots.name=Illiwon Boots
 item.illiwonblade.name=Illiwon Scythe Blade
 item.illiwonstealth.name=Illiwon Stealth Dagger
 item.illiwonfalkion.name=Illiwon Falkion
+item.illiwonbattleaxe.name=Illiwon Battle Axe
+item.illiwonshick.name=Illiwon Shick
 
 item.afnamitesword.name=Afnamite Sword
 item.afnamitepick.name=Afnamite Pickaxe
@@ -95,6 +115,8 @@ item.afnamiteboots.name=Afnamite Boots
 item.afnamiteblade.name=Afnamite Scythe Blade
 item.afnamitestealth.name=Afnamite Stealth Dagger
 item.afnamitefalkion.name=Afnamite Falkion
+item.afnamitebattleaxe.name=Afnamite Battle Axe
+item.afnamiteshick.name=Afnamite Shick
 
 item.endermitesword.name=Endermite Sword
 item.endermitepick.name=Endermite Pickaxe
@@ -108,5 +130,62 @@ item.endermiteboots.name=Endermite Boots
 item.endermiteblade.name=Endermite Scythe Blade
 item.endermitestealth.name=Endermite Stealth Dagger
 item.endermitefalkion.name=Endermite Falkion
+item.endermitebattleaxe.name=Endermite Battle Axe
+item.endermiteshick.name=Endermite Shick
+
+item.woodaxehead.name=Wooden Axe Head
+item.woodpickaxehead.name=Wooden Pickaxe Head
+item.woodshovelhead.name=Wooden Shovel Head
+item.woodswordhead.name=Wooden Sword Head
+
+item.stoneaxehead.name=Stone Axe Head
+item.stonepickaxehead.name=Stone Pickaxe Head
+item.stoneshovelhead.name=Stone Shovel Head
+item.stoneswordhead.name=Stone Sword Head
+
+item.ironaxehead.name=Iron Axe Head
+item.ironpickaxehead.name=Iron Pickaxe Head
+item.ironshovelhead.name=Iron Shovel Head
+item.ironswordhead.name=Iron Sword Head
+
+item.goldaxehead.name=Golden Axe Head
+item.goldpickaxehead.name=Golden Pickaxe Head
+item.goldshovelhead.name=Golden Shovel Head
+item.goldswordhead.name=Golden Sword Head
+
+item.diamondaxehead.name=Diamond Axe Head
+item.diamondpickaxehead.name=Diamond Pickaxe Head
+item.diamondshovelhead.name=Diamond Shovel Head
+item.diamondswordhead.name=Diamond Sword Head
+
+item.sarliteaxehead.name=Sarlite Axe Head
+item.sarlitepickaxehead.name=Sarlite Pickaxe Head
+item.sarliteshovelhead.name=Sarlite Shovel Head
+item.sarliteswordhead.name=Sarlite Sword Head
+
+item.flamiteaxehead.name=Flamite Axe Head
+item.flamitepickaxehead.name=Flamite Pickaxe Head
+item.flamiteshovelhead.name=Flamite Shovel Head
+item.flamiteswordhead.name=Flamite Sword Head
+
+item.clariteaxehead.name=Clarite Axe Head
+item.claritepickaxehead.name=Clarite Pickaxe Head
+item.clariteshovelhead.name=Clarite Shovel Head
+item.clariteswordhead.name=Clarite Sword Head
+
+item.illiwonaxehead.name=Illiwon Axe Head
+item.illiwonpickaxehead.name=Illiwon Pickaxe Head
+item.illiwonshovelhead.name=Illiwon Shovel Head
+item.illiwonswordhead.name=Illiwon Sword Head
+
+item.afnamiteaxehead.name=Afnamtie Axe Head
+item.afnamitepickaxehead.name=Afnamtie Pickaxe Head
+item.afnamiteshovelhead.name=Afnamtie Shovel Head
+item.afnamiteswordhead.name=Afnamtie Sword Head
+
+item.endermiteaxehead.name=Endermite Axe Head
+item.endermitepickaxehead.name=Endermite Pickaxe Head
+item.endermiteshovelhead.name=Endermite Shovel Head
+item.endermiteswordhead.name=Endermite Sword Head
 
 entity.Creeptile.name=Creeptile

@@ -43,6 +43,7 @@ public class Palaria
 	public static CommonProxy proxy;
 	
 	public static int creeptileID;
+	public static int clariteoreID;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -51,7 +52,7 @@ public class Palaria
 		try 
 		{
 			config.load();
-			creeptileID = config.get("Entity", "Creeptile", 12010).getInt();
+			creeptileID = config.get("Entity", "Creeptile", 301).getInt();
 			config.save();
 		} finally
 		{

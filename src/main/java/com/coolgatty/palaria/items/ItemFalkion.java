@@ -21,7 +21,6 @@ public class ItemFalkion extends Item
 {
     private float attackDamage;
     private final Item.ToolMaterial material;
-    private static final String __OBFID = "CL_00000072";
     private final Item repair;
 
     public ItemFalkion(Item.ToolMaterial material, Item repair)
