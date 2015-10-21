@@ -39,17 +39,16 @@ public class EntityCreeptile extends EntityMob
     /** Explosion radius for this creeper. */
     private int explosionRadius = 4;
     private int field_175494_bm = 0;
-    private static final String __OBFID = "CL_00001684";
 
     public EntityCreeptile(World worldIn)
     {
         super(worldIn);
+        ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAICreeptileSwell(this));
         this.tasks.addTask(2, this.field_175455_a);
         this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
         {
-            private static final String __OBFID = "CL_00002224";
             public boolean func_179958_a(Entity p_179958_1_)
             {
                 return p_179958_1_ instanceof EntityOcelot;
@@ -59,6 +58,17 @@ public class EntityCreeptile extends EntityMob
                 return this.func_179958_a((Entity)p_apply_1_);
             }
         }, 6.0F, 1.0D, 1.2D));
+        this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
+        {
+            public boolean func_179958_a(Entity p_179958_1_)
+            {
+                return p_179958_1_ instanceof EntityCowasaurus;
+            }
+            public boolean apply(Object p_apply_1_)
+            {
+                return this.func_179958_a((Entity)p_apply_1_);
+            }
+        }, 15.0F, 1.2D, 1.4D));
         this.tasks.addTask(4, new EntityAIAttackOnCollide(this, 1.0D, false));
         this.tasks.addTask(5, new EntityAIWander(this, 0.8D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
