@@ -189,3 +189,7 @@ item.endermiteshovelhead.name=Endermite Shovel Head
 item.endermiteswordhead.name=Endermite Sword Head
 
 entity.Creeptile.name=Creeptile
+entity.Cowasaurus.name=Cowasaurus
+entity.RaptorChicken.name=Raptor Chicken
+entity.MagmaRaptorChicken.name=Magma Raptor Chicken
+entity.EnderRaptorChicken.name=Ender Raptor Chicken

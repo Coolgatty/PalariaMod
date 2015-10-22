@@ -44,6 +44,9 @@ public class Palaria
 	
 	public static int creeptileID;
 	public static int cowasaurusID;
+	public static int raptorchickenID;
+	public static int magmaraptorchickenID;
+	public static int enderraptorchickenID;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -54,6 +57,9 @@ public class Palaria
 			config.load();
 			creeptileID = config.get("Entity", "Creeptile", 301).getInt();
 			cowasaurusID = config.get("Entity", "Cowasaurus", 302).getInt();
+			raptorchickenID = config.get("Entity", "Raptor Chicken", 303).getInt();
+			magmaraptorchickenID = config.get("Entity", "Magma Raptor Chicken", 304).getInt();
+			enderraptorchickenID = config.get("Entity", "Ender Raptor Chicken", 305).getInt();
 			config.save();
 		} finally
 		{

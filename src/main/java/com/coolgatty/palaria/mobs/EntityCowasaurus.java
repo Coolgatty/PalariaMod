@@ -1,47 +1,47 @@
 package com.coolgatty.palaria.mobs;
 
-import com.google.common.base.Predicate;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
-import net.minecraft.entity.ai.EntityAIMoveToBlock;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.pathfinding.PathNavigateGround;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class EntityCowasaurus extends EntityMob
 {
     private final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
     private boolean field_146076_bu = false;
+	private double moveSpeed;
     
     public EntityCowasaurus(World par1World)
     {
         super(par1World);
+        this.moveSpeed = 1.0D;
         this.setSize(1.5F, 2.2F);
         ((PathNavigateGround)this.getNavigator()).func_179688_b(true);
         ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
-        this.tasks.addTask(1, new EntityAIBreakDoor(this));
+        this.tasks.addTask(2, this.field_175455_a);
         /*this.tasks.addTask(2, new EntityAIAvoidEntity(this, EntityEnderWalker.class, 16.0F, 0.4F, 0.35F));*/
-        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
+        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
         /*this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
         {
             public boolean func_179958_a(Entity p_179958_1_)
@@ -52,24 +52,24 @@ public class EntityCowasaurus extends EntityMob
             {
                 return this.func_179958_a((Entity)p_apply_1_);
             }
-        }, 6.0F, 1.0D, 1.2D));*/
-        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, EntityVillager.class, 1.0D, false));
-        /*this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityRaptorChicken.class, 1.0D, true));*/
-        this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntitySkeleton.class, 1.0D, false));
-        this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntityZombie.class, 1.0D, false));
-        this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntitySpider.class, 1.0D, false));
-        this.tasks.addTask(7, new EntityAIMoveTowardsRestriction(this, 1.0D));
-        this.tasks.addTask(8, new EntityAIMoveThroughVillage(this, 1.0D, false));
-        this.tasks.addTask(9, new EntityAIWander(this, 0.8D));
+        }, 6.0F, this.moveSpeed, this.moveSpeed + 0.2D));*/
+        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, false));
+        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityRaptorChicken.class, this.moveSpeed, true));
+        this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntitySkeleton.class, this.moveSpeed, false));
+        this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntityZombie.class, this.moveSpeed, false));
+        this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntitySpider.class, this.moveSpeed, false));
+        this.tasks.addTask(7, new EntityAIMoveTowardsRestriction(this, this.moveSpeed));
+        this.tasks.addTask(8, new EntityAIMoveThroughVillage(this, this.moveSpeed, false));
+        this.tasks.addTask(9, new EntityAIWander(this, this.moveSpeed - 0.2D));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(11, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
-        /*this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityRaptorChicken.class, true));*/
+        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityRaptorChicken.class, true));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntitySkeleton.class, true));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
-                this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
+        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
         experienceValue = 70;
     }
 
@@ -103,6 +103,7 @@ public class EntityCowasaurus extends EntityMob
             }
         }
     }
+    	 
     
     /**
      * Returns true if the newer Entity AI code should be run
@@ -117,7 +118,7 @@ public class EntityCowasaurus extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.cowasaurus.say";
+        return "palaria:mob.cowasaurus.say";
     }
     
     /**
@@ -125,7 +126,7 @@ public class EntityCowasaurus extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.cowasaurus.hurt";
+        return "palaria:mob.cowasaurus.hurt";
     }
 
     /**
@@ -133,12 +134,12 @@ public class EntityCowasaurus extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.cowasaurus.death";
+        return "palaria:mob.cowasaurus.death";
     }
     
     protected void playStepSound(int par1, int par2, int par3, int par4)
     {
-    	playSound("mob.cowasaurus.step", 1.0F, 1.0F);
+    	playSound("palaria:mob.cowasaurus.step", 1.0F, 1.0F);
     }
 
     /**

@@ -1,0 +1,96 @@
+{
+  "mob.cowasaurus.say": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/cowasaurus/say1",
+      "mob/cowasaurus/say2",
+      "mob/cowasaurus/say3",
+      "mob/cowasaurus/say4",
+      "mob/cowasaurus/say5",
+      "mob/cowasaurus/say6",
+      "mob/cowasaurus/say7",
+      "mob/cowasaurus/say8",
+      "mob/cowasaurus/say9"
+    ]
+  },
+  "mob.cowasaurus.hurt": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/cowasaurus/hurt1",
+      "mob/cowasaurus/hurt2",
+      "mob/cowasaurus/hurt3",
+      "mob/cowasaurus/hurt4"
+    ]
+  },
+    "mob.cowasaurus.step": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/cowasaurus/step1",
+      "mob/cowasaurus/step2"
+    ]
+  },
+  "mob.cowasaurus.death": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/cowasaurus/death1"
+    ]
+  },
+  
+    "mob.raptorchicken.say": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/raptorchicken/say1",
+      "mob/raptorchicken/say2",
+      "mob/raptorchicken/say3",
+      "mob/raptorchicken/say4"
+    ]
+  },
+  "mob.raptorchicken.hurt": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/raptorchicken/hurt1",
+      "mob/raptorchicken/hurt2",
+      "mob/raptorchicken/hurt3"
+    ]
+  },
+    "mob.enderraptorchicken.say": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/enderraptorchicken/say1",
+      "mob/enderraptorchicken/say2",
+      "mob/enderraptorchicken/say3",
+      "mob/enderraptorchicken/say4",
+      "mob/enderraptorchicken/say5",
+      "mob/enderraptorchicken/say6",
+      "mob/enderraptorchicken/say7",
+      "mob/enderraptorchicken/say8"
+    ]
+  },
+  "mob.enderraptorchicken.hurt": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/enderraptorchicken/hurt1",
+      "mob/enderraptorchicken/hurt2",
+      "mob/enderraptorchicken/hurt3",
+      "mob/enderraptorchicken/hurt4",
+      "mob/enderraptorchicken/hurt5",
+      "mob/enderraptorchicken/hurt6",
+      "mob/enderraptorchicken/hurt7"
+    ]
+  },
+  "mob.enderraptorchicken.death": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/enderraptorchicken/death"
+    ]
+  }
+}

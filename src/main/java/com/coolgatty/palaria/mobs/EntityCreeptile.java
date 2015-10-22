@@ -39,10 +39,12 @@ public class EntityCreeptile extends EntityMob
     /** Explosion radius for this creeper. */
     private int explosionRadius = 4;
     private int field_175494_bm = 0;
+	private double moveSpeed;
 
     public EntityCreeptile(World worldIn)
     {
         super(worldIn);
+        this.moveSpeed = 1.0D;
         ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAICreeptileSwell(this));
@@ -57,7 +59,7 @@ public class EntityCreeptile extends EntityMob
             {
                 return this.func_179958_a((Entity)p_apply_1_);
             }
-        }, 6.0F, 1.0D, 1.2D));
+        }, 8.0F, this.moveSpeed, this.moveSpeed + 0.2D));
         this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
         {
             public boolean func_179958_a(Entity p_179958_1_)
@@ -69,8 +71,8 @@ public class EntityCreeptile extends EntityMob
                 return this.func_179958_a((Entity)p_apply_1_);
             }
         }, 15.0F, 1.2D, 1.4D));
-        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, 1.0D, false));
-        this.tasks.addTask(5, new EntityAIWander(this, 0.8D));
+        this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, false));
+        this.tasks.addTask(5, new EntityAIWander(this, this.moveSpeed - 0.2D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
