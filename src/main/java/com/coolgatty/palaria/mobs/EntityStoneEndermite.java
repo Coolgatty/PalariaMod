@@ -11,43 +11,27 @@ import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
-import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAIBreakDoor;
-import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMate;
-import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
-import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityOcelot;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EntityDamageSource;
@@ -57,85 +41,52 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-public class EntityEnderRaptorChicken extends EntityMob
+public class EntityStoneEndermite extends EntityMob
 {
-    
-    public boolean field_70885_d = false;
-    public float field_70886_e = 0.0F;
-    public float destPos = 0.0F;
-    public float field_70884_g;
-    public float field_70888_h;
-    public float field_70889_i = 1.0F;
-    private int teleportDelay = 0;
-    private int field_70826_g = 0;
-	private double moveSpeed;
     private static final UUID attackingSpeedBoostModifierUUID = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
     private static final AttributeModifier attackingSpeedBoostModifier = (new AttributeModifier(attackingSpeedBoostModifierUUID, "Attacking speed boost", 0.15000000596046448D, 0)).setSaved(false);
     private boolean isAggressive;
-    
-    public EntityEnderRaptorChicken(World par1World)
+    /**
+     * Counter to delay the teleportation of an enderman towards the currently attacked target
+     */
+    private int teleportDelay = 0;
+    private int field_70826_g = 0;
+
+    public EntityStoneEndermite(World worldIn)
     {
-    	super(par1World);
-        this.moveSpeed = 1.0D;
-        this.setSize(0.5F, 1.2F);
-        this.getNavigator();
-        ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
+        super(worldIn);
+        this.setSize(1.0F, 1.0F);
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate()
+        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, 1.0D, false));
+        this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(2, new EntityStoneEndermite.AIFindPlayer());
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityEndermite.class, 10, true, false, new Predicate()
         {
-            public boolean func_179958_a(Entity p_179958_1_)
+            private static final String __OBFID = "CL_00002223";
+            public boolean func_179948_a(EntityEndermite p_179948_1_)
             {
-                return p_179958_1_ instanceof EntityCowasaurus;
+                return p_179948_1_.isSpawnedByPlayer();
             }
             public boolean apply(Object p_apply_1_)
             {
-                return this.func_179958_a((Entity)p_apply_1_);
+                return this.func_179948_a((EntityEndermite)p_apply_1_);
             }
-        }, 15.0F, 1.0D, 1.2D));
-        this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityWolf;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 10.0F, 1.0D, 1.2D));
-        this.tasks.addTask(2, this.field_175455_a);
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
-        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, false));
-        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityChicken.class, this.moveSpeed, false));
-        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, this.moveSpeed));
-        this.tasks.addTask(5, new EntityAIMoveThroughVillage(this, this.moveSpeed, false));
-        this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed - 0.2D));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(7, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
-        experienceValue = 50;
+        }));
+        experienceValue = 80;
     }
 
-    /**
-     * Returns true if the newer Entity AI code should be run
-     */
-    public boolean isAIEnabled()
-    {
-        return true;
-    }
-    
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(200.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.30000001192092896D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(30.0D);
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(64.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100D);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(80.0D);
     }
-    
+
     protected void entityInit()
     {
         super.entityInit();
@@ -143,7 +94,6 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.dataWatcher.addObject(17, new Byte((byte)0));
         this.dataWatcher.addObject(18, new Byte((byte)0));
     }
-
 
     /**
      * Checks to see if this enderman should be attacking this player
@@ -169,7 +119,7 @@ public class EntityEnderRaptorChicken extends EntityMob
 
     public float getEyeHeight()
     {
-        return 1.2F;
+        return 2.55F;
     }
 
     /**
@@ -317,6 +267,29 @@ public class EntityEnderRaptorChicken extends EntityMob
         }
     }
 
+    /**
+     * Returns the sound this mob makes while it's alive.
+     */
+    protected String getLivingSound()
+    {
+        return this.isScreaming() ? "mob.endermen.scream" : "mob.endermen.idle";
+    }
+
+    /**
+     * Returns the sound this mob makes when it is hurt.
+     */
+    protected String getHurtSound()
+    {
+        return "mob.endermen.hit";
+    }
+
+    /**
+     * Returns the sound this mob makes on death.
+     */
+    protected String getDeathSound()
+    {
+        return "mob.endermen.death";
+    }
 
     public void func_175490_a(IBlockState p_175490_1_)
     {
@@ -395,18 +368,17 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.dataWatcher.updateObject(18, Byte.valueOf((byte)(p_70819_1_ ? 1 : 0)));
     }
 
-
     class AIFindPlayer extends EntityAINearestAttackableTarget
     {
         private EntityPlayer field_179448_g;
         private int field_179450_h;
         private int field_179451_i;
-        private EntityEnderRaptorChicken field_179449_j = EntityEnderRaptorChicken.this;
+        private EntityStoneEndermite field_179449_j = EntityStoneEndermite.this;
         private static final String __OBFID = "CL_00002221";
 
         public AIFindPlayer()
         {
-            super(EntityEnderRaptorChicken.this, EntityPlayer.class, true);
+            super(EntityStoneEndermite.this, EntityPlayer.class, true);
         }
 
         /**
@@ -446,7 +418,7 @@ public class EntityEnderRaptorChicken extends EntityMob
             this.field_179448_g = null;
             this.field_179449_j.setScreaming(false);
             IAttributeInstance iattributeinstance = this.field_179449_j.getEntityAttribute(SharedMonsterAttributes.movementSpeed);
-            iattributeinstance.removeModifier(EntityEnderRaptorChicken.attackingSpeedBoostModifier);
+            iattributeinstance.removeModifier(EntityStoneEndermite.attackingSpeedBoostModifier);
             super.resetTask();
         }
 
@@ -489,7 +461,7 @@ public class EntityEnderRaptorChicken extends EntityMob
                     this.field_179449_j.playSound("mob.endermen.stare", 1.0F, 1.0F);
                     this.field_179449_j.setScreaming(true);
                     IAttributeInstance iattributeinstance = this.field_179449_j.getEntityAttribute(SharedMonsterAttributes.movementSpeed);
-                    iattributeinstance.applyModifier(EntityEnderRaptorChicken.attackingSpeedBoostModifier);
+                    iattributeinstance.applyModifier(EntityStoneEndermite.attackingSpeedBoostModifier);
                 }
             }
             else
@@ -515,71 +487,19 @@ public class EntityEnderRaptorChicken extends EntityMob
             }
         }
     }
-
-    /**
-     * Returns the sound this mob makes while it's alive.
-     */
-    protected String getLivingSound()
-    {
-        return this.isScreaming() ? "mob.endermen.scream" : "palaria:mob.enderraptorchicken.say";
-    }
-
-    /**
-     * Returns the sound this mob makes when it is hurt.
-     */
-    protected String getHurtSound()
-    {
-        return "palaria:mob.enderraptorchicken.hurt";
-    }
-
-    /**
-     * Returns the sound this mob makes on death.
-     */
-    protected String getDeathSound()
-    {
-        return "mob.endermen.death";
-    }
-
-    /**
-     * Plays step sound at given x, y, z for the entity
-     */
-    protected void playStepSound(int par1, int par2, int par3, int par4)
-    {
-        this.playSound("mob.chicken.step", 0.15F, 1.0F);
-    }
-    
-    public boolean func_70823_r()
-    {
-        return this.dataWatcher.getWatchableObjectByte(18) > 0;
-    }
-
-    protected Item getDropItem()
-    {
-        return Items.ender_pearl;
-    }
-
-
-    /**
-     * Returns the item ID for the item the mob drops on death.
-     */
-
-    /**
-     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
-     * par2 - Level of Looting used to kill this mob.
-     */
+ 
     protected void dropFewItems(boolean par1, int par2)
     {
-        int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
+    	int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
     	int var9 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 
-        /*for (int var4 = 0; var4 < var3; ++var4)
+    	/*for (int var4 = 0; var4 < var9; ++var4)
+    	{
+    		this.dropItem(Palaria.endermiteingot.itemID, 1);
+        }
+    	for (int var4 = 0; var4 < var3; ++var4)
         {
             this.dropItem(Palaria.endermiteshard.itemID, 1);
         }*/
-        
-        for (int var4 = 0; var4 < var9; ++var4)
-        {
-            this.dropItem(Items.ender_pearl, 1);
-        }
     }
 }

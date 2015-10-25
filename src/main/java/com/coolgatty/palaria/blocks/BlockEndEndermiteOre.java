@@ -27,49 +27,4 @@ public class BlockEndEndermiteOre extends Block
 		setHarvestLevel("pickaxe", 6);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
-	
-    @Override
-    public int getExpDrop(IBlockAccess world, BlockPos pos, int fortune)
-    {
-        IBlockState state = world.getBlockState(pos);
-        Random rand = world instanceof World ? ((World)world).rand : new Random();
-        if (this.getItemDropped(state, rand, fortune) != Item.getItemFromBlock(this))
-        {
-            int j = 0;
-
-            if (this == BlockMod.endendermiteore)
-            {
-                j = MathHelper.getRandomIntegerInRange(rand, 2, 8);
-            }
-            
-            return j;
-        }
-        return 0;
-    }
-    
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
-        return this == BlockMod.endendermiteore ? ItemMod.endermiteingot : Item.getItemFromBlock(this);
-    }
-    
-    @Override
-    public int quantityDroppedWithBonus(int fortune, Random random)
-    {
-        if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped((IBlockState)this.getBlockState().getValidStates().iterator().next(), random, fortune))
-        {
-            int j = random.nextInt(fortune + 2) - 1;
-
-            if (j < 0)
-            {
-                j = 0;
-            }
-
-            return this.quantityDropped(random) * (j + 1);
-        }
-        else
-        {
-            return this.quantityDropped(random);
-        }
-    }
 }

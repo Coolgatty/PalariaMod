@@ -10,11 +10,6 @@ public class CommonProxy
 	{
 		
 	}
-	
-	public void renderEntity()
-	{
-		
-	}
 
     public void preInit(FMLPreInitializationEvent event) 
     {

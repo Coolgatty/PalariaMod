@@ -11,32 +11,24 @@ import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
-import net.minecraft.entity.ai.EntityAIBreakDoor;
-import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
-import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityChicken;
-import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
@@ -44,7 +36,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
@@ -57,15 +48,10 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-public class EntityEnderRaptorChicken extends EntityMob
+    
+public class EntityEnderWalker extends EntityMob
 {
     
-    public boolean field_70885_d = false;
-    public float field_70886_e = 0.0F;
-    public float destPos = 0.0F;
-    public float field_70884_g;
-    public float field_70888_h;
-    public float field_70889_i = 1.0F;
     private int teleportDelay = 0;
     private int field_70826_g = 0;
 	private double moveSpeed;
@@ -73,11 +59,11 @@ public class EntityEnderRaptorChicken extends EntityMob
     private static final AttributeModifier attackingSpeedBoostModifier = (new AttributeModifier(attackingSpeedBoostModifierUUID, "Attacking speed boost", 0.15000000596046448D, 0)).setSaved(false);
     private boolean isAggressive;
     
-    public EntityEnderRaptorChicken(World par1World)
+    public EntityEnderWalker(World par1World)
     {
     	super(par1World);
         this.moveSpeed = 1.0D;
-        this.setSize(0.5F, 1.2F);
+        this.setSize(1.4F, 0.9F);
         this.getNavigator();
         ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -116,12 +102,9 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
-        experienceValue = 50;
+        experienceValue = 45;
     }
 
-    /**
-     * Returns true if the newer Entity AI code should be run
-     */
     public boolean isAIEnabled()
     {
         return true;
@@ -130,10 +113,10 @@ public class EntityEnderRaptorChicken extends EntityMob
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(64.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100D);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(80.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(640.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.30D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(80D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(30.0D);
     }
     
     protected void entityInit()
@@ -143,7 +126,6 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.dataWatcher.addObject(17, new Byte((byte)0));
         this.dataWatcher.addObject(18, new Byte((byte)0));
     }
-
 
     /**
      * Checks to see if this enderman should be attacking this player
@@ -169,7 +151,7 @@ public class EntityEnderRaptorChicken extends EntityMob
 
     public float getEyeHeight()
     {
-        return 1.2F;
+        return 0.7F;
     }
 
     /**
@@ -401,12 +383,12 @@ public class EntityEnderRaptorChicken extends EntityMob
         private EntityPlayer field_179448_g;
         private int field_179450_h;
         private int field_179451_i;
-        private EntityEnderRaptorChicken field_179449_j = EntityEnderRaptorChicken.this;
+        private EntityEnderWalker field_179449_j = EntityEnderWalker.this;
         private static final String __OBFID = "CL_00002221";
 
         public AIFindPlayer()
         {
-            super(EntityEnderRaptorChicken.this, EntityPlayer.class, true);
+            super(EntityEnderWalker.this, EntityPlayer.class, true);
         }
 
         /**
@@ -446,7 +428,7 @@ public class EntityEnderRaptorChicken extends EntityMob
             this.field_179448_g = null;
             this.field_179449_j.setScreaming(false);
             IAttributeInstance iattributeinstance = this.field_179449_j.getEntityAttribute(SharedMonsterAttributes.movementSpeed);
-            iattributeinstance.removeModifier(EntityEnderRaptorChicken.attackingSpeedBoostModifier);
+            iattributeinstance.removeModifier(EntityEnderWalker.attackingSpeedBoostModifier);
             super.resetTask();
         }
 
@@ -489,7 +471,7 @@ public class EntityEnderRaptorChicken extends EntityMob
                     this.field_179449_j.playSound("mob.endermen.stare", 1.0F, 1.0F);
                     this.field_179449_j.setScreaming(true);
                     IAttributeInstance iattributeinstance = this.field_179449_j.getEntityAttribute(SharedMonsterAttributes.movementSpeed);
-                    iattributeinstance.applyModifier(EntityEnderRaptorChicken.attackingSpeedBoostModifier);
+                    iattributeinstance.applyModifier(EntityEnderWalker.attackingSpeedBoostModifier);
                 }
             }
             else
@@ -521,7 +503,7 @@ public class EntityEnderRaptorChicken extends EntityMob
      */
     protected String getLivingSound()
     {
-        return this.isScreaming() ? "mob.endermen.scream" : "palaria:mob.enderraptorchicken.say";
+        return this.isScreaming() ? "mob.endermen.scream" : "mob.endermen.idle";
     }
 
     /**
@@ -529,7 +511,7 @@ public class EntityEnderRaptorChicken extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "palaria:mob.enderraptorchicken.hurt";
+        return "mob.endermen.hit";
     }
 
     /**
@@ -538,14 +520,6 @@ public class EntityEnderRaptorChicken extends EntityMob
     protected String getDeathSound()
     {
         return "mob.endermen.death";
-    }
-
-    /**
-     * Plays step sound at given x, y, z for the entity
-     */
-    protected void playStepSound(int par1, int par2, int par3, int par4)
-    {
-        this.playSound("mob.chicken.step", 0.15F, 1.0F);
     }
     
     public boolean func_70823_r()
@@ -579,7 +553,8 @@ public class EntityEnderRaptorChicken extends EntityMob
         
         for (int var4 = 0; var4 < var9; ++var4)
         {
-            this.dropItem(Items.ender_pearl, 1);
+            this.dropItem(Items.ender_pearl, 2);
         }
     }
 }
+

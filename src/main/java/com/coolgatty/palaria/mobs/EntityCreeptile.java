@@ -71,6 +71,17 @@ public class EntityCreeptile extends EntityMob
                 return this.func_179958_a((Entity)p_apply_1_);
             }
         }, 15.0F, 1.2D, 1.4D));
+        this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
+        {
+            public boolean func_179958_a(Entity p_179958_1_)
+            {
+                return p_179958_1_ instanceof EntityNimatin;
+            }
+            public boolean apply(Object p_apply_1_)
+            {
+                return this.func_179958_a((Entity)p_apply_1_);
+            }
+        }, 15.0F, 1.0D, 1.2D));
         this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, false));
         this.tasks.addTask(5, new EntityAIWander(this, this.moveSpeed - 0.2D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));

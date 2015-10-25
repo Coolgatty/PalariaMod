@@ -10,7 +10,7 @@ import com.coolgatty.palaria.help.RegisterHelper;
 import com.coolgatty.palaria.items.ItemMod;
 import com.coolgatty.palaria.items.RecipesMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
-import com.coolgatty.palaria.mobs.MobMod;
+import com.coolgatty.palaria.mobs.MobRegistry;
 import com.coolgatty.palaria.proxy.CommonProxy;
 import com.coolgatty.palaria.world.WorldGenOres;
 
@@ -29,6 +29,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -47,6 +48,10 @@ public class Palaria
 	public static int raptorchickenID;
 	public static int magmaraptorchickenID;
 	public static int enderraptorchickenID;
+	public static int stoneendermiteID;
+	public static int endendermiteID;
+	public static int enderwalkerID;
+	public static int nimatinID;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -55,11 +60,15 @@ public class Palaria
 		try 
 		{
 			config.load();
-			creeptileID = config.get("Entity", "Creeptile", 301).getInt();
-			cowasaurusID = config.get("Entity", "Cowasaurus", 302).getInt();
-			raptorchickenID = config.get("Entity", "Raptor Chicken", 303).getInt();
-			magmaraptorchickenID = config.get("Entity", "Magma Raptor Chicken", 304).getInt();
-			enderraptorchickenID = config.get("Entity", "Ender Raptor Chicken", 305).getInt();
+			creeptileID = config.get("Entity", "Creeptile", 901).getInt();
+			cowasaurusID = config.get("Entity", "Cowasaurus", 902).getInt();
+			raptorchickenID = config.get("Entity", "Raptor Chicken", 903).getInt();
+			magmaraptorchickenID = config.get("Entity", "Magma Raptor Chicken", 904).getInt();
+			enderraptorchickenID = config.get("Entity", "Ender Raptor Chicken", 905).getInt();
+			stoneendermiteID = config.get("Entity", "Stone Endermite", 906).getInt();
+			endendermiteID = config.get("Entity", "End Endermite", 907).getInt();
+			enderwalkerID = config.get("Entity", "Ender Walker", 908).getInt();
+			nimatinID = config.get("Entity", "Nimatin", 909).getInt();
 			config.save();
 		} finally
 		{
@@ -71,14 +80,18 @@ public class Palaria
 		
 		//World
         WorldGenOres.init();
+        
         //Blocks
 		BlockMod.init();		
 		BlockMod.register();
+		
 		//Items
 		ItemMod.init();
 		ItemMod.register();
+		
 		//Mobs
-		MobMod.register();
+		MobRegistry.registerEntity();
+		
 		//Recipes
 		RecipesMod.addRecipes();
 		
