@@ -192,7 +192,7 @@ public class MobRegistry
 		EntityList.addMapping(EntityEndEndermite.class, "EndEndermite", Palaria.endendermiteID, 0x000000, 0xD4D40F);
 		
 		//Ender Walker
-		EntityRegistry.registerModEntity(EntityEnderWalker.class, "EnderWalker", Palaria.enderwalkerID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityEnderWalker.class, "EnderWalker", Palaria.enderwalkerID, Reference.MODID, 50, 5, true);
 		EntityRegistry.addSpawn(EntityEnderWalker.class, 2, 1, 2, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
@@ -234,7 +234,7 @@ public class MobRegistry
 		
 		//Nimatin
 		EntityRegistry.registerModEntity(EntityNimatin.class, "Nimatin", Palaria.nimatinID, Reference.MODID, 100, 3, true);
-		EntityRegistry.addSpawn(EntityNimatin.class, 1, 1, 1, EnumCreatureType.MONSTER, 
+		/**		EntityRegistry.addSpawn(EntityNimatin.class, 1, 1, 1, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
 				BiomeGenBase.extremeHillsEdge, 
@@ -269,7 +269,7 @@ public class MobRegistry
 				BiomeGenBase.savannaPlateau,
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
-				BiomeGenBase.taigaHills);
+				BiomeGenBase.taigaHills);				**/
 		EntityList.addMapping(EntityNimatin.class, "Nimatin", Palaria.nimatinID, 0xD1AB00, 0x6E6E6E);
 	}
 }

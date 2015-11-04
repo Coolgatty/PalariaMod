@@ -25,15 +25,17 @@ public class RenderEnderWalker extends RenderLiving
     {
     	super(Minecraft.getMinecraft().getRenderManager(), new ModelEnderWalker(), 0.0F);
     }
-
+    
+    public ResourceLocation bindTexture(EntityEnderWalker entity)
+	{
+		return enderwalker;
+	}
+    
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) 
 	{
 		return bindTexture((EntityEnderWalker)entity);
 	}
     
-    public ResourceLocation bindTexture(EntityEnderWalker entity)
-	{
-		return enderwalker;
-	}
+
 }

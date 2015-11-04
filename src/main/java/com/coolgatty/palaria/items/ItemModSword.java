@@ -22,7 +22,9 @@ public class ItemModSword extends Item
     private float attackDamage;
     private final Item.ToolMaterial material;
     private final Item repair;
+    private final Item repair2;
 
+    //One repair material
     public ItemModSword(Item.ToolMaterial material, Item repair)
     {
         this.material = material;
@@ -30,6 +32,29 @@ public class ItemModSword extends Item
         this.setMaxDamage(material.getMaxUses());
         this.attackDamage = 4.0F + material.getDamageVsEntity();
         this.repair = repair;
+        this.repair2 = null;
+    }
+    
+    //No repair material
+    public ItemModSword(Item.ToolMaterial material)
+    {
+        this.material = material;
+        this.maxStackSize = 1;
+        this.setMaxDamage(material.getMaxUses());
+        this.attackDamage = 4.0F + material.getDamageVsEntity();
+        this.repair = null;
+        this.repair2 = null;
+    }
+    
+    //Two repair materials
+    public ItemModSword(Item.ToolMaterial material, Item repair, Item repair2)
+    {
+        this.material = material;
+        this.maxStackSize = 1;
+        this.setMaxDamage(material.getMaxUses());
+        this.attackDamage = 4.0F + material.getDamageVsEntity();
+        this.repair = repair;
+        this.repair2 = repair2;
     }
 
     /**
@@ -148,6 +173,8 @@ public class ItemModSword extends Item
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
 	{
 		if(repair.getItem().equals(this.repair))
+			return true;
+		else if(repair.getItem().equals(this.repair2))
 			return true;
 		else
 			return false;

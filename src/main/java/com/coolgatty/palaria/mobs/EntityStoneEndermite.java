@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import com.coolgatty.palaria.items.ItemMod;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Sets;
 
@@ -493,13 +494,13 @@ public class EntityStoneEndermite extends EntityMob
     	int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
     	int var9 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
 
-    	/*for (int var4 = 0; var4 < var9; ++var4)
+    	for (int var4 = 0; var4 < var9; ++var4)
     	{
-    		this.dropItem(Palaria.endermiteingot.itemID, 1);
+    		this.dropItem(ItemMod.endermiteingot, 1);
         }
     	for (int var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(Palaria.endermiteshard.itemID, 1);
-        }*/
+            this.dropItem(ItemMod.endermiteshard, 1);
+        }
     }
 }

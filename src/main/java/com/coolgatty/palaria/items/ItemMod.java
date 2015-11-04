@@ -5,6 +5,7 @@ import com.coolgatty.palaria.blocks.BlockMod;
 import com.coolgatty.palaria.blocks.BlockSarliteOre;
 import com.coolgatty.palaria.help.Reference;
 import com.coolgatty.palaria.help.RegisterHelper;
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -83,6 +84,11 @@ public class ItemMod
 	public static Item endermiteshovelhead;
 	public static Item endermitepickaxehead;
 	
+	/**Drops & their derivatives**/
+	public static Item raptorclaw;
+	public static Item creeptileeye;
+	public static Item stickyraptorclaw;
+	
 	//Materials
 	public static Item sarliteingot;
 	public static Item flamiteingot;
@@ -90,6 +96,18 @@ public class ItemMod
 	public static Item illiwongem;
 	public static Item afnamitegem;
 	public static Item endermiteingot;
+	
+	public static Item rawcrawmite;
+	public static Item crawmite;
+	
+	public static Item endermiteshard;
+	public static Item endermitechunk;
+	public static Item refinedendermitechunk;
+	public static Item endermitequartz;
+	public static Item refinedendermitequartz;
+	public static Item endermitegem;
+	public static Item refinedendermitegem;
+	public static Item enderrite;
 	
 	//Classic Tools	
 	public static Item sarliteshovel;
@@ -142,6 +160,12 @@ public class ItemMod
 	public static Item illiwonsword;
 	public static Item afnamitesword;
 	public static Item endermitesword;
+	
+	public static Item crawmitesword;
+	public static Item doomspoon;
+	public static Item refinedendermitesword;
+	public static Item enderlitesword;
+	public static Item enderritesword;
 	
 	//Scythe Blades
 	public static Item woodblade;
@@ -242,6 +266,13 @@ public class ItemMod
 	static ArmorMaterial AFNAMITE_ARMOR = EnumHelper.addArmorMaterial("AFNAMITE", "palaria:afnamite", 105, new int[]{6, 11, 9, 6}, 8);
 	static ArmorMaterial ENDERMITE_ARMOR = EnumHelper.addArmorMaterial("ENDERMITE", "palaria:ender", 126, new int[]{8, 12, 10, 8}, 8);
 	
+	//Special Materials
+	static ToolMaterial CrawmiteSword = EnumHelper.addToolMaterial("CRAWMITE", 3, 8241, 40.0F, 16, 10);
+	static ToolMaterial DoomSpoonSword = EnumHelper.addToolMaterial("DOOMSPOON", 3, 10044, 49.0F, 20, 9);
+	static ToolMaterial RefinedEndermiteSword = EnumHelper.addToolMaterial("ENDERMITE", 3, 15643, 54.0F, 24, 6);
+	static ToolMaterial EnderliteSword = EnumHelper.addToolMaterial("ENDERLITE", 3, 10000, 250.0F, 32, 5);
+	static ToolMaterial EnderriteSword = EnumHelper.addToolMaterial("ENDERRITE", 3, 8000, 1250.0F, 40, 3);
+	
 	
 	public static void init()
 	{
@@ -310,6 +341,17 @@ public class ItemMod
 		afnamitegem = new Item().setUnlocalizedName("afnamitegem").setCreativeTab(CreativeTabs.tabMaterials);
 		endermiteingot = new Item().setUnlocalizedName("endermiteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		
+		endermiteshard = new Item().setUnlocalizedName("endermiteshard").setCreativeTab(CreativeTabs.tabMaterials);
+		endermitechunk = new Item().setUnlocalizedName("endermitechunk").setCreativeTab(CreativeTabs.tabMaterials);
+		refinedendermitechunk = new Item().setUnlocalizedName("refinedendermitechunk").setCreativeTab(CreativeTabs.tabMaterials);
+		endermitequartz = new Item().setUnlocalizedName("endermitequartz").setCreativeTab(CreativeTabs.tabMaterials);
+		refinedendermitequartz = new Item().setUnlocalizedName("refinedendermitequartz").setCreativeTab(CreativeTabs.tabMaterials);
+		rawcrawmite = new Item().setUnlocalizedName("rawcrawmite").setCreativeTab(CreativeTabs.tabMaterials);	
+		crawmite = new Item().setUnlocalizedName("crawmite").setCreativeTab(CreativeTabs.tabMaterials);
+		endermitegem = new Item().setUnlocalizedName("endermitegem").setCreativeTab(CreativeTabs.tabMaterials);
+		refinedendermitegem = new Item().setUnlocalizedName("refinedendermitegem").setCreativeTab(CreativeTabs.tabMaterials);
+		enderrite = new Item().setUnlocalizedName("enderrite").setCreativeTab(CreativeTabs.tabMaterials);
+		
 		//Tools
 		sarliteshovel = new ItemModSpade(SARLITE, sarliteingot).setUnlocalizedName("sarliteshovel").setCreativeTab(CreativeTabs.tabTools);
 		sarlitepick = new ItemModPickaxe(SARLITE, sarliteingot).setUnlocalizedName("sarlitepick").setCreativeTab(CreativeTabs.tabTools);
@@ -348,6 +390,12 @@ public class ItemMod
 		illiwonsword = new ItemModSword(ILLIWON, illiwongem).setUnlocalizedName("illiwonsword").setCreativeTab(CreativeTabs.tabCombat);
 		afnamitesword = new ItemModSword(AFNAMITE, afnamitegem).setUnlocalizedName("afnamitesword").setCreativeTab(CreativeTabs.tabCombat);
 		endermitesword = new ItemModSword(ENDERMITE, endermiteingot).setUnlocalizedName("endermitesword").setCreativeTab(CreativeTabs.tabCombat);
+		
+		crawmitesword = new ItemModSword(CrawmiteSword, crawmite).setUnlocalizedName("crawmitesword").setCreativeTab(CreativeTabs.tabCombat);
+		doomspoon = new ItemModSword(DoomSpoonSword, crawmite, afnamitegem).setUnlocalizedName("doomspoon").setCreativeTab(CreativeTabs.tabCombat);
+		refinedendermitesword = new ItemModSword(RefinedEndermiteSword).setUnlocalizedName("refinedendermitesword").setCreativeTab(CreativeTabs.tabCombat);
+		enderlitesword = new ItemModSword(EnderliteSword).setUnlocalizedName("enderlitesword").setCreativeTab(CreativeTabs.tabCombat);
+		enderritesword = new ItemModSword(EnderriteSword).setUnlocalizedName("enderritesword").setCreativeTab(CreativeTabs.tabCombat);
 		
 		//Scythe Blades
 		woodblade = new ItemScytheBlade(ToolMaterial.WOOD, Item.getItemFromBlock(Blocks.planks)).setUnlocalizedName("woodblade").setCreativeTab(CreativeTabs.tabCombat);
@@ -513,6 +561,18 @@ public class ItemMod
 		RegisterHelper.registerItem(afnamitegem);
 		RegisterHelper.registerItem(endermiteingot);
 		
+		RegisterHelper.registerItem(rawcrawmite);
+		RegisterHelper.registerItem(crawmite);
+		
+		RegisterHelper.registerItem(endermiteshard);
+		RegisterHelper.registerItem(endermitechunk);
+		RegisterHelper.registerItem(refinedendermitechunk);
+		RegisterHelper.registerItem(endermitequartz);
+		RegisterHelper.registerItem(refinedendermitequartz);
+		RegisterHelper.registerItem(endermitegem);
+		RegisterHelper.registerItem(refinedendermitegem);
+		RegisterHelper.registerItem(enderrite);
+		
 		//Tools
 		RegisterHelper.registerItem(sarliteshovel);
 		RegisterHelper.registerItem(sarlitepick);
@@ -551,6 +611,14 @@ public class ItemMod
 		RegisterHelper.registerItem(illiwonsword);
 		RegisterHelper.registerItem(afnamitesword);
 		RegisterHelper.registerItem(endermitesword);
+		
+		/**Specials**/
+		RegisterHelper.registerItem(crawmitesword);
+		RegisterHelper.registerItem(doomspoon);
+		
+		RegisterHelper.registerItem(refinedendermitesword);
+		RegisterHelper.registerItem(enderlitesword);
+		RegisterHelper.registerItem(enderritesword);
 		
 		//Scythe Blades
 		RegisterHelper.registerItem(woodblade);
@@ -716,6 +784,17 @@ public class ItemMod
 		registerRender(afnamitegem);
 		registerRender(endermiteingot);
 		
+		registerRender(endermiteshard);
+		registerRender(endermitechunk);
+		registerRender(refinedendermitechunk);
+		registerRender(endermitequartz);
+		registerRender(refinedendermitequartz);
+		registerRender(rawcrawmite);
+		registerRender(crawmite);
+		registerRender(endermitegem);
+		registerRender(refinedendermitegem);
+		registerRender(enderrite);
+		
 		//Tools
 		registerRender(sarliteshovel);
 		registerRender(sarlitepick);
@@ -754,6 +833,14 @@ public class ItemMod
 		registerRender(illiwonsword);
 		registerRender(afnamitesword);
 		registerRender(endermitesword);
+		
+		/**Specials**/
+		registerRender(crawmitesword);
+		registerRender(doomspoon);
+		
+		registerRender(refinedendermitesword);
+		registerRender(enderlitesword);
+		registerRender(enderritesword);
 		
 		//Scythe Blades
 		registerRender(woodblade);

@@ -1042,5 +1042,81 @@ public class RecipesMod
 		GameRegistry.addSmelting(BlockMod.endermiteore, new ItemStack(ItemMod.endermiteingot), 5.0F);
 		GameRegistry.addSmelting(BlockMod.endendermiteore, new ItemStack(ItemMod.endermiteingot), 5.0F);
 		
+		//Special
+		
+		/**Crafting**/
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitechunk), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.endermiteshard
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitequartz), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.refinedendermitechunk
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitegem), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.refinedendermitequartz
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.enderrite), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.refinedendermitegem
+		});
+		
+		/***********************************************************************************************************/
+		/**Swords***************************************************************************************************/
+		/***********************************************************************************************************/
+		GameRegistry.addRecipe(new ItemStack(ItemMod.crawmitesword), new Object []
+		{
+			"X",
+			"X",
+			"Y",
+			'X', ItemMod.crawmite, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.doomspoon), new Object []
+		{
+			"X",
+			"X",
+			"Y",
+			'X', ItemMod.afnamitegem, 'Y', ItemMod.crawmitesword
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.refinedendermitesword), new Object []
+		{
+			"X",
+			"X",
+			"Y",
+			'X', ItemMod.refinedendermitequartz, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.enderlitesword), new Object []
+		{
+			"X",
+			"X",
+			"Y",
+			'X', ItemMod.refinedendermitegem, 'Y', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.enderritesword), new Object []
+		{
+			"X",
+			"X",
+			"Y",
+			'X', ItemMod.enderrite, 'Y', Items.stick
+		});
+		
+		/**Smelting**/
+		GameRegistry.addSmelting(ItemMod.endermitechunk, new ItemStack(ItemMod.refinedendermitechunk), 5.0F);
+		GameRegistry.addSmelting(ItemMod.endermitequartz, new ItemStack(ItemMod.refinedendermitequartz), 5.0F);
+		GameRegistry.addSmelting(ItemMod.endermitegem, new ItemStack(ItemMod.refinedendermitegem), 5.0F);
+		
 	}
 }
