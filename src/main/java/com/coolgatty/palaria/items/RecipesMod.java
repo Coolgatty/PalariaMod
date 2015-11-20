@@ -1042,7 +1042,9 @@ public class RecipesMod
 		GameRegistry.addSmelting(BlockMod.endermiteore, new ItemStack(ItemMod.endermiteingot), 5.0F);
 		GameRegistry.addSmelting(BlockMod.endendermiteore, new ItemStack(ItemMod.endermiteingot), 5.0F);
 		
-		//Special
+		  ///////////////////////////
+		 //Special//////////////////
+		///////////////////////////
 		
 		/**Crafting**/
 		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitechunk), new Object []
@@ -1062,8 +1064,6 @@ public class RecipesMod
 		GameRegistry.addRecipe(new ItemStack(ItemMod.endermitegem), new Object []
 		{
 			"XXX",
-			"XXX",
-			"XXX",
 			'X', ItemMod.refinedendermitequartz
 		});
 		GameRegistry.addRecipe(new ItemStack(ItemMod.enderrite), new Object []
@@ -1071,7 +1071,7 @@ public class RecipesMod
 			"XXX",
 			"XXX",
 			"XXX",
-			'X', ItemMod.refinedendermitegem
+			'X', ItemMod.refinedendermitequartz
 		});
 		
 		/***********************************************************************************************************/
@@ -1111,6 +1111,30 @@ public class RecipesMod
 			"X",
 			"Y",
 			'X', ItemMod.enderrite, 'Y', Items.stick
+		});
+		
+		
+		//Other
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stickyraptorclaw), new Object []
+		{
+			"XZX",
+			"ZYZ",
+			"XZX",
+			'X', Items.flint_and_steel, 'Y', Items.clock, 'Z', ItemMod.narriteingot
+		});
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stickyraptorclaw), new Object []
+		{
+			"YX",
+			'X', ItemMod.sarliteingot, 'Y', ItemMod.flamiteingot
+		});
+		
+		/**Drops and their derivatives**/
+		GameRegistry.addRecipe(new ItemStack(ItemMod.stickyraptorclaw), new Object []
+		{
+			"XXX",
+			"XYX",
+			"XXX",
+			'X', ItemMod.creeptileeye, 'Y', ItemMod.raptorclaw
 		});
 		
 		/**Smelting**/

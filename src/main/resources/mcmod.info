@@ -2,8 +2,8 @@
 {
   "modid": "palaria",
   "name": "Palaria Mod",
-  "description": "Unofficial Release",
-  "version": "inDev - 3.0 Beta",
+  "description": "Official Beta Release",
+  "version": "3.0 Beta",
   "mcversion": "Minecraft 1.8",
   "url": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1287343-wip-coming-not-so-soontm-palaria-mod-v3-0-beta",
   "authorList": ["Cooglatty"],

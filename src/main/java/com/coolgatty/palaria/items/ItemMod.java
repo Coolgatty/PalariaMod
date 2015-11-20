@@ -84,6 +84,9 @@ public class ItemMod
 	public static Item endermiteshovelhead;
 	public static Item endermitepickaxehead;
 	
+	//Other
+	public static Item flitherclock;
+	
 	/**Drops & their derivatives**/
 	public static Item raptorclaw;
 	public static Item creeptileeye;
@@ -96,6 +99,8 @@ public class ItemMod
 	public static Item illiwongem;
 	public static Item afnamitegem;
 	public static Item endermiteingot;
+	
+	public static Item narriteingot;
 	
 	public static Item rawcrawmite;
 	public static Item crawmite;
@@ -278,60 +283,68 @@ public class ItemMod
 	{
 		
 		//Items
-		woodswordhead = new Item().setUnlocalizedName("woodswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		woodaxehead= new Item().setUnlocalizedName("woodaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		woodshovelhead = new Item().setUnlocalizedName("woodshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		woodpickaxehead = new Item().setUnlocalizedName("woodpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		woodswordhead = new Item().setUnlocalizedName("woodswordhead").setCreativeTab(CreativeTabs.tabTools);
+		woodaxehead = new Item().setUnlocalizedName("woodaxehead").setCreativeTab(CreativeTabs.tabTools);
+		woodshovelhead = new Item().setUnlocalizedName("woodshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		woodpickaxehead = new Item().setUnlocalizedName("woodpickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		stoneswordhead= new Item().setUnlocalizedName("stoneswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		stoneaxehead= new Item().setUnlocalizedName("stoneaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		stoneshovelhead= new Item().setUnlocalizedName("stoneshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		stonepickaxehead= new Item().setUnlocalizedName("stonepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		stoneswordhead = new Item().setUnlocalizedName("stoneswordhead").setCreativeTab(CreativeTabs.tabTools);
+		stoneaxehead = new Item().setUnlocalizedName("stoneaxehead").setCreativeTab(CreativeTabs.tabTools);
+		stoneshovelhead = new Item().setUnlocalizedName("stoneshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		stonepickaxehead = new Item().setUnlocalizedName("stonepickaxehead").setCreativeTab(CreativeTabs.tabTools);
 
-		ironswordhead= new Item().setUnlocalizedName("ironswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		ironaxehead= new Item().setUnlocalizedName("ironaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		ironshovelhead= new Item().setUnlocalizedName("ironshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		ironpickaxehead= new Item().setUnlocalizedName("ironpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		ironswordhead = new Item().setUnlocalizedName("ironswordhead").setCreativeTab(CreativeTabs.tabTools);
+		ironaxehead = new Item().setUnlocalizedName("ironaxehead").setCreativeTab(CreativeTabs.tabTools);
+		ironshovelhead = new Item().setUnlocalizedName("ironshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		ironpickaxehead = new Item().setUnlocalizedName("ironpickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		clariteswordhead= new Item().setUnlocalizedName("clariteswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		clariteaxehead= new Item().setUnlocalizedName("clariteaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		clariteshovelhead= new Item().setUnlocalizedName("clariteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		claritepickaxehead= new Item().setUnlocalizedName("claritepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		clariteswordhead = new Item().setUnlocalizedName("clariteswordhead").setCreativeTab(CreativeTabs.tabTools);
+		clariteaxehead = new Item().setUnlocalizedName("clariteaxehead").setCreativeTab(CreativeTabs.tabTools);
+		clariteshovelhead = new Item().setUnlocalizedName("clariteshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		claritepickaxehead = new Item().setUnlocalizedName("claritepickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		diamondswordhead= new Item().setUnlocalizedName("diamondswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		diamondaxehead= new Item().setUnlocalizedName("diamondaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		diamondshovelhead= new Item().setUnlocalizedName("diamondshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		diamondpickaxehead= new Item().setUnlocalizedName("diamondpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		diamondswordhead = new Item().setUnlocalizedName("diamondswordhead").setCreativeTab(CreativeTabs.tabTools);
+		diamondaxehead = new Item().setUnlocalizedName("diamondaxehead").setCreativeTab(CreativeTabs.tabTools);
+		diamondshovelhead = new Item().setUnlocalizedName("diamondshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		diamondpickaxehead = new Item().setUnlocalizedName("diamondpickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		goldswordhead= new Item().setUnlocalizedName("goldswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		goldaxehead= new Item().setUnlocalizedName("goldaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		goldshovelhead= new Item().setUnlocalizedName("goldshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		goldpickaxehead= new Item().setUnlocalizedName("goldpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		goldswordhead = new Item().setUnlocalizedName("goldswordhead").setCreativeTab(CreativeTabs.tabTools);
+		goldaxehead = new Item().setUnlocalizedName("goldaxehead").setCreativeTab(CreativeTabs.tabTools);
+		goldshovelhead = new Item().setUnlocalizedName("goldshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		goldpickaxehead = new Item().setUnlocalizedName("goldpickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		sarliteswordhead= new Item().setUnlocalizedName("sarliteswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		sarliteaxehead= new Item().setUnlocalizedName("sarliteaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		sarliteshovelhead= new Item().setUnlocalizedName("sarliteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		sarlitepickaxehead= new Item().setUnlocalizedName("sarlitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		sarliteswordhead = new Item().setUnlocalizedName("sarliteswordhead").setCreativeTab(CreativeTabs.tabTools);
+		sarliteaxehead = new Item().setUnlocalizedName("sarliteaxehead").setCreativeTab(CreativeTabs.tabTools);
+		sarliteshovelhead = new Item().setUnlocalizedName("sarliteshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		sarlitepickaxehead = new Item().setUnlocalizedName("sarlitepickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		flamiteswordhead= new Item().setUnlocalizedName("flamiteswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		flamiteaxehead= new Item().setUnlocalizedName("flamiteaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		flamiteshovelhead= new Item().setUnlocalizedName("flamiteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		flamitepickaxehead= new Item().setUnlocalizedName("flamitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		flamiteswordhead = new Item().setUnlocalizedName("flamiteswordhead").setCreativeTab(CreativeTabs.tabTools);
+		flamiteaxehead = new Item().setUnlocalizedName("flamiteaxehead").setCreativeTab(CreativeTabs.tabTools);
+		flamiteshovelhead = new Item().setUnlocalizedName("flamiteshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		flamitepickaxehead = new Item().setUnlocalizedName("flamitepickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		illiwonswordhead= new Item().setUnlocalizedName("illiwonswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		illiwonaxehead= new Item().setUnlocalizedName("illiwonaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		illiwonshovelhead= new Item().setUnlocalizedName("illiwonshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		illiwonpickaxehead= new Item().setUnlocalizedName("illiwonpickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		illiwonswordhead = new Item().setUnlocalizedName("illiwonswordhead").setCreativeTab(CreativeTabs.tabTools);
+		illiwonaxehead = new Item().setUnlocalizedName("illiwonaxehead").setCreativeTab(CreativeTabs.tabTools);
+		illiwonshovelhead = new Item().setUnlocalizedName("illiwonshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		illiwonpickaxehead = new Item().setUnlocalizedName("illiwonpickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		afnamiteswordhead= new Item().setUnlocalizedName("afnamiteswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		afnamiteaxehead= new Item().setUnlocalizedName("afnamiteaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		afnamiteshovelhead= new Item().setUnlocalizedName("afnamiteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		afnamitepickaxehead= new Item().setUnlocalizedName("afnamitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		afnamiteswordhead = new Item().setUnlocalizedName("afnamiteswordhead").setCreativeTab(CreativeTabs.tabTools);
+		afnamiteaxehead = new Item().setUnlocalizedName("afnamiteaxehead").setCreativeTab(CreativeTabs.tabTools);
+		afnamiteshovelhead = new Item().setUnlocalizedName("afnamiteshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		afnamitepickaxehead = new Item().setUnlocalizedName("afnamitepickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
-		endermiteswordhead= new Item().setUnlocalizedName("endermiteswordhead").setCreativeTab(CreativeTabs.tabMisc);
-		endermiteaxehead= new Item().setUnlocalizedName("endermiteaxehead").setCreativeTab(CreativeTabs.tabMisc);
-		endermiteshovelhead= new Item().setUnlocalizedName("endermiteshovelhead").setCreativeTab(CreativeTabs.tabMisc);
-		endermitepickaxehead= new Item().setUnlocalizedName("endermitepickaxehead").setCreativeTab(CreativeTabs.tabMisc);
+		endermiteswordhead = new Item().setUnlocalizedName("endermiteswordhead").setCreativeTab(CreativeTabs.tabTools);
+		endermiteaxehead = new Item().setUnlocalizedName("endermiteaxehead").setCreativeTab(CreativeTabs.tabTools);
+		endermiteshovelhead = new Item().setUnlocalizedName("endermiteshovelhead").setCreativeTab(CreativeTabs.tabTools);
+		endermitepickaxehead = new Item().setUnlocalizedName("endermitepickaxehead").setCreativeTab(CreativeTabs.tabTools);
+		
+		//Other
+		flitherclock = new Item().setUnlocalizedName("raptorclaw").setCreativeTab(CreativeTabs.tabTools);
+		
+		/*Drops & their derivatives*/
+		raptorclaw = new Item().setUnlocalizedName("raptorclaw").setCreativeTab(CreativeTabs.tabMaterials);
+		stickyraptorclaw = new Item().setUnlocalizedName("stickyraptorclaw").setCreativeTab(CreativeTabs.tabMaterials);
+		creeptileeye = new Item().setUnlocalizedName("creeptileeye").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		//Materials
 		sarliteingot = new Item().setUnlocalizedName("sarliteingot").setCreativeTab(CreativeTabs.tabMaterials);
@@ -340,6 +353,8 @@ public class ItemMod
 		illiwongem = new Item().setUnlocalizedName("illiwongem").setCreativeTab(CreativeTabs.tabMaterials);
 		afnamitegem = new Item().setUnlocalizedName("afnamitegem").setCreativeTab(CreativeTabs.tabMaterials);
 		endermiteingot = new Item().setUnlocalizedName("endermiteingot").setCreativeTab(CreativeTabs.tabMaterials);
+		
+		narriteingot = new Item().setUnlocalizedName("narriteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		endermiteshard = new Item().setUnlocalizedName("endermiteshard").setCreativeTab(CreativeTabs.tabMaterials);
 		endermitechunk = new Item().setUnlocalizedName("endermitechunk").setCreativeTab(CreativeTabs.tabMaterials);
@@ -553,6 +568,14 @@ public class ItemMod
 		RegisterHelper.registerItem(endermiteshovelhead);
 		RegisterHelper.registerItem(endermitepickaxehead);
 		
+		//Other
+		RegisterHelper.registerItem(flitherclock);
+		
+		/**Drops & their derivatives**/
+		RegisterHelper.registerItem(raptorclaw);
+		RegisterHelper.registerItem(stickyraptorclaw);
+		RegisterHelper.registerItem(creeptileeye);
+		
 		//Materials
 		RegisterHelper.registerItem(sarliteingot);
 		RegisterHelper.registerItem(flamiteingot);
@@ -560,6 +583,8 @@ public class ItemMod
 		RegisterHelper.registerItem(illiwongem);
 		RegisterHelper.registerItem(afnamitegem);
 		RegisterHelper.registerItem(endermiteingot);
+		
+		RegisterHelper.registerItem(narriteingot);
 		
 		RegisterHelper.registerItem(rawcrawmite);
 		RegisterHelper.registerItem(crawmite);
@@ -776,6 +801,14 @@ public class ItemMod
 		registerRender(endermiteshovelhead);
 		registerRender(endermitepickaxehead);
 		
+		//Other
+		registerRender(flitherclock);
+		
+		/**Drops & their derivatives**/
+		registerRender(raptorclaw);
+		registerRender(stickyraptorclaw);
+		registerRender(creeptileeye);
+		
 		//Materials
 		registerRender(sarliteingot);
 		registerRender(flamiteingot);
@@ -783,6 +816,8 @@ public class ItemMod
 		registerRender(illiwongem);
 		registerRender(afnamitegem);
 		registerRender(endermiteingot);
+		
+		registerRender(narriteingot);
 		
 		registerRender(endermiteshard);
 		registerRender(endermitechunk);

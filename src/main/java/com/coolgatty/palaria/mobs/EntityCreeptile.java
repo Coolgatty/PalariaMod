@@ -1,5 +1,6 @@
 package com.coolgatty.palaria.mobs;
 
+import com.coolgatty.palaria.items.ItemMod;
 import com.coolgatty.palaria.mobs.entityAI.EntityAICreeptileSwell;
 import com.google.common.base.Predicate;
 
@@ -261,9 +262,19 @@ public class EntityCreeptile extends EntityMob
         return ((float)this.lastActiveTime + (float)(this.timeSinceIgnited - this.lastActiveTime) * p_70831_1_) / (float)(this.fuseTime - 2);
     }
 
-    protected Item getDropItem()
+    protected void dropFewItems(boolean par1, int par2)
     {
-        return Items.gunpowder;
+        int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
+
+        for (int var4 = 0; var4 < var3; ++var4)
+        {
+            this.dropItem(Items.gunpowder, 2);
+        }
+        
+        for (int var4 = 0; var4 < var3; ++var4)
+        {
+            this.dropItem(ItemMod.creeptileeye, 1);
+        }
     }
 
     /**

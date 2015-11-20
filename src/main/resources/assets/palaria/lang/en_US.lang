@@ -209,6 +209,11 @@ item.endermitequartz.name=Endermite Quartz
 item.refinedendermitequartz.name=Refined Endermite Quartz
 item.endermitegem.name=Endermite Gem
 item.refinedendermitegem.name=Refined Endermite Gem
+item.enderrite.name=Enderrite
 item.refinedendermitesword.name=Refined Endermite Sword
 item.enderlitesword.name=Enderlite Sword
 item.enderritesword.name=Enderrite Sword
+
+item.raptorclaw.name=Raptor Claw
+item.stickyraptorclaw.name=Sticky Raptor Claw
+item.creeptileeye.name=Creeptile Eye

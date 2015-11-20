@@ -1,5 +1,6 @@
 package com.coolgatty.palaria.mobs;
 
+import com.coolgatty.palaria.items.ItemMod;
 import com.google.common.base.Predicate;
 
 import net.minecraft.entity.Entity;
@@ -196,10 +197,10 @@ public class EntityRaptorChicken extends EntityMob
             this.dropItem(Items.feather, 1);
         }
         
-        /*for (int k = 0; k < f; ++k)
+        for (int k = 0; k < f; ++k)
         {
             this.dropItem(ItemMod.raptorclaw, 1);
-        }*/
+        }
         
 
         if (this.isBurning())
