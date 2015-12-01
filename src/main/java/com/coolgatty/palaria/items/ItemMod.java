@@ -339,7 +339,7 @@ public class ItemMod
 		endermitepickaxehead = new Item().setUnlocalizedName("endermitepickaxehead").setCreativeTab(CreativeTabs.tabTools);
 		
 		//Other
-		flitherclock = new Item().setUnlocalizedName("raptorclaw").setCreativeTab(CreativeTabs.tabTools);
+		flitherclock = new Item().setUnlocalizedName("flitherclock").setCreativeTab(CreativeTabs.tabTools);
 		
 		/*Drops & their derivatives*/
 		raptorclaw = new Item().setUnlocalizedName("raptorclaw").setCreativeTab(CreativeTabs.tabMaterials);

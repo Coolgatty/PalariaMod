@@ -1,9 +1,13 @@
 package com.coolgatty.palaria.mobs;
 
 
+import com.google.common.base.Predicate;
+
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -18,6 +22,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -40,19 +45,18 @@ public class EntityCowasaurus extends EntityMob
         ((PathNavigateGround)this.getNavigator()).func_179688_b(true);
         ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
         this.tasks.addTask(2, this.field_175455_a);
-        /*this.tasks.addTask(2, new EntityAIAvoidEntity(this, EntityEnderWalker.class, 16.0F, 0.4F, 0.35F));*/
         this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
-        /*this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
+        this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
         {
             public boolean func_179958_a(Entity p_179958_1_)
             {
-                return p_179958_1_ instanceof EntityEndermite;
+                return p_179958_1_ instanceof EntityEnderWalker;
             }
             public boolean apply(Object p_apply_1_)
             {
                 return this.func_179958_a((Entity)p_apply_1_);
             }
-        }, 6.0F, this.moveSpeed, this.moveSpeed + 0.2D));*/
+        }, 6.0F, this.moveSpeed, this.moveSpeed + 0.2D));
         this.tasks.addTask(4, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, false));
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, EntityRaptorChicken.class, this.moveSpeed, true));
         this.tasks.addTask(6, new EntityAIAttackOnCollide(this, EntitySkeleton.class, this.moveSpeed, false));

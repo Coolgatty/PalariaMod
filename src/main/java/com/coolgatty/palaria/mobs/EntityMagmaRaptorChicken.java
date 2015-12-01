@@ -1,5 +1,6 @@
 package com.coolgatty.palaria.mobs;
 
+import com.coolgatty.palaria.items.ItemMod;
 import com.google.common.base.Predicate;
 
 import net.minecraft.block.Block;
@@ -222,7 +223,7 @@ public class EntityMagmaRaptorChicken extends EntityMob
         switch (this.rand.nextInt(2))
         {
             case 0:
-                this.dropItem(Items.wooden_axe, 1);
+                this.dropItem(ItemMod.rawcrawmite, 1);
                 break;
         }
     }

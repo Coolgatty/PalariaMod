@@ -1115,14 +1115,14 @@ public class RecipesMod
 		
 		
 		//Other
-		GameRegistry.addRecipe(new ItemStack(ItemMod.stickyraptorclaw), new Object []
+		GameRegistry.addRecipe(new ItemStack(ItemMod.flitherclock), new Object []
 		{
 			"XZX",
 			"ZYZ",
 			"XZX",
 			'X', Items.flint_and_steel, 'Y', Items.clock, 'Z', ItemMod.narriteingot
 		});
-		GameRegistry.addRecipe(new ItemStack(ItemMod.stickyraptorclaw), new Object []
+		GameRegistry.addRecipe(new ItemStack(ItemMod.narriteingot), new Object []
 		{
 			"YX",
 			'X', ItemMod.sarliteingot, 'Y', ItemMod.flamiteingot
@@ -1136,6 +1136,7 @@ public class RecipesMod
 			"XXX",
 			'X', ItemMod.creeptileeye, 'Y', ItemMod.raptorclaw
 		});
+		
 		
 		/**Smelting**/
 		GameRegistry.addSmelting(ItemMod.endermitechunk, new ItemStack(ItemMod.refinedendermitechunk), 5.0F);

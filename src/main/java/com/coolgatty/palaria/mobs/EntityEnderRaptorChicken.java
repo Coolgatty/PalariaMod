@@ -554,11 +554,6 @@ public class EntityEnderRaptorChicken extends EntityMob
         return this.dataWatcher.getWatchableObjectByte(18) > 0;
     }
 
-    protected Item getDropItem()
-    {
-        return Items.ender_pearl;
-    }
-
 
     /**
      * Returns the item ID for the item the mob drops on death.
