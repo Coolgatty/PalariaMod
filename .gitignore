@@ -1,3 +1,4 @@
+
 *.class
 "C:\Users\Antonio Perez\Desktop\Minecraft Tools\Not Really\Minecraft Modding\Forge\.gradle"
 # Mobile Tools for Java (J2ME)
@@ -22,3 +23,26 @@ build.gradle
 *.bat
 gradlew
 bin
+
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run

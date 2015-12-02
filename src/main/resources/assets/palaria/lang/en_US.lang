@@ -188,15 +188,15 @@ item.endermitepickaxehead.name=Endermite Pickaxe Head
 item.endermiteshovelhead.name=Endermite Shovel Head
 item.endermiteswordhead.name=Endermite Sword Head
 
-entity.Creeptile.name=Creeptile
-entity.Cowasaurus.name=Cowasaurus
-entity.RaptorChicken.name=Raptor Chicken
-entity.MagmaRaptorChicken.name=Magma Raptor Chicken
-entity.EnderRaptorChicken.name=Ender Raptor Chicken
-entity.EnderWalker.name=Ender Walker
-entity.StoneEndermite.name=Stone Endermite
-entity.EndEndermite.name=End Endermite
-entity.Nimatin.name=Nimatin
+entity.palaria.Creeptile.name=Creeptile
+entity.palaria.Cowasaurus.name=Cowasaurus
+entity.palaria.RaptorChicken.name=Raptor Chicken
+entity.palaria.MagmaRaptorChicken.name=Magma Raptor Chicken
+entity.palaria.EnderRaptorChicken.name=Ender Raptor Chicken
+entity.palaria.EnderWalker.name=Ender Walker
+entity.palaria.StoneEndermite.name=Stone Endermite
+entity.palaria.EndEndermite.name=End Endermite
+entity.palaria.Nimatin.name=Nimatin
 
 item.doomspoon.name=Spoon Of Doom
 item.crawmitesword.name=Crawmite Sword

@@ -24,7 +24,7 @@ public class MobRegistry
 	public static void registerEntity()
 	{
 		//Creeptile
-		EntityRegistry.registerModEntity(EntityCreeptile.class, "Creeptile", Palaria.creeptileID, Reference.MODID, 80, 3, true);
+		EntityRegistry.registerModEntity(EntityCreeptile.class, "Creeptile", Palaria.creeptileID, Reference.MODID, 80, 3, true, 0x23DE55, 0x000000);
 				EntityRegistry.addSpawn(EntityCreeptile.class, 10, 2, 3, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
@@ -61,10 +61,9 @@ public class MobRegistry
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills);
-		EntityList.addMapping(EntityCreeptile.class, "Creeptile", Palaria.creeptileID, 0x23DE55, 0x000000);
 		
 		//Cowasaurus
-		EntityRegistry.registerModEntity(EntityCowasaurus.class, "Cowasaurus", Palaria.cowasaurusID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityCowasaurus.class, "Cowasaurus", Palaria.cowasaurusID, Reference.MODID, 100, 3, true, 0x4F3D2B, 0x8C8282);
 				EntityRegistry.addSpawn(EntityCowasaurus.class, 5, 2, 3, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach,
 				BiomeGenBase.forest,
@@ -91,10 +90,9 @@ public class MobRegistry
 				BiomeGenBase.savannaPlateau,
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga);
-		EntityList.addMapping(EntityCowasaurus.class, "Cowasaurus", Palaria.cowasaurusID, 0x4F3D2B, 0x8C8282);
 		
 		//Raptor Chicken
-		EntityRegistry.registerModEntity(EntityRaptorChicken.class, "RaptorChicken", Palaria.raptorchickenID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityRaptorChicken.class, "RaptorChicken", Palaria.raptorchickenID, Reference.MODID, 100, 3, true, 0xCFB8B8, 0xD11515);
 		EntityRegistry.addSpawn(EntityRaptorChicken.class, 12, 4, 5, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
@@ -131,22 +129,19 @@ public class MobRegistry
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills);
-		EntityList.addMapping(EntityRaptorChicken.class, "RaptorChicken", Palaria.raptorchickenID, 0xCFB8B8, 0xD11515);
 		
 		//Magma Raptor Chicken
-		EntityRegistry.registerModEntity(EntityMagmaRaptorChicken.class, "MagmaRaptorChicken", Palaria.magmaraptorchickenID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityMagmaRaptorChicken.class, "MagmaRaptorChicken", Palaria.magmaraptorchickenID, Reference.MODID, 100, 3, true, 0xFFD000, 0xD60400);
 		EntityRegistry.addSpawn(EntityMagmaRaptorChicken.class, 5, 2, 5, EnumCreatureType.MONSTER, 
 				BiomeGenBase.hell);
-		EntityList.addMapping(EntityMagmaRaptorChicken.class, "MagmaRaptorChicken", Palaria.magmaraptorchickenID, 0xFFD000, 0xD60400);
 		
 		//Ender Raptor Chicken
-		EntityRegistry.registerModEntity(EntityEnderRaptorChicken.class, "EnderRaptorChicken", Palaria.enderraptorchickenID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityEnderRaptorChicken.class, "EnderRaptorChicken", Palaria.enderraptorchickenID, Reference.MODID, 100, 3, true, 0x000000, 0xD11515);
 		EntityRegistry.addSpawn(EntityEnderRaptorChicken.class, 3, 2, 5, EnumCreatureType.MONSTER, 
 				BiomeGenBase.sky);
-		EntityList.addMapping(EntityEnderRaptorChicken.class, "EnderRaptorChicken", Palaria.enderraptorchickenID, 0x000000, 0xD11515);
 		
 		//Stone Endermite
-		EntityRegistry.registerModEntity(EntityStoneEndermite.class, "StoneEndermite", Palaria.stoneendermiteID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityStoneEndermite.class, "StoneEndermite", Palaria.stoneendermiteID, Reference.MODID, 100, 3, true, 0x000000, 0xBABABA);
 		EntityRegistry.addSpawn(EntityStoneEndermite.class, 2, 1, 2, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
@@ -183,16 +178,14 @@ public class MobRegistry
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills);
-		EntityList.addMapping(EntityStoneEndermite.class, "StoneEndermite", Palaria.stoneendermiteID, 0x000000, 0xBABABA);
 		
 		//End Endermite
-		EntityRegistry.registerModEntity(EntityEndEndermite.class, "EndEndermite", Palaria.endendermiteID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityEndEndermite.class, "EndEndermite", Palaria.endendermiteID, Reference.MODID, 100, 3, true, 0x000000, 0xD4D40F);
 		EntityRegistry.addSpawn(EntityEndEndermite.class, 2, 2, 5, EnumCreatureType.MONSTER, 
 				BiomeGenBase.sky);
-		EntityList.addMapping(EntityEndEndermite.class, "EndEndermite", Palaria.endendermiteID, 0x000000, 0xD4D40F);
 		
 		//Ender Walker
-		EntityRegistry.registerModEntity(EntityEnderWalker.class, "EnderWalker", Palaria.enderwalkerID, Reference.MODID, 50, 5, true);
+		EntityRegistry.registerModEntity(EntityEnderWalker.class, "EnderWalker", Palaria.enderwalkerID, Reference.MODID, 50, 5, true, 0x000000, 0xA00000);
 		EntityRegistry.addSpawn(EntityEnderWalker.class, 2, 1, 2, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
@@ -230,10 +223,9 @@ public class MobRegistry
 				BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills,
 				BiomeGenBase.sky);
-		EntityList.addMapping(EntityEnderWalker.class, "EnderWalker", Palaria.enderwalkerID, 0x000000, 0xA00000);
 		
 		//Nimatin
-		EntityRegistry.registerModEntity(EntityNimatin.class, "Nimatin", Palaria.nimatinID, Reference.MODID, 100, 3, true);
+		EntityRegistry.registerModEntity(EntityNimatin.class, "Nimatin", Palaria.nimatinID, Reference.MODID, 100, 3, true, 0xD1AB00, 0x6E6E6E);
 		/**		EntityRegistry.addSpawn(EntityNimatin.class, 1, 1, 1, EnumCreatureType.MONSTER, 
 				BiomeGenBase.beach, 
 				BiomeGenBase.extremeHills, 
@@ -270,6 +262,5 @@ public class MobRegistry
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills);				**/
-		EntityList.addMapping(EntityNimatin.class, "Nimatin", Palaria.nimatinID, 0xD1AB00, 0x6E6E6E);
 	}
 }
