@@ -1,6 +1,7 @@
 Palaria
 =========
 
+
 The official repository for the Palaria Minecraft mod
 
 Minecraft Forum thread: [Palaria](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1287343-discontinued-1-5-2-forge-smp-palaria-mod-v2-6-0)
