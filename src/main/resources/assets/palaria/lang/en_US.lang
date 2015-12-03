@@ -35,6 +35,7 @@ tile.illiwonore.name=Illiwon Ore
 tile.afnamiteore.name=Afnamite Ore
 tile.endermiteore.name=Endermite Ore
 tile.endendermiteore.name=Endermite Ore
+tile.neliumore.name=Nelium Ore
 
 item.sarliteingot.name=Sarlite Ingot
 item.flamiteingot.name=Flamite Ingot
@@ -42,6 +43,7 @@ item.claritegem.name=Clarite Gem
 item.illiwongem.name=Illiwon Gem
 item.afnamitegem.name=Afnamite Gem
 item.endermiteingot.name=Endermite Ingot
+item.nelium.name=Nelium
 
 item.sarlitesword.name=Sarlite Sword
 item.sarlitepick.name=Sarlite Pickaxe

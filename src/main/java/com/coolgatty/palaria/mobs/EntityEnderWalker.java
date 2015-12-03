@@ -49,10 +49,15 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-    
 public class EntityEnderWalker extends EntityMob
 {
     
+    public boolean field_70885_d = false;
+    public float field_70886_e = 0.0F;
+    public float destPos = 0.0F;
+    public float field_70884_g;
+    public float field_70888_h;
+    public float field_70889_i = 1.0F;
     private int teleportDelay = 0;
     private int field_70826_g = 0;
 	private double moveSpeed;
@@ -114,7 +119,7 @@ public class EntityEnderWalker extends EntityMob
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(640.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(64.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.30D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(80D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(30.0D);

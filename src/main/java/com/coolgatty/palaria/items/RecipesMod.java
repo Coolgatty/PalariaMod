@@ -1041,6 +1041,7 @@ public class RecipesMod
 		GameRegistry.addSmelting(BlockMod.flamiteore, new ItemStack(ItemMod.flamiteingot), 5.0F);
 		GameRegistry.addSmelting(BlockMod.endermiteore, new ItemStack(ItemMod.endermiteingot), 5.0F);
 		GameRegistry.addSmelting(BlockMod.endendermiteore, new ItemStack(ItemMod.endermiteingot), 5.0F);
+		GameRegistry.addSmelting(BlockMod.neliumore, new ItemStack(ItemMod.nelium), 5.0F);
 		
 		  ///////////////////////////
 		 //Special//////////////////

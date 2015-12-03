@@ -25,6 +25,10 @@ public class BlockMod
 	public static Block afnamiteore;
 	public static Block endermiteore;
 	public static Block endendermiteore;
+	public static Block neliumore;
+	
+	//Logs and wood
+	
 	
 	public static void init()
 	{
@@ -36,6 +40,7 @@ public class BlockMod
 		afnamiteore = new BlockAfnamiteOre();
 		endermiteore = new BlockEndermiteOre();
 		endendermiteore = new BlockEndEndermiteOre();
+		neliumore = new BlockNeliumOre();
 	}
 	
 	public static void register()
@@ -48,6 +53,7 @@ public class BlockMod
 		RegisterHelper.registerBlock(afnamiteore);
 		RegisterHelper.registerBlock(endermiteore);
 		RegisterHelper.registerBlock(endendermiteore);
+		RegisterHelper.registerBlock(neliumore);
 	}
 	
 	public static void registerRenders ()
@@ -59,6 +65,7 @@ public class BlockMod
 		registerRender(afnamiteore);
 		registerRender(endermiteore);
 		registerRender(endendermiteore);
+		registerRender(neliumore);
 	}
 	
 	public static void registerRender(Block block)

@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import com.coolgatty.palaria.blocks.BlockFlamiteOre;
 import com.coolgatty.palaria.blocks.BlockMod;
 import com.coolgatty.palaria.blocks.BlockSarliteOre;
+import com.coolgatty.palaria.help.PalariaFuelHandler;
 import com.coolgatty.palaria.help.Reference;
 import com.coolgatty.palaria.help.RegisterHelper;
 import com.coolgatty.palaria.items.ItemMod;
@@ -12,6 +13,7 @@ import com.coolgatty.palaria.items.RecipesMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.MobRegistry;
 import com.coolgatty.palaria.proxy.CommonProxy;
+import com.coolgatty.palaria.world.BiomeRegistry;
 import com.coolgatty.palaria.world.WorldGenOres;
 
 import net.minecraft.block.Block;
@@ -53,6 +55,9 @@ public class Palaria
 	public static int enderwalkerID;
 	public static int nimatinID;
 	
+	public static int skyforestBiomeID;
+	public static int bloodforestBiomeID;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -69,6 +74,9 @@ public class Palaria
 			endendermiteID = config.get("Entity", "End Endermite", 907).getInt();
 			enderwalkerID = config.get("Entity", "Ender Walker", 908).getInt();
 			nimatinID = config.get("Entity", "Nimatin", 909).getInt();
+			
+			skyforestBiomeID = config.get("Biome", "Sky Forest", 137).getInt();
+			bloodforestBiomeID = config.get("Biome", "Blood Forest", 138).getInt();
 			config.save();
 		} finally
 		{
@@ -80,6 +88,9 @@ public class Palaria
 		
 		//World
         WorldGenOres.init();
+        
+        /**Biomes**/
+        BiomeRegistry.init();
         
         //Blocks
 		BlockMod.init();		
@@ -94,6 +105,9 @@ public class Palaria
 		
 		//Recipes
 		RecipesMod.addRecipes();
+		
+		//Handlers
+		GameRegistry.registerFuelHandler(new PalariaFuelHandler());
 		
 	}
 	 

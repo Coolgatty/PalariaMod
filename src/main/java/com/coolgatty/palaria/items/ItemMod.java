@@ -99,6 +99,7 @@ public class ItemMod
 	public static Item illiwongem;
 	public static Item afnamitegem;
 	public static Item endermiteingot;
+	public static Item nelium;
 	
 	public static Item narriteingot;
 	
@@ -353,6 +354,7 @@ public class ItemMod
 		illiwongem = new Item().setUnlocalizedName("illiwongem").setCreativeTab(CreativeTabs.tabMaterials);
 		afnamitegem = new Item().setUnlocalizedName("afnamitegem").setCreativeTab(CreativeTabs.tabMaterials);
 		endermiteingot = new Item().setUnlocalizedName("endermiteingot").setCreativeTab(CreativeTabs.tabMaterials);
+		nelium = new Item().setUnlocalizedName("nelium").setCreativeTab(CreativeTabs.tabMaterials);
 		
 		narriteingot = new Item().setUnlocalizedName("narriteingot").setCreativeTab(CreativeTabs.tabMaterials);
 		
@@ -583,6 +585,7 @@ public class ItemMod
 		RegisterHelper.registerItem(illiwongem);
 		RegisterHelper.registerItem(afnamitegem);
 		RegisterHelper.registerItem(endermiteingot);
+		RegisterHelper.registerItem(nelium);
 		
 		RegisterHelper.registerItem(narriteingot);
 		
@@ -816,6 +819,7 @@ public class ItemMod
 		registerRender(illiwongem);
 		registerRender(afnamitegem);
 		registerRender(endermiteingot);
+		registerRender(nelium);
 		
 		registerRender(narriteingot);
 		

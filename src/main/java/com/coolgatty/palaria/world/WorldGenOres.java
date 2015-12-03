@@ -81,6 +81,15 @@ public class WorldGenOres implements IWorldGenerator
 
 	            new WorldGenMinable(BlockMod.endermiteore.getDefaultState(), 3).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
 	        }
+	        
+	        for (int i = 0; i < 5; i++) 
+	        {
+	            int Xcoord = x + random.nextInt(16);
+	            int Zcoord = z + random.nextInt(16);
+	            int Ycoord = random.nextInt(30);
+
+	            new WorldGenMinable(BlockMod.neliumore.getDefaultState(), 10).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
+	        }
 	    }
 	    
 	    private void generateNether(World world, Random random, int x, int z) 
