@@ -40,7 +40,7 @@ public class BlockClariteOre extends Block
 
             if (this == BlockMod.clariteore)
             {
-                j = MathHelper.getRandomIntegerInRange(rand, 2, 8);
+                j = MathHelper.getRandomIntegerInRange(rand, 2, 4);
             }
             
             return j;

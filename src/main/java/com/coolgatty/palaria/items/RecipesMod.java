@@ -1,7 +1,9 @@
 package com.coolgatty.palaria.items;
 
 import com.coolgatty.palaria.blocks.BlockMod;
+import com.coolgatty.palaria.blocks.BlockModPlanks;
 
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -428,6 +430,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.sarliteshovelhead, 'Y', ItemMod.sarlitepickaxehead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.sarliteblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.sarliteingot,
+		});
 		
 		/**************************************************************/
 		/*Flamite*/
@@ -548,6 +557,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.flamiteshovelhead, 'Y', ItemMod.flamitepickaxehead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.flamiteblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.flamiteingot,
 		});
 		
 		/**************************************************************/
@@ -670,6 +686,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.clariteshovelhead, 'Y', ItemMod.claritepickaxehead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.clariteblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.claritegem,
+		});
 		
 		/**************************************************************/
 		/*Illiwon*/
@@ -790,6 +813,13 @@ public class RecipesMod
 			"Y",
 			"Z",
 			'X', ItemMod.illiwonshovelhead, 'Y', ItemMod.illiwonpickaxehead, 'Z', Items.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.illiwonblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.illiwongem,
 		});
 		
 		/**************************************************************/
@@ -912,6 +942,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.afnamiteshovelhead, 'Y', ItemMod.afnamitepickaxehead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.afnamiteblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.afnamitegem,
+		});
 		
 		/**************************************************************/
 		/*Endermite*/
@@ -1033,6 +1070,13 @@ public class RecipesMod
 			"Z",
 			'X', ItemMod.endermiteshovelhead, 'Y', ItemMod.endermitepickaxehead, 'Z', Items.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.endermiteblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.endermiteingot,
+		});
 		
 		
 		
@@ -1073,6 +1117,43 @@ public class RecipesMod
 			"XXX",
 			"XXX",
 			'X', ItemMod.refinedendermitequartz
+		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.narriteblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.narriteingot,
+		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.neliumblock), new Object []
+		{
+			"XXX",
+			"XXX",
+			"XXX",
+			'X', ItemMod.nelium,
+		});
+		GameRegistry.addRecipe(new ItemStack(BlockMod.modplank, 4, BlockModPlanks.EnumType.REDWOOD.getMetadata()), new Object []
+		{
+			"X",
+			'X', new ItemStack(BlockMod.modlog, 1, BlockModPlanks.EnumType.REDWOOD.getMetadata())
+		});
+		GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object []
+		{
+			"X",
+			"X",
+			'X', BlockMod.modplank
+		});
+		GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object []
+		{
+			"X",
+			"Y",
+			'X', BlockMod.modplank, 'Y', Blocks.planks
+		});
+		GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object []
+		{
+			"Y",
+			"X",
+			'X', BlockMod.modplank, 'Y', Blocks.planks
 		});
 		
 		/***********************************************************************************************************/

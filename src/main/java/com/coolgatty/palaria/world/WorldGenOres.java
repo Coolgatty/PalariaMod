@@ -86,7 +86,7 @@ public class WorldGenOres implements IWorldGenerator
 	        {
 	            int Xcoord = x + random.nextInt(16);
 	            int Zcoord = z + random.nextInt(16);
-	            int Ycoord = random.nextInt(30);
+	            int Ycoord = random.nextInt(40);
 
 	            new WorldGenMinable(BlockMod.neliumore.getDefaultState(), 10).generate(world,random, new BlockPos(Xcoord,Ycoord,Zcoord));
 	        }
@@ -116,7 +116,7 @@ public class WorldGenOres implements IWorldGenerator
 	        }
 	    }
 	    
-	    public static void init()
+	    public static void preInit()
 	    {
 	        registerWorldGen();
 	    }

@@ -37,6 +37,15 @@ tile.endermiteore.name=Endermite Ore
 tile.endendermiteore.name=Endermite Ore
 tile.neliumore.name=Nelium Ore
 
+tile.sarliteblock.name=Sarlite Block
+tile.flamiteblock.name=Flamite Block
+tile.clariteblock.name=Clarite Block
+tile.illiwonblock.name=Illiwon Block
+tile.afnamiteblock.name=Afnamite Block
+tile.endermiteblock.name=Endermite Block
+tile.narriteblock.name=Narrite Block
+tile.neliumblock.name=Nelium Block
+
 item.sarliteingot.name=Sarlite Ingot
 item.flamiteingot.name=Flamite Ingot
 item.claritegem.name=Clarite Gem
@@ -222,3 +231,5 @@ item.creeptileeye.name=Creeptile Eye
 
 item.narriteingot.name=Narrite Ingot
 item.flitherclock.name=Flither Clock
+
+tile.modlog.redwood.name=Redwood Wood

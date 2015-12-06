@@ -6,6 +6,8 @@ import com.coolgatty.palaria.Palaria;
 import com.coolgatty.palaria.blocks.BlockMod;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -28,11 +30,12 @@ public class BiomeGenBloodForest extends BiomeGenBase
 		this.theBiomeDecorator.deadBushPerChunk = 1;
 		this.theBiomeDecorator.grassPerChunk = 5;
 		this.theBiomeDecorator.treesPerChunk = 4;
+		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityWolf.class, 5, 4, 4));
 	}
 
 	public int getGrassColorAtPos(BlockPos p_180627_1_)
 	{
-		return 0xDB9600;
+		return 0xDF8225;
 	}
 	
 	

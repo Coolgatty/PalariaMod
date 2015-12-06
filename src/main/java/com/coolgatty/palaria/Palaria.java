@@ -42,6 +42,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Palaria 
 {
+	@Instance(Reference.MODID)
+	public static Palaria instance;
+	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
@@ -55,8 +58,8 @@ public class Palaria
 	public static int enderwalkerID;
 	public static int nimatinID;
 	
-	public static int skyforestBiomeID;
-	public static int bloodforestBiomeID;
+	public static int skyforestID;
+	public static int bloodforestID;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -75,8 +78,8 @@ public class Palaria
 			enderwalkerID = config.get("Entity", "Ender Walker", 908).getInt();
 			nimatinID = config.get("Entity", "Nimatin", 909).getInt();
 			
-			skyforestBiomeID = config.get("Biome", "Sky Forest", 137).getInt();
-			bloodforestBiomeID = config.get("Biome", "Blood Forest", 138).getInt();
+			skyforestID = config.get("Biome", "Sky Forest", 137).getInt();
+			bloodforestID = config.get("Biome", "Blood Forest", 138).getInt();
 			config.save();
 		} finally
 		{
@@ -87,17 +90,17 @@ public class Palaria
 		}
 		
 		//World
-        WorldGenOres.init();
+        WorldGenOres.preInit();
         
         /**Biomes**/
-        BiomeRegistry.init();
+        BiomeRegistry.preInit();
         
         //Blocks
-		BlockMod.init();		
+		BlockMod.preInit();		
 		BlockMod.register();
 		
 		//Items
-		ItemMod.init();
+		ItemMod.preInit();
 		ItemMod.register();
 		
 		//Mobs

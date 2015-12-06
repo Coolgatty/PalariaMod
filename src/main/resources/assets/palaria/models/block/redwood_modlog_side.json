@@ -1,0 +1,7 @@
+{
+    "parent": "block/column_side",
+    "textures": {
+        "end": "palaria:blocks/redwood_top",
+        "side": "palaria:blocks/redwood_modlog"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y,variant=redwood":  { "model": "palaria:redwood_modlog" },
+        "axis=z,variant=redwood":   { "model": "palaria:redwood_modlog_side" },
+        "axis=x,variant=redwood":   { "model": "palaria:redwood_modlog_side", "y": 90 },
+        "axis=none,variant=redwood": { "model": "palaria:redwood_bark" }
+    }
+}

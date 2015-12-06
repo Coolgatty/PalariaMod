@@ -55,7 +55,8 @@ public class ItemBattleAxe extends ItemTool
         else
         {
             Material material = block.getMaterial();
-            return material != Material.wood && material != Material.plants && material != Material.vine && material != Material.coral && material != Material.leaves && material != Material.gourd? super.getStrVsBlock(stack, block) : this.efficiencyOnProperMaterial;
+            return material != Material.wood && material != Material.plants && material != Material.vine && material != Material.coral && material 
+            != Material.leaves && material != Material.gourd? super.getStrVsBlock(stack, block) : this.efficiencyOnProperMaterial;
         }
     }
 

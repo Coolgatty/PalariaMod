@@ -40,7 +40,7 @@ public class BlockIlliwonOre extends Block
 
             if (this == BlockMod.illiwonore)
             {
-                j = MathHelper.getRandomIntegerInRange(rand, 2, 8);
+                j = MathHelper.getRandomIntegerInRange(rand, 2, 6);
             }
             
             return j;

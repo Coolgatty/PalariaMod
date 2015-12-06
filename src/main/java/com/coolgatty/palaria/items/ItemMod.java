@@ -280,7 +280,7 @@ public class ItemMod
 	static ToolMaterial EnderriteSword = EnumHelper.addToolMaterial("ENDERRITE", 3, 8000, 1250.0F, 40, 3);
 	
 	
-	public static void init()
+	public static void preInit()
 	{
 		
 		//Items
@@ -749,238 +749,233 @@ public class ItemMod
 	{
 		
 		//Items
-		registerRender(woodswordhead);
-		registerRender(woodaxehead);
-		registerRender(woodshovelhead);
-		registerRender(woodpickaxehead);
+		RegisterHelper.registerRender(woodswordhead);
+		RegisterHelper.registerRender(woodaxehead);
+		RegisterHelper.registerRender(woodshovelhead);
+		RegisterHelper.registerRender(woodpickaxehead);
 		
-		registerRender(stoneswordhead);
-		registerRender(stoneaxehead);
-		registerRender(stoneshovelhead);
-		registerRender(stonepickaxehead);
+		RegisterHelper.registerRender(stoneswordhead);
+		RegisterHelper.registerRender(stoneaxehead);
+		RegisterHelper.registerRender(stoneshovelhead);
+		RegisterHelper.registerRender(stonepickaxehead);
 		
-		registerRender(ironswordhead);
-		registerRender(ironaxehead);
-		registerRender(ironshovelhead);
-		registerRender(ironpickaxehead);
+		RegisterHelper.registerRender(ironswordhead);
+		RegisterHelper.registerRender(ironaxehead);
+		RegisterHelper.registerRender(ironshovelhead);
+		RegisterHelper.registerRender(ironpickaxehead);
 		
-		registerRender(clariteswordhead);
-		registerRender(clariteaxehead);
-		registerRender(clariteshovelhead);
-		registerRender(claritepickaxehead);
+		RegisterHelper.registerRender(clariteswordhead);
+		RegisterHelper.registerRender(clariteaxehead);
+		RegisterHelper.registerRender(clariteshovelhead);
+		RegisterHelper.registerRender(claritepickaxehead);
 		
-		registerRender(diamondswordhead);
-		registerRender(diamondaxehead);
-		registerRender(diamondshovelhead);
-		registerRender(diamondpickaxehead);
+		RegisterHelper.registerRender(diamondswordhead);
+		RegisterHelper.registerRender(diamondaxehead);
+		RegisterHelper.registerRender(diamondshovelhead);
+		RegisterHelper.registerRender(diamondpickaxehead);
 		
-		registerRender(goldswordhead);
-		registerRender(goldaxehead);
-		registerRender(goldshovelhead);
-		registerRender(goldpickaxehead);
+		RegisterHelper.registerRender(goldswordhead);
+		RegisterHelper.registerRender(goldaxehead);
+		RegisterHelper.registerRender(goldshovelhead);
+		RegisterHelper.registerRender(goldpickaxehead);
 		
-		registerRender(sarliteswordhead);
-		registerRender(sarliteaxehead);
-		registerRender(sarliteshovelhead);
-		registerRender(sarlitepickaxehead);
+		RegisterHelper.registerRender(sarliteswordhead);
+		RegisterHelper.registerRender(sarliteaxehead);
+		RegisterHelper.registerRender(sarliteshovelhead);
+		RegisterHelper.registerRender(sarlitepickaxehead);
 		
-		registerRender(flamiteswordhead);
-		registerRender(flamiteaxehead);
-		registerRender(flamiteshovelhead);
-		registerRender(flamitepickaxehead);
+		RegisterHelper.registerRender(flamiteswordhead);
+		RegisterHelper.registerRender(flamiteaxehead);
+		RegisterHelper.registerRender(flamiteshovelhead);
+		RegisterHelper.registerRender(flamitepickaxehead);
 		
-		registerRender(illiwonswordhead);
-		registerRender(illiwonaxehead);
-		registerRender(illiwonshovelhead);
-		registerRender(illiwonpickaxehead);
+		RegisterHelper.registerRender(illiwonswordhead);
+		RegisterHelper.registerRender(illiwonaxehead);
+		RegisterHelper.registerRender(illiwonshovelhead);
+		RegisterHelper.registerRender(illiwonpickaxehead);
 		
-		registerRender(afnamiteswordhead);
-		registerRender(afnamiteaxehead);
-		registerRender(afnamiteshovelhead);
-		registerRender(afnamitepickaxehead);
+		RegisterHelper.registerRender(afnamiteswordhead);
+		RegisterHelper.registerRender(afnamiteaxehead);
+		RegisterHelper.registerRender(afnamiteshovelhead);
+		RegisterHelper.registerRender(afnamitepickaxehead);
 		
-		registerRender(endermiteswordhead);
-		registerRender(endermiteaxehead);
-		registerRender(endermiteshovelhead);
-		registerRender(endermitepickaxehead);
+		RegisterHelper.registerRender(endermiteswordhead);
+		RegisterHelper.registerRender(endermiteaxehead);
+		RegisterHelper.registerRender(endermiteshovelhead);
+		RegisterHelper.registerRender(endermitepickaxehead);
 		
 		//Other
-		registerRender(flitherclock);
+		RegisterHelper.registerRender(flitherclock);
 		
 		/**Drops & their derivatives**/
-		registerRender(raptorclaw);
-		registerRender(stickyraptorclaw);
-		registerRender(creeptileeye);
+		RegisterHelper.registerRender(raptorclaw);
+		RegisterHelper.registerRender(stickyraptorclaw);
+		RegisterHelper.registerRender(creeptileeye);
 		
 		//Materials
-		registerRender(sarliteingot);
-		registerRender(flamiteingot);
-		registerRender(claritegem);
-		registerRender(illiwongem);
-		registerRender(afnamitegem);
-		registerRender(endermiteingot);
-		registerRender(nelium);
+		RegisterHelper.registerRender(sarliteingot);
+		RegisterHelper.registerRender(flamiteingot);
+		RegisterHelper.registerRender(claritegem);
+		RegisterHelper.registerRender(illiwongem);
+		RegisterHelper.registerRender(afnamitegem);
+		RegisterHelper.registerRender(endermiteingot);
+		RegisterHelper.registerRender(nelium);
 		
-		registerRender(narriteingot);
+		RegisterHelper.registerRender(narriteingot);
 		
-		registerRender(endermiteshard);
-		registerRender(endermitechunk);
-		registerRender(refinedendermitechunk);
-		registerRender(endermitequartz);
-		registerRender(refinedendermitequartz);
-		registerRender(rawcrawmite);
-		registerRender(crawmite);
-		registerRender(endermitegem);
-		registerRender(refinedendermitegem);
-		registerRender(enderrite);
+		RegisterHelper.registerRender(endermiteshard);
+		RegisterHelper.registerRender(endermitechunk);
+		RegisterHelper.registerRender(refinedendermitechunk);
+		RegisterHelper.registerRender(endermitequartz);
+		RegisterHelper.registerRender(refinedendermitequartz);
+		RegisterHelper.registerRender(rawcrawmite);
+		RegisterHelper.registerRender(crawmite);
+		RegisterHelper.registerRender(endermitegem);
+		RegisterHelper.registerRender(refinedendermitegem);
+		RegisterHelper.registerRender(enderrite);
 		
 		//Tools
-		registerRender(sarliteshovel);
-		registerRender(sarlitepick);
-		registerRender(sarliteaxe);
-		registerRender(sarlitehoe);
+		RegisterHelper.registerRender(sarliteshovel);
+		RegisterHelper.registerRender(sarlitepick);
+		RegisterHelper.registerRender(sarliteaxe);
+		RegisterHelper.registerRender(sarlitehoe);
 		
-		registerRender(flamiteshovel);
-		registerRender(flamitepick);
-		registerRender(flamiteaxe);
-		registerRender(flamitehoe);
+		RegisterHelper.registerRender(flamiteshovel);
+		RegisterHelper.registerRender(flamitepick);
+		RegisterHelper.registerRender(flamiteaxe);
+		RegisterHelper.registerRender(flamitehoe);
 		
-		registerRender(clariteshovel);
-		registerRender(claritepick);
-		registerRender(clariteaxe);
-		registerRender(claritehoe);
+		RegisterHelper.registerRender(clariteshovel);
+		RegisterHelper.registerRender(claritepick);
+		RegisterHelper.registerRender(clariteaxe);
+		RegisterHelper.registerRender(claritehoe);
 		
-		registerRender(illiwonshovel);
-		registerRender(illiwonpick);
-		registerRender(illiwonaxe);
-		registerRender(illiwonhoe);
+		RegisterHelper.registerRender(illiwonshovel);
+		RegisterHelper.registerRender(illiwonpick);
+		RegisterHelper.registerRender(illiwonaxe);
+		RegisterHelper.registerRender(illiwonhoe);
 		
-		registerRender(afnamiteshovel);
-		registerRender(afnamitepick);
-		registerRender(afnamiteaxe);
-		registerRender(afnamitehoe);
+		RegisterHelper.registerRender(afnamiteshovel);
+		RegisterHelper.registerRender(afnamitepick);
+		RegisterHelper.registerRender(afnamiteaxe);
+		RegisterHelper.registerRender(afnamitehoe);
 		
-		registerRender(endermiteshovel);
-		registerRender(endermitepick);
-		registerRender(endermiteaxe);
-		registerRender(endermitehoe);
+		RegisterHelper.registerRender(endermiteshovel);
+		RegisterHelper.registerRender(endermitepick);
+		RegisterHelper.registerRender(endermiteaxe);
+		RegisterHelper.registerRender(endermitehoe);
 		
 		//Swords
-		registerRender(sarlitesword);
-		registerRender(flamitesword);
-		registerRender(claritesword);
-		registerRender(illiwonsword);
-		registerRender(afnamitesword);
-		registerRender(endermitesword);
+		RegisterHelper.registerRender(sarlitesword);
+		RegisterHelper.registerRender(flamitesword);
+		RegisterHelper.registerRender(claritesword);
+		RegisterHelper.registerRender(illiwonsword);
+		RegisterHelper.registerRender(afnamitesword);
+		RegisterHelper.registerRender(endermitesword);
 		
 		/**Specials**/
-		registerRender(crawmitesword);
-		registerRender(doomspoon);
+		RegisterHelper.registerRender(crawmitesword);
+		RegisterHelper.registerRender(doomspoon);
 		
-		registerRender(refinedendermitesword);
-		registerRender(enderlitesword);
-		registerRender(enderritesword);
+		RegisterHelper.registerRender(refinedendermitesword);
+		RegisterHelper.registerRender(enderlitesword);
+		RegisterHelper.registerRender(enderritesword);
 		
 		//Scythe Blades
-		registerRender(woodblade);
-		registerRender(stoneblade);
-		registerRender(ironblade);
-		registerRender(diamondblade);
-		registerRender(goldblade);
-		registerRender(sarliteblade);
-		registerRender(flamiteblade);
-		registerRender(clariteblade);
-		registerRender(illiwonblade);
-		registerRender(afnamiteblade);
-		registerRender(endermiteblade);
+		RegisterHelper.registerRender(woodblade);
+		RegisterHelper.registerRender(stoneblade);
+		RegisterHelper.registerRender(ironblade);
+		RegisterHelper.registerRender(diamondblade);
+		RegisterHelper.registerRender(goldblade);
+		RegisterHelper.registerRender(sarliteblade);
+		RegisterHelper.registerRender(flamiteblade);
+		RegisterHelper.registerRender(clariteblade);
+		RegisterHelper.registerRender(illiwonblade);
+		RegisterHelper.registerRender(afnamiteblade);
+		RegisterHelper.registerRender(endermiteblade);
 		
 		//Stealth Daggers
-		registerRender(woodstealth);
-		registerRender(stonestealth);
-		registerRender(ironstealth);
-		registerRender(diamondstealth);
-		registerRender(goldstealth);
-		registerRender(sarlitestealth);
-		registerRender(flamitestealth);
-		registerRender(claritestealth);
-		registerRender(illiwonstealth);
-		registerRender(afnamitestealth);
-		registerRender(endermitestealth);
+		RegisterHelper.registerRender(woodstealth);
+		RegisterHelper.registerRender(stonestealth);
+		RegisterHelper.registerRender(ironstealth);
+		RegisterHelper.registerRender(diamondstealth);
+		RegisterHelper.registerRender(goldstealth);
+		RegisterHelper.registerRender(sarlitestealth);
+		RegisterHelper.registerRender(flamitestealth);
+		RegisterHelper.registerRender(claritestealth);
+		RegisterHelper.registerRender(illiwonstealth);
+		RegisterHelper.registerRender(afnamitestealth);
+		RegisterHelper.registerRender(endermitestealth);
 		
 		//Falkions
-		registerRender(woodfalkion);
-		registerRender(stonefalkion);
-		registerRender(ironfalkion);
-		registerRender(diamondfalkion);
-		registerRender(goldfalkion);
-		registerRender(sarlitefalkion);
-		registerRender(flamitefalkion);
-		registerRender(claritefalkion);
-		registerRender(illiwonfalkion);
-		registerRender(afnamitefalkion);
-		registerRender(endermitefalkion);
+		RegisterHelper.registerRender(woodfalkion);
+		RegisterHelper.registerRender(stonefalkion);
+		RegisterHelper.registerRender(ironfalkion);
+		RegisterHelper.registerRender(diamondfalkion);
+		RegisterHelper.registerRender(goldfalkion);
+		RegisterHelper.registerRender(sarlitefalkion);
+		RegisterHelper.registerRender(flamitefalkion);
+		RegisterHelper.registerRender(claritefalkion);
+		RegisterHelper.registerRender(illiwonfalkion);
+		RegisterHelper.registerRender(afnamitefalkion);
+		RegisterHelper.registerRender(endermitefalkion);
 		
 		//Battle Axes
-		registerRender(woodbattleaxe);
-		registerRender(stonebattleaxe);
-		registerRender(ironbattleaxe);
-		registerRender(diamondbattleaxe);
-		registerRender(goldbattleaxe);
-		registerRender(sarlitebattleaxe);
-		registerRender(flamitebattleaxe);
-		registerRender(claritebattleaxe);
-		registerRender(illiwonbattleaxe);
-		registerRender(afnamitebattleaxe);
-		registerRender(endermitebattleaxe);
+		RegisterHelper.registerRender(woodbattleaxe);
+		RegisterHelper.registerRender(stonebattleaxe);
+		RegisterHelper.registerRender(ironbattleaxe);
+		RegisterHelper.registerRender(diamondbattleaxe);
+		RegisterHelper.registerRender(goldbattleaxe);
+		RegisterHelper.registerRender(sarlitebattleaxe);
+		RegisterHelper.registerRender(flamitebattleaxe);
+		RegisterHelper.registerRender(claritebattleaxe);
+		RegisterHelper.registerRender(illiwonbattleaxe);
+		RegisterHelper.registerRender(afnamitebattleaxe);
+		RegisterHelper.registerRender(endermitebattleaxe);
 		
 		//Shicks
-		registerRender(woodshick);
-		registerRender(stoneshick);
-		registerRender(ironshick);
-		registerRender(diamondshick);
-		registerRender(goldshick);
-		registerRender(sarliteshick);
-		registerRender(flamiteshick);
-		registerRender(clariteshick);
-		registerRender(illiwonshick);
-		registerRender(afnamiteshick);
-		registerRender(endermiteshick);
+		RegisterHelper.registerRender(woodshick);
+		RegisterHelper.registerRender(stoneshick);
+		RegisterHelper.registerRender(ironshick);
+		RegisterHelper.registerRender(diamondshick);
+		RegisterHelper.registerRender(goldshick);
+		RegisterHelper.registerRender(sarliteshick);
+		RegisterHelper.registerRender(flamiteshick);
+		RegisterHelper.registerRender(clariteshick);
+		RegisterHelper.registerRender(illiwonshick);
+		RegisterHelper.registerRender(afnamiteshick);
+		RegisterHelper.registerRender(endermiteshick);
 		
 		//Armor
-		registerRender(sarlitehelmet);
-		registerRender(sarlitechestplate);
-		registerRender(sarliteleggings);
-		registerRender(sarliteboots);
+		RegisterHelper.registerRender(sarlitehelmet);
+		RegisterHelper.registerRender(sarlitechestplate);
+		RegisterHelper.registerRender(sarliteleggings);
+		RegisterHelper.registerRender(sarliteboots);
 		
-		registerRender(flamitehelmet);
-		registerRender(flamitechestplate);
-		registerRender(flamiteleggings);
-		registerRender(flamiteboots);
+		RegisterHelper.registerRender(flamitehelmet);
+		RegisterHelper.registerRender(flamitechestplate);
+		RegisterHelper.registerRender(flamiteleggings);
+		RegisterHelper.registerRender(flamiteboots);
 		
-		registerRender(claritehelmet);
-		registerRender(claritechestplate);
-		registerRender(clariteleggings);
-		registerRender(clariteboots);
+		RegisterHelper.registerRender(claritehelmet);
+		RegisterHelper.registerRender(claritechestplate);
+		RegisterHelper.registerRender(clariteleggings);
+		RegisterHelper.registerRender(clariteboots);
 		
-		registerRender(illiwonhelmet);
-		registerRender(illiwonchestplate);
-		registerRender(illiwonleggings);
-		registerRender(illiwonboots);
+		RegisterHelper.registerRender(illiwonhelmet);
+		RegisterHelper.registerRender(illiwonchestplate);
+		RegisterHelper.registerRender(illiwonleggings);
+		RegisterHelper.registerRender(illiwonboots);
 		
-		registerRender(afnamitehelmet);
-		registerRender(afnamitechestplate);
-		registerRender(afnamiteleggings);
-		registerRender(afnamiteboots);
+		RegisterHelper.registerRender(afnamitehelmet);
+		RegisterHelper.registerRender(afnamitechestplate);
+		RegisterHelper.registerRender(afnamiteleggings);
+		RegisterHelper.registerRender(afnamiteboots);
 		
-		registerRender(endermitehelmet);
-		registerRender(endermitechestplate);
-		registerRender(endermiteleggings);
-		registerRender(endermiteboots);
+		RegisterHelper.registerRender(endermitehelmet);
+		RegisterHelper.registerRender(endermitechestplate);
+		RegisterHelper.registerRender(endermiteleggings);
+		RegisterHelper.registerRender(endermiteboots);
 		
-	}
-	
-	public static void registerRender(Item item)
-	{
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MODID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
 	}
 }

@@ -22,7 +22,8 @@ public class ItemModAxe extends ItemTool
 
     public float getStrVsBlock(ItemStack stack, Block block)
     {
-        return block.getMaterial() != Material.wood && block.getMaterial() != Material.plants && block.getMaterial() != Material.vine ? super.getStrVsBlock(stack, block) : this.efficiencyOnProperMaterial;
+        return block.getMaterial() != Material.wood && block.getMaterial() != Material.plants && block.getMaterial() 
+        != Material.vine ? super.getStrVsBlock(stack, block) : this.efficiencyOnProperMaterial;
     }
     
     @Override

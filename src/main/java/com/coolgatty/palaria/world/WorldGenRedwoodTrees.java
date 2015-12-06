@@ -1,6 +1,9 @@
 package com.coolgatty.palaria.world;
 
 import java.util.Random;
+
+import com.coolgatty.palaria.blocks.BlockMod;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
@@ -135,7 +138,7 @@ public class WorldGenRedwoodTrees extends WorldGenTrees
 
                         if (block2.isAir(worldIn, upN) || block2.isLeaves(worldIn, upN) || block2.getMaterial() == Material.vine)
                         {
-                            this.func_175905_a(worldIn, p_180709_3_.up(l), Blocks.log, this.metaWood);
+                            this.func_175905_a(worldIn, p_180709_3_.up(l), BlockMod.modlog, this.metaWood);
 
                             if (this.vinesGrow && l > 0)
                             {

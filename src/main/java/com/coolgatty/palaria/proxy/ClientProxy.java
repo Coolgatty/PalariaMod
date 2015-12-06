@@ -19,6 +19,7 @@ public class ClientProxy extends CommonProxy
 		ItemMod.registerRenders();
 		BlockMod.registerRenders();
 		RenderRegistry.registerRenders();
+		BlockMod.registerMetaBlocks();
 	}
 	
 	@Override

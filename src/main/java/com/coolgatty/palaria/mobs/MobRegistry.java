@@ -11,6 +11,7 @@ import com.coolgatty.palaria.mobs.render.RenderMagmaRaptorChicken;
 import com.coolgatty.palaria.mobs.render.RenderNimatin;
 import com.coolgatty.palaria.mobs.render.RenderRaptorChicken;
 import com.coolgatty.palaria.mobs.render.RenderStoneEndermite;
+import com.coolgatty.palaria.world.BiomeRegistry;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.EntityList;
@@ -60,7 +61,9 @@ public class MobRegistry
 				BiomeGenBase.savannaPlateau,
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
-				BiomeGenBase.taigaHills);
+				BiomeGenBase.taigaHills,
+				BiomeRegistry.bloodforest,
+				BiomeRegistry.skyforest);
 		
 		//Cowasaurus
 		EntityRegistry.registerModEntity(EntityCowasaurus.class, "Cowasaurus", Palaria.cowasaurusID, Reference.MODID, 100, 3, true, 0x4F3D2B, 0x8C8282);
@@ -89,7 +92,8 @@ public class MobRegistry
 				BiomeGenBase.savanna,
 				BiomeGenBase.savannaPlateau,
 				BiomeGenBase.stoneBeach,
-				BiomeGenBase.taiga);
+				BiomeGenBase.taiga,
+				BiomeRegistry.bloodforest);
 		
 		//Raptor Chicken
 		EntityRegistry.registerModEntity(EntityRaptorChicken.class, "RaptorChicken", Palaria.raptorchickenID, Reference.MODID, 100, 3, true, 0xCFB8B8, 0xD11515);
@@ -128,7 +132,9 @@ public class MobRegistry
 				BiomeGenBase.savannaPlateau,
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
-				BiomeGenBase.taigaHills);
+				BiomeGenBase.taigaHills,
+				BiomeRegistry.bloodforest,
+				BiomeRegistry.skyforest);
 		
 		//Magma Raptor Chicken
 		EntityRegistry.registerModEntity(EntityMagmaRaptorChicken.class, "MagmaRaptorChicken", Palaria.magmaraptorchickenID, Reference.MODID, 100, 3, true, 0xFFD000, 0xD60400);
@@ -177,7 +183,9 @@ public class MobRegistry
 				BiomeGenBase.savannaPlateau,
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
-				BiomeGenBase.taigaHills);
+				BiomeGenBase.taigaHills,
+				BiomeRegistry.bloodforest,
+				BiomeRegistry.skyforest);
 		
 		//End Endermite
 		EntityRegistry.registerModEntity(EntityEndEndermite.class, "EndEndermite", Palaria.endendermiteID, Reference.MODID, 100, 3, true, 0x000000, 0xD4D40F);
@@ -222,7 +230,9 @@ public class MobRegistry
 				BiomeGenBase.stoneBeach,
 				BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills,
-				BiomeGenBase.sky);
+				BiomeGenBase.sky,
+				BiomeRegistry.bloodforest,
+				BiomeRegistry.skyforest);
 		
 		//Nimatin
 		EntityRegistry.registerModEntity(EntityNimatin.class, "Nimatin", Palaria.nimatinID, Reference.MODID, 100, 3, true, 0xD1AB00, 0x6E6E6E);
