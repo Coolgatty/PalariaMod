@@ -1155,6 +1155,12 @@ public class RecipesMod
 			"X",
 			'X', BlockMod.modplank, 'Y', Blocks.planks
 		});
+		GameRegistry.addRecipe(new ItemStack(Blocks.torch, 6), new Object []
+		{
+			"Y",
+			"X",
+			'X', Items.stick, 'Y', ItemMod.nelium
+		});
 		
 		/***********************************************************************************************************/
 		/**Swords***************************************************************************************************/
