@@ -60,7 +60,7 @@ public class BlockMod
 		
 		//Logs and wood
 		modlog = new BlockModLog().setUnlocalizedName("modlog");
-		modplank = new BlockModPlanks().setUnlocalizedName("modplank");
+		modplank = new BlockModPlanks().setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setUnlocalizedName("modplank");
 		
 		//Material Blocks
 		sarliteblock = new BlockModCompressed(MapColor.blueColor).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setUnlocalizedName("sarliteblock");
