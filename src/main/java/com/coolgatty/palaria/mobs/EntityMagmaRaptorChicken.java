@@ -121,7 +121,17 @@ public class EntityMagmaRaptorChicken extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(80D);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(50.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(44.0D);
+    }
+    
+    public boolean attackEntityAsMob(Entity entity)
+    {
+    	float f = 2.0F;
+    	float d = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
+        
+    	boolean dmg = entity.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), f) && entity.attackEntityFrom(DamageSource.causeMobDamage(this), d);
+    
+        return dmg;
     }
     
     /**

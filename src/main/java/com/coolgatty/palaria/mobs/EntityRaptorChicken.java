@@ -33,6 +33,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
@@ -109,7 +110,17 @@ public class EntityRaptorChicken extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(30.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(50D);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(15.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(14.0D);
+    }
+    
+    public boolean attackEntityAsMob(Entity entity)
+    {
+    	float f = 1.0F;
+    	float d = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
+        
+    	boolean dmg = entity.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), f) && entity.attackEntityFrom(DamageSource.causeMobDamage(this), d);
+    
+        return dmg;
     }
     
     /**

@@ -134,7 +134,7 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(64.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100D);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(80.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(70.0D);
     }
     
     protected void entityInit()
@@ -143,6 +143,16 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.dataWatcher.addObject(16, new Short((short)0));
         this.dataWatcher.addObject(17, new Byte((byte)0));
         this.dataWatcher.addObject(18, new Byte((byte)0));
+    }
+    
+    public boolean attackEntityAsMob(Entity entity)
+    {
+    	float f = 3.0F;
+    	float d = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
+        
+    	boolean dmg = entity.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), f) && entity.attackEntityFrom(DamageSource.causeMobDamage(this), d);
+    
+        return dmg;
     }
 
 

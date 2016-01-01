@@ -95,6 +95,16 @@ public class EntityStoneEndermite extends EntityMob
         this.dataWatcher.addObject(17, new Byte((byte)0));
         this.dataWatcher.addObject(18, new Byte((byte)0));
     }
+    
+    public boolean attackEntityAsMob(Entity entity)
+    {
+    	float f = 0.2F;
+    	float d = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
+        
+    	boolean dmg = entity.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), f) && entity.attackEntityFrom(DamageSource.causeMobDamage(this), d);
+    
+        return dmg;
+    }
 
     /**
      * Checks to see if this enderman should be attacking this player

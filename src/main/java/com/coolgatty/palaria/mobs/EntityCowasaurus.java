@@ -4,7 +4,9 @@ package com.coolgatty.palaria.mobs;
 import com.google.common.base.Predicate;
 
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -28,6 +30,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
@@ -83,7 +87,18 @@ public class EntityCowasaurus extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(35.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.40D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(140D);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(60.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(50D);
+        this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(10D);
+    }
+    
+    public boolean attackEntityAsMob(Entity entity)
+    {
+    	float f = 3.0F;
+    	float d = (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getAttributeValue();
+        
+    	boolean dmg = entity.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), f) && entity.attackEntityFrom(DamageSource.causeMobDamage(this), d);
+    
+        return dmg;
     }
     
     public boolean func_146072_bX()

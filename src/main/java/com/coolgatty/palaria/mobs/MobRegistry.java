@@ -22,6 +22,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class MobRegistry 
 {
+	
 	public static void registerEntity()
 	{
 		//Creeptile
