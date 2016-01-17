@@ -10,7 +10,12 @@ public class CommonProxy
 	{
 		
 	}
-
+	
+	public void versionChecker() 
+	{
+		
+	}
+	
     public void preInit(FMLPreInitializationEvent event) 
     {
 

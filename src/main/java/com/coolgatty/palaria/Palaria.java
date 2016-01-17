@@ -5,9 +5,11 @@ import java.util.logging.Level;
 import com.coolgatty.palaria.blocks.BlockFlamiteOre;
 import com.coolgatty.palaria.blocks.BlockMod;
 import com.coolgatty.palaria.blocks.BlockSarliteOre;
+import com.coolgatty.palaria.help.PalariaEventHandler;
 import com.coolgatty.palaria.help.PalariaFuelHandler;
 import com.coolgatty.palaria.help.Reference;
 import com.coolgatty.palaria.help.RegisterHelper;
+import com.coolgatty.palaria.help.VersionChecker;
 import com.coolgatty.palaria.items.ItemMod;
 import com.coolgatty.palaria.items.RecipesMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
@@ -28,6 +30,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -60,6 +63,9 @@ public class Palaria
 	
 	public static int skyforestID;
 	public static int bloodforestID;
+	
+	public static VersionChecker versionChecker;
+	public static boolean haveWarnedVersionOutOfDate = false;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -117,12 +123,19 @@ public class Palaria
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
-		proxy.registerRenders();
+	    System.out.println("Registering event listeners");
+
+	   /*inecraftForge.EVENT_BUS.register(new PalariaEventHandler());
+	   /* MinecraftForge.TERRAIN_GEN_BUS.register(new PalariaTerrainGenEventHandler());
+	    MinecraftForge.ORE_GEN_BUS.register(new PalariaOreGenEventHandler());*/
+	    // some events, especially tick, are handled on FML bus
+	    FMLCommonHandler.instance().bus().register(new PalariaEventHandler());
+	    proxy.registerRenders();
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		
+		proxy.versionChecker();
 	}
 }

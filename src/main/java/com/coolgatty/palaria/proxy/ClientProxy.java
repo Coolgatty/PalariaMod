@@ -1,6 +1,8 @@
 package com.coolgatty.palaria.proxy;
 
+import com.coolgatty.palaria.Palaria;
 import com.coolgatty.palaria.blocks.BlockMod;
+import com.coolgatty.palaria.help.VersionChecker;
 import com.coolgatty.palaria.items.ItemMod;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.render.RenderCreeptile;
@@ -23,6 +25,14 @@ public class ClientProxy extends CommonProxy
 	}
 	
 	@Override
+	public void versionChecker()
+	{
+		Palaria.versionChecker = new VersionChecker();
+		Thread versionCheckThread = new Thread(Palaria.versionChecker, "Version Check");
+		versionCheckThread.start();
+	}
+	
+	@Override
     public void preInit(FMLPreInitializationEvent event) 
     {
 
@@ -37,6 +47,6 @@ public class ClientProxy extends CommonProxy
 	@Override
     public void postInit(FMLPostInitializationEvent event) 
     {
-
+		
     }
 }
