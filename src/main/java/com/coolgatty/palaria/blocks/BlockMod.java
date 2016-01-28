@@ -8,7 +8,6 @@ import com.coolgatty.palaria.help.Reference;
 import com.coolgatty.palaria.help.RegisterHelper;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCompressed;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;

@@ -6,6 +6,7 @@ import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIAvoidEntity;
@@ -33,6 +34,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -40,47 +42,26 @@ import net.minecraft.world.World;
 public class EntityRaptorChicken extends EntityMob
 {
     
-    public boolean field_70885_d = false;
-    public float field_70886_e = 0.0F;
-    public float destPos = 0.0F;
+    public float wingRotation;
+    public float destPos;
     public float field_70884_g;
     public float field_70888_h;
-    public float field_70889_i = 1.0F;
-
+    public float wingRotDelta = 1.0F;
     /** The time until the next egg is spawned. */
     public int timeUntilNextEgg;
+    public boolean chickenJockey;
 	private double moveSpeed;
 
     public EntityRaptorChicken(World par1World)
     {
     	super(par1World);
+        this.timeUntilNextEgg = this.rand.nextInt(6000) + 6000;
         this.moveSpeed = 1.0D;
         this.setSize(0.5F, 1.2F);
         this.getNavigator();
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityCowasaurus;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 15.0F, 1.0D, 1.2D));
-        this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityWolf;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 10.0F, 1.0D, 1.2D));
-        this.tasks.addTask(2, this.field_175455_a);
+        this.tasks.addTask(1, new EntityAIAvoidEntity(this, EntityCowasaurus.class, 15.0F, 1.0D, 1.2D));
+        this.tasks.addTask(1, new EntityAIAvoidEntity(this, EntityWolf.class, 10.0F, 1.0D, 1.2D));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
         this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, false));
         this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityChicken.class, this.moveSpeed, false));
@@ -130,26 +111,26 @@ public class EntityRaptorChicken extends EntityMob
     public void onLivingUpdate()
     {
         super.onLivingUpdate();
-        this.field_70888_h = this.field_70886_e;
+        this.field_70888_h = this.wingRotation;
         this.field_70884_g = this.destPos;
         this.destPos = (float)((double)this.destPos + (double)(this.onGround ? -1 : 4) * 0.3D);
         this.destPos = MathHelper.clamp_float(this.destPos, 0.0F, 1.0F);
 
-        if (!this.onGround && this.field_70889_i < 1.0F)
+        if (!this.onGround && this.wingRotDelta < 1.0F)
         {
-            this.field_70889_i = 1.0F;
+            this.wingRotDelta = 1.0F;
         }
 
-        this.field_70889_i = (float)((double)this.field_70889_i * 0.9D);
+        this.wingRotDelta = (float)((double)this.wingRotDelta * 0.9D);
 
         if (!this.onGround && this.motionY < 0.0D)
         {
             this.motionY *= 0.6D;
         }
 
-        this.field_70886_e += this.field_70889_i * 2.0F;
+        this.wingRotation += this.wingRotDelta * 2.0F;
 
-        if (!this.worldObj.isRemote && !this.isChild() && --this.timeUntilNextEgg <= 0)
+        if (!this.worldObj.isRemote && !this.isChild() && !this.isChickenJockey() && --this.timeUntilNextEgg <= 0)
         {
             this.playSound("mob.chicken.plop", 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
             this.dropItem(Items.egg, 1);
@@ -222,5 +203,90 @@ public class EntityRaptorChicken extends EntityMob
         {
             this.dropItem(Items.chicken, 1);
         }
+    }
+    
+    public EntityRaptorChicken createChild(EntityAgeable ageable)
+    {
+        return new EntityRaptorChicken(this.worldObj);
+    }
+
+    /**
+     * Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on
+     * the animal type)
+     */
+    public boolean isBreedingItem(ItemStack stack)
+    {
+        return stack != null && stack.getItem() == Items.wheat_seeds;
+    }
+
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound tagCompund)
+    {
+        super.readEntityFromNBT(tagCompund);
+        this.chickenJockey = tagCompund.getBoolean("IsChickenJockey");
+
+        if (tagCompund.hasKey("EggLayTime"))
+        {
+            this.timeUntilNextEgg = tagCompund.getInteger("EggLayTime");
+        }
+    }
+
+    /**
+     * Get the experience points the entity currently has.
+     */
+    protected int getExperiencePoints(EntityPlayer player)
+    {
+        return this.isChickenJockey() ? 10 : super.getExperiencePoints(player);
+    }
+
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound tagCompound)
+    {
+        super.writeEntityToNBT(tagCompound);
+        tagCompound.setBoolean("IsChickenJockey", this.chickenJockey);
+        tagCompound.setInteger("EggLayTime", this.timeUntilNextEgg);
+    }
+
+    /**
+     * Determines if an entity can be despawned, used on idle far away entities
+     */
+    protected boolean canDespawn()
+    {
+        return this.isChickenJockey() && this.riddenByEntity == null;
+    }
+
+    public void updateRiderPosition()
+    {
+        super.updateRiderPosition();
+        float f = MathHelper.sin(this.renderYawOffset * (float)Math.PI / 180.0F);
+        float f1 = MathHelper.cos(this.renderYawOffset * (float)Math.PI / 180.0F);
+        float f2 = 0.1F;
+        float f3 = 0.0F;
+        this.riddenByEntity.setPosition(this.posX + (double)(f2 * f), this.posY + (double)(this.height * 0.5F) + this.riddenByEntity.getYOffset() + (double)f3, this.posZ - (double)(f2 * f1));
+
+        if (this.riddenByEntity instanceof EntityLivingBase)
+        {
+            ((EntityLivingBase)this.riddenByEntity).renderYawOffset = this.renderYawOffset;
+        }
+    }
+
+    /**
+     * Determines if this chicken is a jokey with a zombie riding it.
+     */
+    public boolean isChickenJockey()
+    {
+        return this.chickenJockey;
+    }
+
+    /**
+     * Sets whether this chicken is a jockey or not.
+     */
+    public void setChickenJockey(boolean jockey)
+    {
+        this.chickenJockey = jockey;
     }
 }

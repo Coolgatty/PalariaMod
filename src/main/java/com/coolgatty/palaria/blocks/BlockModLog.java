@@ -5,6 +5,8 @@ import com.google.common.base.Predicate;
 import java.util.List;
 
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
@@ -17,30 +19,46 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModLog extends BlockLog implements IMetaBlockName
 {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", BlockModPlanks.EnumType.class, new Predicate()
+    public static final PropertyEnum<BlockModPlanks.EnumType> VARIANT = PropertyEnum.<BlockModPlanks.EnumType>create("variant", BlockModPlanks.EnumType.class, new Predicate<BlockModPlanks.EnumType>()
     {
-        private static final String __OBFID = "CL_00002084";
         public boolean apply(BlockModPlanks.EnumType type)
         {
             return type.getMetadata() < 4;
         }
-        public boolean apply(Object p_apply_1_)
-        {
-            return this.apply((BlockModPlanks.EnumType)p_apply_1_);
-        }
     });
-    private static final String __OBFID = "CL_00000281";
 
     public BlockModLog()
     {
         this.setDefaultState(this.blockState.getBaseState().withProperty(VARIANT, BlockModPlanks.EnumType.REDWOOD).withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
     }
+    
+    public MapColor getMapColor(IBlockState state)
+    {
+        BlockModPlanks.EnumType blockmodplanks$enumtype = (BlockModPlanks.EnumType)state.getValue(VARIANT);
+
+        switch ((BlockLog.EnumAxis)state.getValue(LOG_AXIS))
+        {
+            case X:
+            case Z:
+            case NONE:
+            default:
+
+                switch (blockmodplanks$enumtype)
+                {
+                    case REDWOOD:
+                    default:
+                        return BlockModPlanks.EnumType.REDWOOD.func_181070_c();
+                }
+
+            case Y:
+                return blockmodplanks$enumtype.func_181070_c();
+        }
+    }
 
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list)
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list)
     {
         list.add(new ItemStack(itemIn, 1, BlockModPlanks.EnumType.REDWOOD.getMetadata()));
     }
@@ -73,20 +91,21 @@ public class BlockModLog extends BlockLog implements IMetaBlockName
     /**
      * Convert the BlockState into the correct metadata value
      */
+    @SuppressWarnings("incomplete-switch")
     public int getMetaFromState(IBlockState state)
     {
-        byte b0 = 0;
-        int i = b0 | ((BlockModPlanks.EnumType)state.getValue(VARIANT)).getMetadata();
+        int i = 0;
+        i = i | ((BlockModPlanks.EnumType)state.getValue(VARIANT)).getMetadata();
 
-        switch (BlockModLog.SwitchEnumAxis.AXIS_LOOKUP[((BlockLog.EnumAxis)state.getValue(LOG_AXIS)).ordinal()])
+        switch ((BlockLog.EnumAxis)state.getValue(LOG_AXIS))
         {
-            case 1:
+            case X:
                 i |= 4;
                 break;
-            case 2:
+            case Z:
                 i |= 8;
                 break;
-            case 3:
+            case NONE:
                 i |= 12;
         }
 
@@ -110,42 +129,6 @@ public class BlockModLog extends BlockLog implements IMetaBlockName
     {
         return ((BlockModPlanks.EnumType)state.getValue(VARIANT)).getMetadata();
     }
-
-    static final class SwitchEnumAxis
-        {
-            static final int[] AXIS_LOOKUP = new int[BlockLog.EnumAxis.values().length];
-            private static final String __OBFID = "CL_00002083";
-
-            static
-            {
-                try
-                {
-                    AXIS_LOOKUP[BlockLog.EnumAxis.X.ordinal()] = 1;
-                }
-                catch (NoSuchFieldError var3)
-                {
-                    ;
-                }
-
-                try
-                {
-                    AXIS_LOOKUP[BlockLog.EnumAxis.Z.ordinal()] = 2;
-                }
-                catch (NoSuchFieldError var2)
-                {
-                    ;
-                }
-
-                try
-                {
-                    AXIS_LOOKUP[BlockLog.EnumAxis.NONE.ordinal()] = 3;
-                }
-                catch (NoSuchFieldError var1)
-                {
-                    ;
-                }
-            }
-        }
 
     @Override
     public String getSpecialName(ItemStack stack) 

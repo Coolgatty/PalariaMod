@@ -31,22 +31,4 @@ public class ClientProxy extends CommonProxy
 		Thread versionCheckThread = new Thread(Palaria.versionChecker, "Version Check");
 		versionCheckThread.start();
 	}
-	
-	@Override
-    public void preInit(FMLPreInitializationEvent event) 
-    {
-
-    }
-
-	@Override
-    public void init(FMLInitializationEvent event) 
-    {
-
-    }
-
-	@Override
-    public void postInit(FMLPostInitializationEvent event) 
-    {
-		
-    }
 }

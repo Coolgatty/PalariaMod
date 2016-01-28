@@ -5,6 +5,8 @@ import java.util.List;
 import com.coolgatty.palaria.blocks.metahelp.IMetaBlockName;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -19,8 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockModPlanks extends Block implements IMetaBlockName
 {
-    public static final PropertyEnum VARIANT = PropertyEnum.create("variant", BlockModPlanks.EnumType.class);
-    private static final String __OBFID = "CL_00002082";
+    public static final PropertyEnum<BlockModPlanks.EnumType> VARIANT = PropertyEnum.<BlockModPlanks.EnumType>create("variant", BlockModPlanks.EnumType.class);
 
     public BlockModPlanks()
     {
@@ -40,16 +41,11 @@ public class BlockModPlanks extends Block implements IMetaBlockName
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, List list)
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list)
     {
-        BlockModPlanks.EnumType[] aenumtype = BlockModPlanks.EnumType.values();
-        int i = aenumtype.length;
-
-        for (int j = 0; j < i; ++j)
+        for (BlockModPlanks.EnumType blockmodplanks$enumtype : BlockModPlanks.EnumType.values())
         {
-            BlockModPlanks.EnumType enumtype = aenumtype[j];
-            list.add(new ItemStack(itemIn, 1, enumtype.getMetadata()));
+            list.add(new ItemStack(itemIn, 1, blockmodplanks$enumtype.getMetadata()));
         }
     }
 
@@ -61,6 +57,11 @@ public class BlockModPlanks extends Block implements IMetaBlockName
         return this.getDefaultState().withProperty(VARIANT, BlockModPlanks.EnumType.byMetadata(meta));
     }
 
+    public MapColor getMapColor(IBlockState state)
+    {
+        return ((BlockModPlanks.EnumType)state.getValue(VARIANT)).func_181070_c();
+    }
+    
     /**
      * Convert the BlockState into the correct metadata value
      */
@@ -76,24 +77,26 @@ public class BlockModPlanks extends Block implements IMetaBlockName
 
     public static enum EnumType implements IStringSerializable
     {
-        REDWOOD(0, "redwood");
+        REDWOOD(0, "redwood", MapColor.redColor);
         private static final BlockModPlanks.EnumType[] META_LOOKUP = new BlockModPlanks.EnumType[values().length];
         private final int meta;
         private final String name;
         private final String unlocalizedName;
+        private final MapColor field_181071_k;
 
         private static final String __OBFID = "CL_00002081";
 
-        private EnumType(int meta, String name)
+        private EnumType(int p_i46388_3_, String p_i46388_4_, MapColor p_i46388_5_)
         {
-            this(meta, name, name);
+            this(p_i46388_3_, p_i46388_4_, p_i46388_4_, p_i46388_5_);
         }
 
-        private EnumType(int meta, String name, String unlocalizedName)
+        private EnumType(int p_i46389_3_, String p_i46389_4_, String p_i46389_5_, MapColor p_i46389_6_)
         {
-            this.meta = meta;
-            this.name = name;
-            this.unlocalizedName = unlocalizedName;
+            this.meta = p_i46389_3_;
+            this.name = p_i46389_4_;
+            this.unlocalizedName = p_i46389_5_;
+            this.field_181071_k = p_i46389_6_;
         }
 
         public int getMetadata()
@@ -101,6 +104,11 @@ public class BlockModPlanks extends Block implements IMetaBlockName
             return this.meta;
         }
 
+        public MapColor func_181070_c()
+        {
+            return this.field_181071_k;
+        }
+        
         public String toString()
         {
             return this.name;
@@ -128,13 +136,9 @@ public class BlockModPlanks extends Block implements IMetaBlockName
 
         static
         {
-            BlockModPlanks.EnumType[] var0 = values();
-            int var1 = var0.length;
-
-            for (int var2 = 0; var2 < var1; ++var2)
+            for (BlockModPlanks.EnumType blockmodplanks$enumtype : values())
             {
-                BlockModPlanks.EnumType var3 = var0[var2];
-                META_LOOKUP[var3.getMetadata()] = var3;
+                META_LOOKUP[blockmodplanks$enumtype.getMetadata()] = blockmodplanks$enumtype;
             }
         }
     }

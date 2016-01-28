@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -29,29 +30,32 @@ public class RenderCreeptile extends RenderLiving
     }
 
 
-    protected void func_180570_a(EntityCreeptile p_180570_1_, float p_180570_2_)
+    protected void preRenderCallback(EntityCreeptile entitylivingbaseIn, float partialTickTime)
     {
-        float f1 = p_180570_1_.getCreeptileFlashIntensity(p_180570_2_);
-        float f2 = 1.0F + MathHelper.sin(f1 * 100.0F) * f1 * 0.01F;
-        f1 = MathHelper.clamp_float(f1, 0.0F, 1.0F);
-        f1 *= f1;
-        f1 *= f1;
-        float f3 = (1.0F + f1 * 0.4F) * f2;
-        float f4 = (1.0F + f1 * 0.1F) / f2;
-        GlStateManager.scale(f3, f4, f3);
+        float f = entitylivingbaseIn.getCreeptileFlashIntensity(partialTickTime);
+        float f1 = 1.0F + MathHelper.sin(f * 100.0F) * f * 0.01F;
+        f = MathHelper.clamp_float(f, 0.0F, 1.0F);
+        f = f * f;
+        f = f * f;
+        float f2 = (1.0F + f * 0.4F) * f1;
+        float f3 = (1.0F + f * 0.1F) / f1;
+        GlStateManager.scale(f2, f3, f2);
     }
 
-    protected int func_180571_a(EntityCreeptile p_180571_1_, float p_180571_2_, float p_180571_3_)
+    /**
+     * Returns an ARGB int color back. Args: entityLiving, lightBrightness, partialTickTime
+     */
+    protected int getColorMultiplier(EntityCreeptile entitylivingbaseIn, float lightBrightness, float partialTickTime)
     {
-        float f2 = p_180571_1_.getCreeptileFlashIntensity(p_180571_3_);
+        float f = entitylivingbaseIn.getCreeptileFlashIntensity(partialTickTime);
 
-        if ((int)(f2 * 10.0F) % 2 == 0)
+        if ((int)(f * 10.0F) % 2 == 0)
         {
             return 0;
         }
         else
         {
-            int i = (int)(f2 * 0.2F * 255.0F);
+            int i = (int)(f * 0.2F * 255.0F);
             i = MathHelper.clamp_int(i, 0, 255);
             return i << 24 | 16777215;
         }
@@ -77,7 +81,7 @@ public class RenderCreeptile extends RenderLiving
      */
     protected void preRenderCallback(EntityLivingBase p_77041_1_, float p_77041_2_)
     {
-        this.func_180570_a((EntityCreeptile)p_77041_1_, p_77041_2_);
+        this.preRenderCallback((EntityCreeptile)p_77041_1_, p_77041_2_);
     }
 
     /**
@@ -85,7 +89,7 @@ public class RenderCreeptile extends RenderLiving
      */
     protected int getColorMultiplier(EntityLivingBase p_77030_1_, float p_77030_2_, float p_77030_3_)
     {
-        return this.func_180571_a((EntityCreeptile)p_77030_1_, p_77030_2_, p_77030_3_);
+        return this.getColorMultiplier((EntityCreeptile)p_77030_1_, p_77030_2_, p_77030_3_);
     }
 
     /**

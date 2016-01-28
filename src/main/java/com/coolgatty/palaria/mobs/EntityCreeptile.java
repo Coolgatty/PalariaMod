@@ -26,6 +26,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityCreeptile extends EntityMob
 {
@@ -46,43 +48,11 @@ public class EntityCreeptile extends EntityMob
     {
         super(worldIn);
         this.moveSpeed = 1.0D;
-        ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
+        ((PathNavigateGround)this.getNavigator()).setAvoidsWater(true);
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAICreeptileSwell(this));
-        this.tasks.addTask(2, this.field_175455_a);
-        this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityOcelot;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 8.0F, this.moveSpeed, this.moveSpeed + 0.2D));
-        this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityCowasaurus;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 15.0F, 1.2D, 1.4D));
-        this.tasks.addTask(3, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityNimatin;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 15.0F, 1.0D, 1.2D));
+        this.tasks.addTask(3, new EntityAIAvoidEntity(this, EntityOcelot.class, 8.0F, this.moveSpeed, this.moveSpeed + 0.2D));
+        this.tasks.addTask(3, new EntityAIAvoidEntity(this, EntityCowasaurus.class, 15.0F, 1.2D, 1.4D));
         this.tasks.addTask(4, new EntityAIAttackOnCollide(this, this.moveSpeed, false));
         this.tasks.addTask(5, new EntityAIWander(this, this.moveSpeed - 0.2D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -97,10 +67,21 @@ public class EntityCreeptile extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.35D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40D);
     }
+    
+    protected void dropFewItems(boolean par1, int par2)
+    {
+        int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
 
-    /**
-     * The maximum height from where the entity is alowed to jump (used in pathfinder)
-     */
+        for (int var4 = 0; var4 < var3; ++var4)
+        {
+            this.dropItem(Items.gunpowder, 2);
+        }
+        
+        for (int var4 = 0; var4 < var3; ++var4)
+        {
+            this.dropItem(ItemMod.creeptileeye, 1);
+        }
+    }
     public int getMaxFallHeight()
     {
         return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
@@ -139,7 +120,7 @@ public class EntityCreeptile extends EntityMob
 
         tagCompound.setShort("Fuse", (short)this.fuseTime);
         tagCompound.setByte("ExplosionRadius", (byte)this.explosionRadius);
-        tagCompound.setBoolean("ignited", this.func_146078_ca());
+        tagCompound.setBoolean("ignited", this.hasIgnited());
     }
 
     /**
@@ -162,7 +143,7 @@ public class EntityCreeptile extends EntityMob
 
         if (tagCompund.getBoolean("ignited"))
         {
-            this.func_146079_cb();
+            this.ignite();
         }
     }
 
@@ -175,7 +156,7 @@ public class EntityCreeptile extends EntityMob
         {
             this.lastActiveTime = this.timeSinceIgnited;
 
-            if (this.func_146078_ca())
+            if (this.hasIgnited())
             {
                 this.setCreeptileState(1);
             }
@@ -241,7 +222,7 @@ public class EntityCreeptile extends EntityMob
         }
     }
 
-    public boolean attackEntityAsMob(Entity p_70652_1_)
+    public boolean attackEntityAsMob(Entity entityIn)
     {
         return true;
     }
@@ -257,25 +238,12 @@ public class EntityCreeptile extends EntityMob
     /**
      * Params: (Float)Render tick. Returns the intensity of the creeper's flash when it is ignited.
      */
+    @SideOnly(Side.CLIENT)
     public float getCreeptileFlashIntensity(float p_70831_1_)
     {
         return ((float)this.lastActiveTime + (float)(this.timeSinceIgnited - this.lastActiveTime) * p_70831_1_) / (float)(this.fuseTime - 2);
     }
 
-    protected void dropFewItems(boolean par1, int par2)
-    {
-        int var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
-
-        for (int var4 = 0; var4 < var3; ++var4)
-        {
-            this.dropItem(Items.gunpowder, 2);
-        }
-        
-        for (int var4 = 0; var4 < var3; ++var4)
-        {
-            this.dropItem(ItemMod.creeptileeye, 1);
-        }
-    }
 
     /**
      * Returns the current state of creeper, -1 is idle, 1 is 'in fuse'
@@ -288,9 +256,9 @@ public class EntityCreeptile extends EntityMob
     /**
      * Sets the state of creeper, -1 to idle and 1 to be 'in fuse'
      */
-    public void setCreeptileState(int p_70829_1_)
+    public void setCreeptileState(int state)
     {
-        this.dataWatcher.updateObject(16, Byte.valueOf((byte)p_70829_1_));
+        this.dataWatcher.updateObject(16, Byte.valueOf((byte)state));
     }
 
     /**
@@ -316,7 +284,7 @@ public class EntityCreeptile extends EntityMob
 
             if (!this.worldObj.isRemote)
             {
-                this.func_146079_cb();
+                this.ignite();
                 itemstack.damageItem(1, player);
                 return true;
             }
@@ -332,19 +300,19 @@ public class EntityCreeptile extends EntityMob
     {
         if (!this.worldObj.isRemote)
         {
-            boolean flag = this.worldObj.getGameRules().getGameRuleBooleanValue("mobGriefing");
+            boolean flag = this.worldObj.getGameRules().getBoolean("mobGriefing");
             float f = this.getPowered() ? 2.0F : 1.0F;
             this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, flag);
             this.setDead();
         }
     }
 
-    public boolean func_146078_ca()
+    public boolean hasIgnited()
     {
         return this.dataWatcher.getWatchableObjectByte(18) != 0;
     }
 
-    public void func_146079_cb()
+    public void ignite()
     {
         this.dataWatcher.updateObject(18, Byte.valueOf((byte)1));
     }
@@ -354,7 +322,7 @@ public class EntityCreeptile extends EntityMob
      */
     public boolean isAIEnabled()
     {
-        return this.field_175494_bm < 1 && this.worldObj.getGameRules().getGameRuleBooleanValue("doMobLoot");
+        return this.field_175494_bm < 1 && this.worldObj.getGameRules().getBoolean("doMobLoot");
     }
 
     public void func_175493_co()

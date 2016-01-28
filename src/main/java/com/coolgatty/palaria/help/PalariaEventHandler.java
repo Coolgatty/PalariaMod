@@ -18,8 +18,7 @@ public class PalariaEventHandler
 	    if (!Palaria.haveWarnedVersionOutOfDate && event.player.worldObj.isRemote 
 	          && !Palaria.versionChecker.isLatestVersion())
 	    {
-	        ClickEvent versionCheckChatClickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, 
-	        		"http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1287343-palaria-mod-3-1-2-beta-for-minecraft-1-8-with-new");
+	        ClickEvent versionCheckChatClickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, "http://bit.ly/1Vt2At9");
 	        ChatStyle clickableChatStyle = new ChatStyle().setChatClickEvent(versionCheckChatClickEvent);
 	        ChatComponentText versionWarningChatComponent = 
 	              new ChatComponentText("Your current version of Palaria is" + EnumChatFormatting.RED + " out of date!" + EnumChatFormatting.AQUA + " Click here " + EnumChatFormatting.WHITE + "to download the latest update from the Minecraft Forum thread.");

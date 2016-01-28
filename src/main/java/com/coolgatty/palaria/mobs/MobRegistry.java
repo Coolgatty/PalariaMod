@@ -8,7 +8,6 @@ import com.coolgatty.palaria.mobs.render.RenderEndEndermite;
 import com.coolgatty.palaria.mobs.render.RenderEnderRaptorChicken;
 import com.coolgatty.palaria.mobs.render.RenderEnderWalker;
 import com.coolgatty.palaria.mobs.render.RenderMagmaRaptorChicken;
-import com.coolgatty.palaria.mobs.render.RenderNimatin;
 import com.coolgatty.palaria.mobs.render.RenderRaptorChicken;
 import com.coolgatty.palaria.mobs.render.RenderStoneEndermite;
 import com.coolgatty.palaria.world.BiomeRegistry;
@@ -234,44 +233,5 @@ public class MobRegistry
 				BiomeGenBase.sky,
 				BiomeRegistry.bloodforest,
 				BiomeRegistry.skyforest);
-		
-		//Nimatin
-		EntityRegistry.registerModEntity(EntityNimatin.class, "Nimatin", Palaria.nimatinID, Reference.MODID, 100, 3, true, 0xD1AB00, 0x6E6E6E);
-		/**		EntityRegistry.addSpawn(EntityNimatin.class, 1, 1, 1, EnumCreatureType.MONSTER, 
-				BiomeGenBase.beach, 
-				BiomeGenBase.extremeHills, 
-				BiomeGenBase.extremeHillsEdge, 
-				BiomeGenBase.forest, 
-				BiomeGenBase.forestHills, 
-				BiomeGenBase.jungle, 
-				BiomeGenBase.jungleHills, 
-				BiomeGenBase.mushroomIsland, 
-				BiomeGenBase.mushroomIslandShore, 
-				BiomeGenBase.ocean, 
-				BiomeGenBase.plains, 
-				BiomeGenBase.river, 
-				BiomeGenBase.swampland,
-				BiomeGenBase.desert,
-				BiomeGenBase.birchForest,
-				BiomeGenBase.birchForestHills,
-				BiomeGenBase.coldBeach,
-				BiomeGenBase.coldTaiga,
-				BiomeGenBase.coldTaigaHills,
-				BiomeGenBase.desertHills,
-				BiomeGenBase.extremeHillsPlus,
-				BiomeGenBase.jungleEdge,
-				BiomeGenBase.megaTaiga,
-				BiomeGenBase.megaTaigaHills,
-				BiomeGenBase.mesa,
-				BiomeGenBase.mesaPlateau,
-				BiomeGenBase.mesaPlateau_F,
-				BiomeGenBase.mushroomIsland,
-				BiomeGenBase.mushroomIslandShore,
-				BiomeGenBase.roofedForest,
-				BiomeGenBase.savanna,
-				BiomeGenBase.savannaPlateau,
-				BiomeGenBase.stoneBeach,
-				BiomeGenBase.taiga,
-				BiomeGenBase.taigaHills);				**/
 	}
 }

@@ -80,31 +80,10 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.moveSpeed = 1.0D;
         this.setSize(0.5F, 1.2F);
         this.getNavigator();
-        ((PathNavigateGround)this.getNavigator()).func_179690_a(true);
+        ((PathNavigateGround)this.getNavigator()).setAvoidsWater(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityCowasaurus;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 15.0F, 1.0D, 1.2D));
-        this.tasks.addTask(1, new EntityAIAvoidEntity(this, new Predicate()
-        {
-            public boolean func_179958_a(Entity p_179958_1_)
-            {
-                return p_179958_1_ instanceof EntityWolf;
-            }
-            public boolean apply(Object p_apply_1_)
-            {
-                return this.func_179958_a((Entity)p_apply_1_);
-            }
-        }, 10.0F, 1.0D, 1.2D));
-        this.tasks.addTask(2, this.field_175455_a);
+        this.tasks.addTask(1, new EntityAIAvoidEntity(this, EntityCowasaurus.class, 15.0F, 1.0D, 1.2D));
+        this.tasks.addTask(1, new EntityAIAvoidEntity(this, EntityWolf.class, 10.0F, 1.0D, 1.2D));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
         this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, false));
         this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityChicken.class, this.moveSpeed, false));
