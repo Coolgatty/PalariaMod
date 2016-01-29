@@ -98,13 +98,13 @@ public class Palaria
 		//World
         WorldGenOres.preInit();
         
-        /**Biomes**/
-        BiomeRegistry.preInit();
-        
         //Blocks
 		BlockMod.preInit();		
 		BlockMod.register();
-		
+        
+		/**Biomes**/
+        BiomeRegistry.preInit();
+        
 		//Items
 		ItemMod.preInit();
 		ItemMod.register();

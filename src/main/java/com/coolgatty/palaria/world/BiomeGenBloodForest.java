@@ -30,13 +30,13 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class BiomeGenBloodForest extends BiomeGenBase
 {
 	private WorldGenerator theWorldGenerator = new WorldGenMinable(Blocks.monster_egg.getDefaultState().withProperty(BlockSilverfish.VARIANT, BlockSilverfish.EnumType.STONE), 5);
-    private static final IBlockState field_181653_a = Blocks.log.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK);
+    private static final IBlockState redwoodSpawn = BlockMod.modlog.getDefaultState().withProperty(BlockModLog.VARIANT, BlockModPlanks.EnumType.REDWOOD);
     private static final IBlockState field_181654_b = Blocks.leaves.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
 	   
 	public BiomeGenBloodForest(int biomeID) 
 	{
 		super(biomeID);
-        this.worldGeneratorTrees = new WorldGenTrees(false, 16, field_181653_a, field_181654_b, false);
+        this.worldGeneratorTrees = new WorldGenTrees(false, 16, redwoodSpawn, field_181654_b, false);
 		this.waterColorMultiplier = 0xFF0000;
 		this.theBiomeDecorator.flowersPerChunk = 3;
 		this.theBiomeDecorator.deadBushPerChunk = 1;
@@ -44,12 +44,6 @@ public class BiomeGenBloodForest extends BiomeGenBase
 		this.theBiomeDecorator.treesPerChunk = 4;
 		this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityWolf.class, 5, 4, 4));
 	}
-
-	/*private static final IBlockState metaWood()
-	{
-		IBlockState blockstate = BlockMod.modlog.getDefaultState().withProperty(BlockModLog.VARIANT, BlockModPlanks.EnumType.REDWOOD);
-		return blockstate;
-	}*/
 		
 	public int getGrassColorAtPos(BlockPos p_180627_1_)
 	{
