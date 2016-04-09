@@ -67,7 +67,7 @@ public class EntityCowasaurus extends EntityMob
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
         this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
         this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
-        experienceValue = 70;
+        this.experienceValue = 70;
     }
 
     protected void applyEntityAttributes()
@@ -77,7 +77,7 @@ public class EntityCowasaurus extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.40D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(140D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(50D);
-        this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(10D);
+        this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(0.4D);
     }
     
     public boolean attackEntityAsMob(Entity entity)
@@ -111,6 +111,42 @@ public class EntityCowasaurus extends EntityMob
             }
         }
     }
+    
+    public void updateAITasks()
+    {
+        if (this.getMoveHelper().isUpdating())
+        {
+            double d0 = this.getMoveHelper().getSpeed();
+
+            if (d0 == 0.0D)
+            {
+                this.setSneaking(false);
+                this.setSprinting(false);
+            }
+            else if (d0 >= 1.2D)
+            {
+                this.setSneaking(false);
+                this.setSprinting(true);
+            }
+            else if (d0 <= 1.2D)
+            {
+                this.setSneaking(true);
+                this.setSprinting(false);
+            }
+            else
+            {
+                this.setSneaking(false);
+                this.setSprinting(false);
+            }
+        }
+        else
+        {
+            this.setSneaking(false);
+            this.setSprinting(false);
+        }
+    }
+    
+
     	 
     
     /**

@@ -96,7 +96,7 @@ public class EntityEnderRaptorChicken extends EntityMob
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
-        experienceValue = 50;
+        this.experienceValue = 50;
     }
 
     /**

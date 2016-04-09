@@ -59,7 +59,7 @@ public class Palaria
 	public static int stoneendermiteID;
 	public static int endendermiteID;
 	public static int enderwalkerID;
-	public static int nimatinID;
+	public static int WIP_1ID;
 	
 	public static int skyforestID;
 	public static int bloodforestID;
@@ -82,7 +82,7 @@ public class Palaria
 			stoneendermiteID = config.get("Entity", "Stone Endermite", 906).getInt();
 			endendermiteID = config.get("Entity", "End Endermite", 907).getInt();
 			enderwalkerID = config.get("Entity", "Ender Walker", 908).getInt();
-			nimatinID = config.get("Entity", "Nimatin", 909).getInt();
+			WIP_1ID = config.get("Entity", "Nimatin", 909).getInt();
 			
 			skyforestID = config.get("Biome", "Sky Forest", 137).getInt();
 			bloodforestID = config.get("Biome", "Blood Forest", 138).getInt();

@@ -87,7 +87,7 @@ public class EntityEnderWalker extends EntityMob
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityVillager.class, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityChicken.class, true));
-        experienceValue = 45;
+        this.experienceValue = 45;
     }
 
     public boolean isAIEnabled()

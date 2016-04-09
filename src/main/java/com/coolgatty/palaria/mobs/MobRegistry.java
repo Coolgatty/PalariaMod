@@ -233,5 +233,8 @@ public class MobRegistry
 				BiomeGenBase.sky,
 				BiomeRegistry.bloodforest,
 				BiomeRegistry.skyforest);
+		
+		//WIP_1
+		EntityRegistry.registerModEntity(EntityWIP_1.class, "WIP_1", Palaria.WIP_1ID, Reference.MODID, 100, 3, true, 0x4F3D2B, 0x8C8282);
 	}
 }

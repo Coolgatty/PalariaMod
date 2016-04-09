@@ -2,11 +2,15 @@ package com.coolgatty.palaria.mobs.models;
 
 import org.lwjgl.opengl.GL11;
 
+import com.coolgatty.palaria.mobs.EntityCowasaurus;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.MathHelper;
 
 public class ModelCowasaurus extends ModelBase
@@ -74,6 +78,7 @@ public class ModelCowasaurus extends ModelBase
     ModelRenderer rightear2;
     ModelRenderer leftear1;
     ModelRenderer leftear2;
+    int field_78163_i = 1;
   
   public ModelCowasaurus()
   {
@@ -528,9 +533,9 @@ public class ModelCowasaurus extends ModelBase
     model.rotateAngleZ = z;
   }
   
-  public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
+  public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
   {
-    super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
+    super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
     head.rotateAngleY = par4 / (180F / (float)Math.PI);
     head.rotateAngleX = par5 / (180F / (float)Math.PI);
     rightear1.rotateAngleY = this.head.rotateAngleY;
@@ -603,14 +608,6 @@ public class ModelCowasaurus extends ModelBase
     leftfoot3.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.0F * par2;
     rightfoot4.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 1.0F * par2;
     leftfoot4.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.0F * par2;
-    tail1.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 0.2F * par2;
-    tail1.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.1F * par2;
-    tail2.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 0.3F * par2;
-    tail2.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.1F * par2;
-    tail3.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 0.4F * par2;
-    tail3.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.1F * par2;
-    tail4.rotateAngleY = MathHelper.cos(par1 * 0.6662F) * 0.5F * par2;
-    tail4.rotateAngleX = MathHelper.cos(par1 * 0.6662F) * 0.1F * par2;
     leftarm.rotateAngleY = this.rightquadriceps.rotateAngleX;
     rightarm.rotateAngleY = this.rightquadriceps.rotateAngleX;
     lefthand1.rotateAngleY = this.rightquadriceps.rotateAngleX;
@@ -637,5 +634,47 @@ public class ModelCowasaurus extends ModelBase
     righthand3.rotateAngleZ = this.rightquadriceps.rotateAngleX;
 
   }
-
+  
+  public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float p_78086_2_, float p_78086_3_, float partialTickTime)
+  {
+      EntityCowasaurus entity = (EntityCowasaurus)entitylivingbaseIn;
+      float bobSpeed = 0.1F;
+      float bobSpeedWalking = 0.6662F;
+      if (entity.isSneaking())
+      {
+      	tail1.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F;
+      	tail1.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+      	tail2.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.3F;
+      	tail2.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+      	tail3.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.4F;
+      	tail3.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+      	tail4.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.5F;
+      	tail4.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+        this.field_78163_i = 0;
+      }
+      else if (entity.isSprinting())
+      {
+        	tail1.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F;
+          	tail1.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+          	tail2.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.3F;
+          	tail2.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+          	tail3.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.4F;
+          	tail3.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+          	tail4.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.5F;
+          	tail4.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.1F;
+        this.field_78163_i = 2;
+      }
+      else
+      {
+        	tail1.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.2F;
+          	tail1.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.1F;
+          	tail2.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.3F;
+          	tail2.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.1F;
+          	tail3.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.4F;
+          	tail3.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.1F;
+          	tail4.rotateAngleY = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.5F;
+          	tail4.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.1F;
+        this.field_78163_i = 1;
+      }
+  }
 }

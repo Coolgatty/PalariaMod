@@ -76,7 +76,7 @@ public class EntityStoneEndermite extends EntityMob
                 return this.func_179948_a((EntityEndermite)p_apply_1_);
             }
         }));
-        experienceValue = 80;
+        this.experienceValue = 80;
     }
 
     protected void applyEntityAttributes()

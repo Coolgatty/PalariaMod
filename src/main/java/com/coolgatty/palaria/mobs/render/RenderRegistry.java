@@ -8,6 +8,7 @@ import com.coolgatty.palaria.mobs.EntityEnderWalker;
 import com.coolgatty.palaria.mobs.EntityMagmaRaptorChicken;
 import com.coolgatty.palaria.mobs.EntityRaptorChicken;
 import com.coolgatty.palaria.mobs.EntityStoneEndermite;
+import com.coolgatty.palaria.mobs.EntityWIP_1;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -24,6 +25,7 @@ public class RenderRegistry
 		registerRender(EntityStoneEndermite.class, new RenderStoneEndermite());
 		registerRender(EntityEndEndermite.class, new RenderEndEndermite());
 		registerRender(EntityEnderWalker.class, new RenderEnderWalker());
+		registerRender(EntityWIP_1.class, new RenderWIP_1());
 	}
 
 	private static void registerRender(Class entityClass, Render renderClass) 
