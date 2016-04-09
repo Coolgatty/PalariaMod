@@ -134,6 +134,37 @@ public class ModelWIP_1 extends ModelBase
   public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
   {
     super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+    this.frontLeftArm1a.rotationPointX =  5.0F;
+    this.frontLeftArm1a.rotationPointY =  0.0F;
+    this.frontLeftArm1a.rotationPointZ = -1.0F;
+
+    this.frontRightArm2a.rotationPointX = -5.0F;
+    this.frontRightArm2a.rotationPointY =  0.0F;
+    this.frontRightArm2a.rotationPointZ = -1.0F;
+
+    this.frontLeftArm1b.rotationPointX =  5.0F;
+    this.frontLeftArm1b.rotationPointY =  0.0F;
+    this.frontLeftArm1b.rotationPointZ = -1.0F;
+
+    this.frontRightArm2b.rotationPointX = -5.0F;
+    this.frontRightArm2b.rotationPointY =  0.0F;
+    this.frontRightArm2b.rotationPointZ = -1.0F;
+
+    this.backLeftArm1a.rotationPointX =  7.0F;
+    this.backLeftArm1a.rotationPointY = -4.0F;
+    this.backLeftArm1a.rotationPointZ =  9.0F;
+    
+    this.backLeftArm1b.rotationPointX =  7.0F;
+    this.backLeftArm1b.rotationPointY = -4.0F;
+    this.backLeftArm1b.rotationPointZ =  9.0F;
+    
+    this.backRightArm2a.rotationPointX = -7.0F;
+    this.backRightArm2a.rotationPointY = -4.0F;
+    this.backRightArm2a.rotationPointZ =  9.0F;
+    
+    this.backRightArm2b.rotationPointX = -7.0F;
+    this.backRightArm2b.rotationPointY = -4.0F;
+    this.backRightArm2b.rotationPointZ =  9.0F;
   }
   
   public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float p_78086_2_, float p_78086_3_, float partialTickTime)
@@ -155,7 +186,6 @@ public class ModelWIP_1 extends ModelBase
       this.lowerTorso.rotationPointX = 0.0478158F;
       this.lowerTorso.rotationPointY = 0.0F;
       this.lowerTorso.rotationPointZ = 0.0F;
-      
 
       this.frontLeftArm1a.rotationPointX = -0.2602503F;
       this.frontLeftArm1a.rotationPointY =  0.0743572F;
@@ -197,6 +227,18 @@ public class ModelWIP_1 extends ModelBase
     	  upperTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.3F  + this.upperTorso.rotationPointX;
     	  midTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.4F  + this.midTorso.rotationPointX;
     	  lowerTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.5F  + this.lowerTorso.rotationPointX;
+    	  
+    	  frontLeftArm1a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking +(float)Math.PI) * 0.2F  + this.frontLeftArm1a.rotationPointZ;
+    	  frontLeftArm1b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking +(float)Math.PI) * 0.2F  + this.frontLeftArm1b.rotationPointZ;
+    	  
+    	  frontRightArm2a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.frontRightArm2a.rotationPointZ;
+    	  frontRightArm2b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.frontRightArm2b.rotationPointZ;
+    	  
+    	  backLeftArm1a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking +(float)Math.PI) * 0.2F  + this.backLeftArm1a.rotationPointZ;
+    	  backLeftArm1b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking +(float)Math.PI) * 0.2F  + this.backLeftArm1b.rotationPointZ;
+    	  
+    	  backRightArm2a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.backRightArm2a.rotationPointZ;
+    	  backRightArm2b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.backRightArm2b.rotationPointZ;
     	  this.field_78163_i = 0;
       }
       else if (entity.isSprinting())
@@ -205,6 +247,18 @@ public class ModelWIP_1 extends ModelBase
     	  upperTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.3F  + this.upperTorso.rotationPointX;
     	  midTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.4F  + this.midTorso.rotationPointX;
     	  lowerTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.5F  + this.lowerTorso.rotationPointX;
+    	  
+    	  frontLeftArm1a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking+(float)Math.PI) * 0.2F  + this.frontLeftArm1a.rotationPointZ;
+    	  frontLeftArm1b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking+(float)Math.PI) * 0.2F  + this.frontLeftArm1b.rotationPointZ;
+    	  
+    	  frontRightArm2a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.frontRightArm2a.rotationPointZ;
+    	  frontRightArm2b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.frontRightArm2b.rotationPointZ;
+    	  
+    	  backLeftArm1a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking+(float)Math.PI) * 0.2F  + this.backLeftArm1a.rotationPointZ;
+    	  backLeftArm1b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking+(float)Math.PI) * 0.2F  + this.backLeftArm1b.rotationPointZ;
+    	  
+    	  backRightArm2a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.backRightArm2a.rotationPointZ;
+    	  backRightArm2b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeedWalking) * 0.2F  + this.backRightArm2b.rotationPointZ;
     	  this.field_78163_i = 2;
       }
       else
@@ -213,6 +267,18 @@ public class ModelWIP_1 extends ModelBase
           upperTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.2F  + this.upperTorso.rotationPointX;
           midTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.3F  + this.midTorso.rotationPointX;
           lowerTorso.rotateAngleX = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.4F  + this.lowerTorso.rotationPointX;
+          
+    	  frontLeftArm1a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed+(float)Math.PI) * 0.2F  + this.frontLeftArm1a.rotationPointZ;
+    	  frontLeftArm1b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed+(float)Math.PI) * 0.2F  + this.frontLeftArm1b.rotationPointZ;
+    	  
+    	  frontRightArm2a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.2F  + this.frontRightArm2a.rotationPointZ;
+    	  frontRightArm2b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.2F  + this.frontRightArm2b.rotationPointZ;
+    	  
+    	  backLeftArm1a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed+(float)Math.PI) * 0.2F  + this.backLeftArm1a.rotationPointZ;
+    	  backLeftArm1b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed+(float)Math.PI) * 0.2F  + this.backLeftArm1b.rotationPointZ;
+    	  
+    	  backRightArm2a.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.2F  + this.backRightArm2a.rotationPointZ;
+    	  backRightArm2b.rotateAngleZ = MathHelper.cos((entity.ticksExisted + entity.getEntityId()) * bobSpeed) * 0.2F  + this.backRightArm2b.rotationPointZ;
           this.field_78163_i = 1;
       }
 
