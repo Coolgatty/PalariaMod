@@ -33,12 +33,13 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 
 public class EntityCowasaurus extends EntityMob
 {
     private final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
-    private boolean field_146076_bu = false;
+    private boolean isBreakDoorsTaskSet = false;
 	private double moveSpeed;
     
     public EntityCowasaurus(World par1World)
@@ -90,18 +91,21 @@ public class EntityCowasaurus extends EntityMob
         return dmg;
     }
     
-    public boolean func_146072_bX()
+    public boolean isBreakDoorsTaskSet()
     {
-        return this.field_146076_bu;
+        return this.isBreakDoorsTaskSet;
     }
 
-    public void func_146070_a(boolean p_146070_1_)
+    /**
+     * Sets or removes EntityAIBreakDoor task
+     */
+    public void setBreakDoorsAItask(boolean par1)
     {
-        if (this.field_146076_bu != p_146070_1_)
+        if (this.isBreakDoorsTaskSet != par1)
         {
-            this.field_146076_bu = p_146070_1_;
+            this.isBreakDoorsTaskSet = par1;
 
-            if (p_146070_1_)
+            if (par1)
             {
                 this.tasks.addTask(1, this.breakDoor);
             }
@@ -128,7 +132,7 @@ public class EntityCowasaurus extends EntityMob
                 this.setSneaking(false);
                 this.setSprinting(true);
             }
-            else if (d0 <= 1.2D)
+            else if (d0 < 1.2D)
             {
                 this.setSneaking(true);
                 this.setSprinting(false);

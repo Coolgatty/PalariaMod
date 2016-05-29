@@ -535,6 +535,7 @@ public class ModelCowasaurus extends ModelBase
   
   public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
   {
+	EntityCowasaurus thisEntity = (EntityCowasaurus)entity;
     super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
     head.rotateAngleY = par4 / (180F / (float)Math.PI);
     head.rotateAngleX = par5 / (180F / (float)Math.PI);
@@ -575,7 +576,18 @@ public class ModelCowasaurus extends ModelBase
     tooth9.rotateAngleX = this.head.rotateAngleX;
     tooth10.rotateAngleX = this.head.rotateAngleX;
     jaw.rotateAngleY = this.head.rotateAngleY;
-    jaw.rotateAngleX = par5 / (80F / (float)Math.PI);
+    jaw.rotateAngleX = this.head.rotateAngleX;
+
+    jaw.rotateAngleX = (this.head.rotateAngleX + (25F / (180F / (float)Math.PI))) + (par5 / (180F / (float)Math.PI))*MathHelper.cos(thisEntity.ticksExisted*0.4F)*0.1F;
+    	
+    if (this.head.rotateAngleX == 0)
+    {
+    	this.jaw.rotateAngleX = 0F + (2F / (180F / (float)Math.PI));
+    }    
+    else if (this.head.rotateAngleX > 0)
+    {
+    	this.jaw.rotateAngleX = (this.head.rotateAngleX + (25F / (180F / (float)Math.PI))) + (par5 / (180F / (float)Math.PI))*MathHelper.cos(thisEntity.ticksExisted*0.4F)*0.6662F;
+    }
     tooth11.rotateAngleY = this.jaw.rotateAngleY;
     tooth12.rotateAngleY = this.jaw.rotateAngleY;
     tooth13.rotateAngleY = this.jaw.rotateAngleY;

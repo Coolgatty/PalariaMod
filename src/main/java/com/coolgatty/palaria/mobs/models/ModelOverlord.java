@@ -1,15 +1,13 @@
 package com.coolgatty.palaria.mobs.models;
 
 import com.coolgatty.palaria.mobs.EntityCowasaurus;
-import com.coolgatty.palaria.mobs.EntityWIP_1;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 
-public class ModelWIP_1 extends ModelBase
+public class ModelOverlord extends ModelBase
 {
   //fields
     ModelRenderer upperTorso;
@@ -27,7 +25,7 @@ public class ModelWIP_1 extends ModelBase
     
     int field_78163_i = 1;
   
-  public ModelWIP_1()
+  public ModelOverlord()
   {
     textureWidth = 128;
     textureHeight = 128;
@@ -169,7 +167,7 @@ public class ModelWIP_1 extends ModelBase
   
   public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float p_78086_2_, float p_78086_3_, float partialTickTime)
   {
-      EntityWIP_1 entity = (EntityWIP_1)entitylivingbaseIn;  
+      Entity entity = entitylivingbaseIn;  
       
       this.head.rotationPointX = 0.4461433F;
       this.head.rotationPointY = 0.0F;

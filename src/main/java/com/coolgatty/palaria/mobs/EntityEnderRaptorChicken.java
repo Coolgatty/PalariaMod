@@ -60,10 +60,12 @@ import net.minecraft.world.World;
 
 public class EntityEnderRaptorChicken extends EntityMob
 {
-    
+    public float wingRotation;
+    public float wingRotDelta = 1.0F;
     public boolean field_70885_d = false;
     public float field_70886_e = 0.0F;
     public float destPos = 0.0F;
+    public float destPosi;
     public float field_70884_g;
     public float field_70888_h;
     public float field_70889_i = 1.0F;
@@ -168,6 +170,26 @@ public class EntityEnderRaptorChicken extends EntityMob
      */
     public void onLivingUpdate()
     {
+        super.onLivingUpdate();
+        this.field_70888_h = this.wingRotation;
+        this.field_70884_g = this.destPosi;
+        this.destPosi = (float)((double)this.destPosi + (double)(this.onGround ? -1 : 4) * 0.3D);
+        this.destPosi = MathHelper.clamp_float(this.destPosi, 0.0F, 1.0F);
+
+        if (!this.onGround && this.wingRotDelta < 1.0F)
+        {
+            this.wingRotDelta = 1.0F;
+        }
+
+        this.wingRotDelta = (float)((double)this.wingRotDelta * 0.9D);
+
+        if (!this.onGround && this.motionY < 0.0D)
+        {
+            this.motionY *= 0.6D;
+        }
+
+        this.wingRotation += this.wingRotDelta * 2.0F;
+        
         if (this.worldObj.isRemote)
         {
             for (int i = 0; i < 2; ++i)
@@ -177,7 +199,6 @@ public class EntityEnderRaptorChicken extends EntityMob
         }
 
         this.isJumping = false;
-        super.onLivingUpdate();
     }
 
     protected void updateAITasks()

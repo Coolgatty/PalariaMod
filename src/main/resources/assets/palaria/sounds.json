@@ -92,5 +92,57 @@
     "sounds": [
       "mob/enderraptorchicken/death"
     ]
+  },
+    "mob.overlord.step": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/overlord/step1",
+      "mob/overlord/step2",
+      "mob/overlord/step3",
+      "mob/overlord/step4",
+      "mob/overlord/step5"
+    ]
+  },
+    "mob.overlord.death": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/overlord/death1",
+      "mob/overlord/death2"
+    ]
+  },
+    "mob.overlord.hurt": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/overlord/hurt1",
+      "mob/overlord/hurt2",
+      "mob/overlord/hurt3",
+      "mob/overlord/hurt4",
+      "mob/overlord/hurt5"
+    ]
+  },
+    "mob.ent.say": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/ent/say1",
+      "mob/ent/say2",
+      "mob/ent/say3",
+      "mob/ent/say4",
+      "mob/ent/say5",
+      "mob/ent/say6"
+    ]
+  },      
+    "mob.ent.step": {
+    "category": "hostile",
+    "replace": true,
+    "sounds": [
+      "mob/ent/step1",
+      "mob/ent/step2",
+      "mob/ent/step3",
+      "mob/ent/step4"
+    ]
   }
 }

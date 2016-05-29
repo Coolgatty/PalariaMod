@@ -1,8 +1,9 @@
-package com.coolgatty.palaria.mobs.render;
+package com.coolgatty.palaria.mobs.render.layer;
 
 
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.models.ModelCreeptile;
+import com.coolgatty.palaria.mobs.render.RenderCreeptile;
 
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;

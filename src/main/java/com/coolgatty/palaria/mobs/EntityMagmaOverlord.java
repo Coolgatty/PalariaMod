@@ -1,5 +1,6 @@
 package com.coolgatty.palaria.mobs;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -8,21 +9,22 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityWIP_1 extends EntityMob
+public class EntityMagmaOverlord extends EntityMob
 {
     /** Random offset used in floating behaviour */
     private float heightOffset = 1.0F;
@@ -30,13 +32,12 @@ public class EntityWIP_1 extends EntityMob
     private int heightOffsetUpdateTime;
 	private double moveSpeed;
 
-    public EntityWIP_1(World worldIn)
+    public EntityMagmaOverlord(World worldIn)
     {
         super(worldIn);
         this.moveSpeed = 1.0D;
-        this.experienceValue = 30;
+        this.experienceValue = 35;
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
-        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityVillager.class, this.moveSpeed, false));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, this.moveSpeed));
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed - 0.2D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -49,10 +50,10 @@ public class EntityWIP_1 extends EntityMob
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(14.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(54.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.25D);
-        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(48.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(80D);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(30.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100D);
     }
     
     public boolean attackEntityAsMob(Entity entity)
@@ -110,7 +111,12 @@ public class EntityWIP_1 extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.blaze.breathe";
+        return "palaria:mob.overlord.say";
+    }
+    
+    protected void playStepSound(BlockPos pos, Block blockIn)
+    {
+        this.playSound("palaria:mob.overlord.step", 0.7F, 1.0F);
     }
 
     /**
@@ -118,7 +124,7 @@ public class EntityWIP_1 extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.blaze.hit";
+        return "palaria:mob.overlord.hurt";
     }
 
     /**
@@ -126,20 +132,7 @@ public class EntityWIP_1 extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.blaze.death";
-    }
-
-    @SideOnly(Side.CLIENT)
-    public int getBrightnessForRender(float partialTicks)
-    {
-        return 7864440;
-    }
-    /**
-     * Gets how bright this entity is.
-     */
-    public float getBrightness(float partialTicks)
-    {
-        return 1.0F;
+        return "palaria:mob.overlord.death";
     }
 
 
@@ -152,23 +145,23 @@ public class EntityWIP_1 extends EntityMob
  	
         if (this.worldObj.isRemote)
         {
-            if (this.rand.nextInt(24) == 0 && !this.isSilent())
-            {
-                this.worldObj.playSound(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D, "fire.fire", 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F, false);
-            }
-
             for (int i = 0; i < 2; ++i)
             {
-                this.worldObj.spawnParticle(EnumParticleTypes.REDSTONE, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
+                this.worldObj.spawnParticle(EnumParticleTypes.LAVA, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D, new int[0]);
             }
         }
 
         super.onLivingUpdate();
     } 
-
-    protected Item getDropItem()
+    
+    public boolean isBurning()
     {
-        return Items.blaze_rod;
+        return this.func_70845_n();
+    }
+    
+    public boolean func_70845_n()
+    {
+        return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
     }
 
     /**
@@ -187,8 +180,29 @@ public class EntityWIP_1 extends EntityMob
 
             for (int j = 0; j < i; ++j)
             {
+                this.dropItem(Items.magma_cream, 1);
+            }
+            
+            for (int j = 0; j < i; ++j)
+            {
                 this.dropItem(Items.blaze_rod, 1);
             }
         }
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public int getBrightnessForRender(float p_70070_1_)
+    {
+        return 1000000;
+    }
+    
+    public float getBrightness(float p_70013_1_)
+    {
+        return 0.2F;
+    }
+    
+    protected boolean isValidLightLevel()
+    {
+        return true;
     }
 }

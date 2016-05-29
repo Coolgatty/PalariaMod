@@ -11,10 +11,12 @@ import com.coolgatty.palaria.mobs.render.RenderMagmaRaptorChicken;
 import com.coolgatty.palaria.mobs.render.RenderRaptorChicken;
 import com.coolgatty.palaria.mobs.render.RenderStoneEndermite;
 import com.coolgatty.palaria.world.BiomeRegistry;
+import com.jcraft.jorbis.Block;
 
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -71,8 +73,6 @@ public class MobRegistry
 				BiomeGenBase.beach,
 				BiomeGenBase.forest,
 				BiomeGenBase.jungle,
-				BiomeGenBase.mushroomIsland, 
-				BiomeGenBase.mushroomIslandShore, 
 				BiomeGenBase.ocean, 
 				BiomeGenBase.plains, 
 				BiomeGenBase.river, 
@@ -138,7 +138,7 @@ public class MobRegistry
 		
 		//Magma Raptor Chicken
 		EntityRegistry.registerModEntity(EntityMagmaRaptorChicken.class, "MagmaRaptorChicken", Palaria.magmaraptorchickenID, Reference.MODID, 100, 3, true, 0xFFD000, 0xD60400);
-		EntityRegistry.addSpawn(EntityMagmaRaptorChicken.class, 5, 2, 5, EnumCreatureType.MONSTER, 
+		EntityRegistry.addSpawn(EntityMagmaRaptorChicken.class, 6, 2, 5, EnumCreatureType.MONSTER, 
 				BiomeGenBase.hell);
 		
 		//Ender Raptor Chicken
@@ -222,8 +222,6 @@ public class MobRegistry
 				BiomeGenBase.mesa,
 				BiomeGenBase.mesaPlateau,
 				BiomeGenBase.mesaPlateau_F,
-				BiomeGenBase.mushroomIsland,
-				BiomeGenBase.mushroomIslandShore,
 				BiomeGenBase.roofedForest,
 				BiomeGenBase.savanna,
 				BiomeGenBase.savannaPlateau,
@@ -234,7 +232,41 @@ public class MobRegistry
 				BiomeRegistry.bloodforest,
 				BiomeRegistry.skyforest);
 		
-		//WIP_1
-		EntityRegistry.registerModEntity(EntityWIP_1.class, "WIP_1", Palaria.WIP_1ID, Reference.MODID, 100, 3, true, 0x4F3D2B, 0x8C8282);
+		//Magma Overlord
+		EntityRegistry.registerModEntity(EntityMagmaOverlord.class, "MagmaOverlord", Palaria.magmaoverlordID, Reference.MODID, 100, 3, true, 0x5B280D, 0xFFD000);
+		EntityRegistry.addSpawn(EntityMagmaOverlord.class, 6, 1, 3, EnumCreatureType.MONSTER, 
+				BiomeGenBase.hell);
+		
+		//Slime Overlord
+		EntityRegistry.registerModEntity(EntitySlimeOverlord.class, "SlimeOverlord", Palaria.slimeoverlordID, Reference.MODID, 100, 3, true, 0x2EF0E6, 0x2EF078);
+		EntityRegistry.addSpawn(EntitySlimeOverlord.class, 7, 2, 4, EnumCreatureType.MONSTER, 
+				BiomeGenBase.mushroomIsland, 
+				BiomeGenBase.mushroomIslandShore, 
+				BiomeGenBase.swampland,
+				BiomeGenBase.river,
+				BiomeGenBase.roofedForest,
+				BiomeGenBase.stoneBeach,
+				BiomeRegistry.skyforest);
+		
+		//Agonizing Ent
+		EntityRegistry.registerModEntity(EntityAgonizingEnt.class, "AgonizingEnt", Palaria.agonizingentID, Reference.MODID, 100, 3, true, 0x6B5821, 0xC09D1F);
+		EntityRegistry.addSpawn(EntityAgonizingEnt.class, 15, 2, 7, EnumCreatureType.MONSTER, 
+				BiomeGenBase.mushroomIsland, 
+				BiomeGenBase.mushroomIslandShore, 
+				BiomeGenBase.swampland,
+				BiomeGenBase.roofedForest,
+				BiomeGenBase.birchForest,
+				BiomeGenBase.birchForestHills,
+				BiomeGenBase.forestHills,
+				BiomeGenBase.forest,
+				BiomeGenBase.jungle,
+				BiomeGenBase.jungleEdge,
+				BiomeGenBase.jungleHills,
+				BiomeGenBase.taiga,
+				BiomeGenBase.taigaHills,
+				BiomeGenBase.savanna,
+				BiomeGenBase.savannaPlateau,
+				BiomeRegistry.bloodforest,
+				BiomeRegistry.skyforest);
 	}
 }

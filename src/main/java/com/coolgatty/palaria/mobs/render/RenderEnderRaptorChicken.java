@@ -1,6 +1,7 @@
 package com.coolgatty.palaria.mobs.render;
 
 import com.coolgatty.palaria.mobs.EntityEnderRaptorChicken;
+import com.coolgatty.palaria.mobs.EntityEnderRaptorChicken;
 import com.coolgatty.palaria.mobs.models.ModelRaptorChicken;
 
 import net.minecraft.client.Minecraft;
@@ -35,11 +36,11 @@ public class RenderEnderRaptorChicken extends RenderLiving
 		return bindTexture((EntityEnderRaptorChicken)entity);
 	}
 
-    protected float func_180569_a(EntityEnderRaptorChicken p_180569_1_, float p_180569_2_)
+    protected float handleRotationFloat(EntityEnderRaptorChicken livingBase, float partialTicks)
     {
-        float f1 = p_180569_1_.field_70888_h + (p_180569_1_.field_70886_e - p_180569_1_.field_70888_h) * p_180569_2_;
-        float f2 = p_180569_1_.field_70884_g + (p_180569_1_.destPos - p_180569_1_.field_70884_g) * p_180569_2_;
-        return (MathHelper.sin(f1) + 1.0F) * f2;
+        float f = livingBase.field_70888_h + (livingBase.wingRotation - livingBase.field_70888_h) * partialTicks;
+        float f1 = livingBase.field_70884_g + (livingBase.destPosi - livingBase.field_70884_g) * partialTicks;
+        return (MathHelper.sin(f) + 1.0F) * f1;
     }
     
     /**
@@ -47,7 +48,7 @@ public class RenderEnderRaptorChicken extends RenderLiving
      */
     protected float handleRotationFloat(EntityLivingBase p_77044_1_, float p_77044_2_)
     {
-        return this.func_180569_a((EntityEnderRaptorChicken)p_77044_1_, p_77044_2_);
+        return this.handleRotationFloat((EntityEnderRaptorChicken)p_77044_1_, p_77044_2_);
     }    
     
     public ResourceLocation bindTexture(EntityEnderRaptorChicken entity)

@@ -44,13 +44,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityMagmaRaptorChicken extends EntityMob
 {
-    
+    public float wingRotation;
     public boolean field_70885_d = false;
     public float field_70886_e = 0.0F;
     public float destPos = 0.0F;
     public float field_70884_g;
     public float field_70888_h;
     public float field_70889_i = 1.0F;
+    public float wingRotDelta = 1.0F;
 	private double moveSpeed;
 
 
@@ -119,6 +120,27 @@ public class EntityMagmaRaptorChicken extends EntityMob
      */
     public void onLivingUpdate()
     {
+    	
+        this.field_70888_h = this.wingRotation;
+        this.field_70884_g = this.destPos;
+        this.destPos = (float)((double)this.destPos + (double)(this.onGround ? -1 : 4) * 0.3D);
+        this.destPos = MathHelper.clamp_float(this.destPos, 0.0F, 1.0F);
+
+        if (!this.onGround && this.wingRotDelta < 1.0F)
+        {
+            this.wingRotDelta = 1.0F;
+        }
+
+        this.wingRotDelta = (float)((double)this.wingRotDelta * 0.9D);
+
+        if (!this.onGround && this.motionY < 0.0D)
+        {
+            this.motionY *= 0.6D;
+        }
+
+        this.wingRotation += this.wingRotDelta * 2.0F;
+
+        
         if (this.isWet())
         {
             this.attackEntityFrom(DamageSource.drown, 1);
@@ -217,20 +239,6 @@ public class EntityMagmaRaptorChicken extends EntityMob
         }
     }
     
-    @SideOnly(Side.CLIENT)
-    public int getBrightnessForRender(float p_70070_1_)
-    {
-        return 15728880;
-    }
-
-    /**
-     * Gets how bright this entity is.
-     */
-    public float getBrightness(float p_70013_1_)
-    {
-        return 1.0F;
-    }
-    
     public boolean isBurning()
     {
         return this.func_70845_n();
@@ -261,10 +269,18 @@ public class EntityMagmaRaptorChicken extends EntityMob
 
         this.dataWatcher.updateObject(16, Byte.valueOf(b0));
     }
-
-    /**
-     * Checks to make sure the light is not too bright where the mob is spawning
-     */
+    
+    @SideOnly(Side.CLIENT)
+    public int getBrightnessForRender(float p_70070_1_)
+    {
+        return 15728880;
+    }
+    
+    public float getBrightness(float p_70013_1_)
+    {
+        return 1.0F;
+    }
+    
     protected boolean isValidLightLevel()
     {
         return true;

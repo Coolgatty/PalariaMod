@@ -11,30 +11,35 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 import org.lwjgl.opengl.GL11;
-import com.coolgatty.palaria.mobs.EntityWIP_1;
-import com.coolgatty.palaria.mobs.models.ModelWIP_1;
 
-public class RenderWIP_1 extends RenderLiving
+import com.coolgatty.palaria.mobs.EntityAgonizingEnt;
+import com.coolgatty.palaria.mobs.models.ModelAgonizingEnt;
+
+
+
+public class RenderAgonizingEnt extends RenderLiving
 {
-	public static final ResourceLocation WIP_1 = new ResourceLocation("palaria:textures/mobs/WIP_1.png");
+	public static final ResourceLocation agonizing_ent = new ResourceLocation("palaria:textures/mobs/AgonizingEnt.png");
+    private static final String __OBFID = "CL_00000985";
 
-    public RenderWIP_1()
+    public RenderAgonizingEnt()
     {
-    	super(Minecraft.getMinecraft().getRenderManager(), new ModelWIP_1(), 0.0F);
+    	super(Minecraft.getMinecraft().getRenderManager(), new ModelAgonizingEnt(), 0.0F);
     }
 
     /**
      * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
      */
-	public ResourceLocation bindTexture(EntityWIP_1 entity)
+	public ResourceLocation bindTexture(EntityAgonizingEnt entity)
 	{
-		return WIP_1;
+		return agonizing_ent;
 	}
 	
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) 
 	{
-		return bindTexture((EntityWIP_1)entity);
+		return bindTexture((EntityAgonizingEnt)entity);
 	}
 }

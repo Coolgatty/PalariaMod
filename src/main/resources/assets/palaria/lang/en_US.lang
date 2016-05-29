@@ -207,7 +207,9 @@ entity.palaria.EnderRaptorChicken.name=Ender Raptor Chicken
 entity.palaria.EnderWalker.name=Ender Walker
 entity.palaria.StoneEndermite.name=Stone Endermite
 entity.palaria.EndEndermite.name=End Endermite
-entity.palaria.Nimatin.name=Nimatin
+entity.palaria.MagmaOverlord.name=Magma Overlord
+entity.palaria.SlimeOverlord.name=Slime Overlord
+entity.palaria.AgonizingEnt.name=Agonizing Ent
 
 item.doomspoon.name=Spoon Of Doom
 item.crawmitesword.name=Crawmite Sword

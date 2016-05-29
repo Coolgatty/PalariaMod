@@ -17,6 +17,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.models.ModelCreeptile;
+import com.coolgatty.palaria.mobs.render.layer.LayerCreeptileCharge;
 
 public class RenderCreeptile extends RenderLiving
 {
