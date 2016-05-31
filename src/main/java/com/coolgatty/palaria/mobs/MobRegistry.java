@@ -250,7 +250,7 @@ public class MobRegistry
 		
 		//Agonizing Ent
 		EntityRegistry.registerModEntity(EntityAgonizingEnt.class, "AgonizingEnt", Palaria.agonizingentID, Reference.MODID, 100, 3, true, 0x6B5821, 0xC09D1F);
-		EntityRegistry.addSpawn(EntityAgonizingEnt.class, 15, 2, 7, EnumCreatureType.MONSTER, 
+		EntityRegistry.addSpawn(EntityAgonizingEnt.class, 15, 4, 7, EnumCreatureType.MONSTER, 
 				BiomeGenBase.mushroomIsland, 
 				BiomeGenBase.mushroomIslandShore, 
 				BiomeGenBase.swampland,

@@ -1,10 +1,15 @@
 package com.coolgatty.palaria.mobs.models;
 
+import com.coolgatty.palaria.mobs.EntityAgonizingEnt;
+import com.coolgatty.palaria.mobs.EntityCowasaurus;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
-public class ModelAgonizingEnt extends ModelBase {
+public class ModelAgonizingEnt extends ModelBase 
+{
     public ModelRenderer twig1;
     public ModelRenderer twig2;
     public ModelRenderer twig3;
@@ -21,13 +26,14 @@ public class ModelAgonizingEnt extends ModelBase {
     public ModelRenderer twig13;
     public ModelRenderer twig14;
     public ModelRenderer armRight;
-    public ModelRenderer armRight_1;
+    public ModelRenderer armLeft;
     public ModelRenderer frontLeftLeg;
     public ModelRenderer frontRightLeg;
     public ModelRenderer backLeftLeg;
     public ModelRenderer backRightLeg;
 
-    public ModelAgonizingEnt() {
+    public ModelAgonizingEnt() 
+    {
         this.textureWidth = 126;
         this.textureHeight = 128;
         this.torso = new ModelRenderer(this, 35, 32);
@@ -67,10 +73,10 @@ public class ModelAgonizingEnt extends ModelBase {
         this.twig9 = new ModelRenderer(this, 0, 0);
         this.twig9.setRotationPoint(-5.0F, 0.0F, 6.0F);
         this.twig9.addBox(0.0F, 0.0F, 0.0F, 0, 2, 1, 0.0F);
-        this.armRight_1 = new ModelRenderer(this, 50, 0);
-        this.armRight_1.setRotationPoint(2.0F, 3.0F, 3.0F);
-        this.armRight_1.addBox(0.0F, 0.0F, 0.0F, 2, 18, 2, 0.0F);
-        this.setRotateAngle(armRight_1, -0.3490658503988659F, -0.3490658503988659F, -0.04363323129985824F);
+        this.armLeft = new ModelRenderer(this, 50, 0);
+        this.armLeft.setRotationPoint(2.0F, 3.0F, 3.0F);
+        this.armLeft.addBox(0.0F, 0.0F, 0.0F, 2, 18, 2, 0.0F);
+        this.setRotateAngle(armLeft, -0.3490658503988659F, -0.3490658503988659F, -0.04363323129985824F);
         this.frontLeftLeg = new ModelRenderer(this, 40, 11);
         this.frontLeftLeg.setRotationPoint(1.0F, 22.0F, 1.0F);
         this.frontLeftLeg.addBox(-1.0F, 0.0F, -8.0F, 3, 3, 8, 0.0F);
@@ -102,7 +108,8 @@ public class ModelAgonizingEnt extends ModelBase {
     }
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) { 
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) 
+    { 
         this.torso.render(f5);
         this.twig10.render(f5);
         this.twig3.render(f5);
@@ -115,7 +122,7 @@ public class ModelAgonizingEnt extends ModelBase {
         this.twig8.render(f5);
         this.twig7.render(f5);
         this.twig9.render(f5);
-        this.armRight_1.render(f5);
+        this.armLeft.render(f5);
         this.frontLeftLeg.render(f5);
         this.frontRightLeg.render(f5);
         this.twig13.render(f5);
@@ -129,9 +136,24 @@ public class ModelAgonizingEnt extends ModelBase {
     /**
      * This is a helper function from Tabula to set the rotation of model parts
      */
-    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+    public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) 
+    {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
+    }
+    
+    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity entity)
+    {
+  	EntityAgonizingEnt thisEntity = (EntityAgonizingEnt)entity;
+      super.setRotationAngles(par1, par2, par3, par4, par5, par6, entity);
+      armRight.rotateAngleX = MathHelper.cos(par1 * 0.6662F + thisEntity.getEntityId()) * par2;
+      armLeft.rotateAngleX = MathHelper.cos(par1 * 0.6662F + (float)Math.PI + thisEntity.getEntityId()) * par2;
+      armRight.rotateAngleZ = MathHelper.abs(MathHelper.cos(par1 * 0.1F + thisEntity.getEntityId()) * par2 + (15F / (180F / (float)Math.PI)));
+      armLeft.rotateAngleZ = (MathHelper.abs(MathHelper.cos(par1 * 0.1F - (float)Math.PI + thisEntity.getEntityId()) * par2 - (15F / (180F / (float)Math.PI)))) * -1;
+      frontLeftLeg.rotateAngleY = (MathHelper.abs(MathHelper.cos(par1 * 0.6662F + thisEntity.getEntityId()) * par2)) * -1 - (15F / (180F / (float)Math.PI));
+      frontRightLeg.rotateAngleY = MathHelper.abs(MathHelper.cos(par1 * 0.6662F + (float)Math.PI + thisEntity.getEntityId()) * par2) + (15F / (180F / (float)Math.PI));
+      backLeftLeg.rotateAngleY = (MathHelper.abs(MathHelper.cos(par1 * 0.6662F + thisEntity.getEntityId()) * par2)) + (5F / (180F / (float)Math.PI));
+      backRightLeg.rotateAngleY = (MathHelper.abs(MathHelper.cos(par1 * 0.6662F + (float)Math.PI + thisEntity.getEntityId())) * par2) * -1 - (5F / (180F / (float)Math.PI));
     }
 }
