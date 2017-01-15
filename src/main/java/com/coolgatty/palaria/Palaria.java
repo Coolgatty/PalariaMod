@@ -62,6 +62,7 @@ public class Palaria
 	public static int magmaoverlordID;
 	public static int slimeoverlordID;
 	public static int agonizingentID;
+	public static int atomheID;
 	
 	public static int skyforestID;
 	public static int bloodforestID;
@@ -87,6 +88,7 @@ public class Palaria
 			magmaoverlordID = config.get("Entity", "Magma Overlord", 909).getInt();
 			slimeoverlordID = config.get("Entity", "Slime Overlord", 910).getInt();
 			agonizingentID = config.get("Entity", "Agonizing Ent", 911).getInt();
+			atomheID = config.get("Entity", "Atom He", 912).getInt();
 			
 			skyforestID = config.get("Biome", "Sky Forest", 137).getInt();
 			bloodforestID = config.get("Biome", "Blood Forest", 138).getInt();

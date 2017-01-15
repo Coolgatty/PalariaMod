@@ -33,6 +33,7 @@ public class BlockMod
 	//Logs and wood
 	public static Block modlog;
 	public static Block modplank;
+	public static Block neliumtorch;
 	
 	//Material Blocks
 	public static Block sarliteblock;
@@ -60,6 +61,8 @@ public class BlockMod
 		//Logs and wood
 		modlog = new BlockModLog().setUnlocalizedName("modlog");
 		modplank = new BlockModPlanks().setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundTypeWood).setUnlocalizedName("modplank");
+		neliumtorch = new BlockModTorch().setHardness(0.0F).setLightLevel(1.0F).setStepSound(Block.soundTypeWood).setUnlocalizedName("neliumtorch");
+		
 		
 		//Material Blocks
 		sarliteblock = new BlockModCompressed(MapColor.blueColor).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal).setUnlocalizedName("sarliteblock");
@@ -93,6 +96,7 @@ public class BlockMod
 		//Logs and wood
 		RegisterHelper.registerBlock(modlog, ItemBlockMeta.class);
 		RegisterHelper.registerBlock(modplank, ItemBlockMeta.class);
+		RegisterHelper.registerBlock(neliumtorch);
 		
 		//Material Blocks
 		RegisterHelper.registerBlock(sarliteblock);
@@ -120,6 +124,7 @@ public class BlockMod
 		//Logs and wood
 		RegisterHelper.registerRender(modlog, 0, "redwood_modlog");
 		RegisterHelper.registerRender(modplank, 0, "redwood_modplank");
+		RegisterHelper.registerRender(neliumtorch);
 		
 		//Material Blocks
 		RegisterHelper.registerRender(sarliteblock);

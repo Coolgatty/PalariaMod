@@ -1,6 +1,7 @@
 package com.coolgatty.palaria.mobs.render;
 
 import com.coolgatty.palaria.mobs.EntityAgonizingEnt;
+import com.coolgatty.palaria.mobs.EntityAtomHe;
 import com.coolgatty.palaria.mobs.EntityCowasaurus;
 import com.coolgatty.palaria.mobs.EntityCreeptile;
 import com.coolgatty.palaria.mobs.EntityEndEndermite;
@@ -30,6 +31,7 @@ public class RenderRegistry
 		registerRender(EntityMagmaOverlord.class, new RenderMagmaOverlord());
 		registerRender(EntitySlimeOverlord.class, new RenderSlimeOverlord());
 		registerRender(EntityAgonizingEnt.class, new RenderAgonizingEnt());
+		registerRender(EntityAtomHe.class, new RenderAtomHe());
 	}
 
 	private static void registerRender(Class entityClass, Render renderClass) 

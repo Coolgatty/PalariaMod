@@ -268,5 +268,16 @@ public class MobRegistry
 				BiomeGenBase.savannaPlateau,
 				BiomeRegistry.bloodforest,
 				BiomeRegistry.skyforest);
+		
+		//Atom He
+		EntityRegistry.registerModEntity(EntityAtomHe.class, "AtomHe", Palaria.atomheID, Reference.MODID, 100, 3, true, 0xFF0000, 0x0000FF);
+		EntityRegistry.addSpawn(EntityAtomHe.class, 15, 4, 7, EnumCreatureType.MONSTER, 
+				BiomeRegistry.skyforest,
+				BiomeGenBase.birchForestHills,
+				BiomeGenBase.extremeHills,
+				BiomeGenBase.extremeHillsEdge,
+				BiomeGenBase.extremeHillsPlus,
+				BiomeGenBase.taigaHills);
 	}
+	
 }

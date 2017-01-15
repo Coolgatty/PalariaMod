@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "palaria:nelium_torch" },
+        "facing=east": { "model": "palaria:nelium_torch_wall" },
+        "facing=south": { "model": "palaria:nelium_torch_wall", "y": 90 },
+        "facing=west": { "model": "palaria:nelium_torch_wall", "y": 180 },
+        "facing=north": { "model": "palaria:nelium_torch_wall", "y": 270 }
+    }
+}
